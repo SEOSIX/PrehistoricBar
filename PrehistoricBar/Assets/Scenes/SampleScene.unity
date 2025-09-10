@@ -184,7 +184,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 6
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.7084765, g: 0.7169812, b: 0.65272343, a: 1}
+  m_Color: {r: 0.78431374, g: 0.23137255, b: 0.23137255, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -232,9 +232,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
   m_Padding:
-    m_Left: 0
+    m_Left: 12
     m_Right: 0
-    m_Top: 0
+    m_Top: 13
     m_Bottom: 0
   m_ChildAlignment: 0
   m_Spacing: 0
@@ -642,8 +642,10 @@ MonoBehaviour:
   - {fileID: 6949938112487522110, guid: 285c8daf7dd212d4c87cf5fc3a66fcb7, type: 3}
   - {fileID: 1196315882192001240, guid: 7cfd23a795b772b4ca90ee116b42cbc2, type: 3}
   - {fileID: 5140566595777703782, guid: 55bea1002a4a3c843a0ad45d4b4771f5, type: 3}
-  minClient: 5
-  maxClient: 10
+  minClient: 8
+  maxClient: 18
+  minCocktails: 1
+  maxCocktails: 2
 --- !u!4 &784911051
 Transform:
   m_ObjectHideFlags: 0
@@ -724,7 +726,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 6
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.7084765, g: 0.7169812, b: 0.65272343, a: 1}
+  m_Color: {r: 0.14901961, g: 0.32156864, b: 0.8509804, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -814,7 +816,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 6
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.7084765, g: 0.7169812, b: 0.65272343, a: 1}
+  m_Color: {r: 0.14117648, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1007,6 +1009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QueueUiManager
   queueManager: {fileID: 784911050}
   spawnContainer: {fileID: 427255814}
+  nameText: {fileID: 2063416402}
 --- !u!1 &1344816082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,7 +1165,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 6
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.7084765, g: 0.7169812, b: 0.65272343, a: 1}
+  m_Color: {r: 0.8509804, g: 0.7882353, b: 0.14901961, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1323,7 +1326,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1467,7 +1470,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 6
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.7084765, g: 0.7169812, b: 0.65272343, a: 1}
+  m_Color: {r: 0.5921569, g: 0.6431373, b: 0.29803923, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1502,7 +1505,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 373197820678627326, guid: 85464c506dc97304a936dd8b8aaae722, type: 3}
       propertyPath: m_Name
-      value: Image
+      value: CaseClient
       objectReference: {fileID: 0}
     - target: {fileID: 1651545109314579247, guid: 85464c506dc97304a936dd8b8aaae722, type: 3}
       propertyPath: m_Pivot.x
@@ -1530,11 +1533,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1651545109314579247, guid: 85464c506dc97304a936dd8b8aaae722, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 453.6032
+      value: 235.0029
       objectReference: {fileID: 0}
     - target: {fileID: 1651545109314579247, guid: 85464c506dc97304a936dd8b8aaae722, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 193.4814
+      value: 222.2892
       objectReference: {fileID: 0}
     - target: {fileID: 1651545109314579247, guid: 85464c506dc97304a936dd8b8aaae722, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1566,11 +1569,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1651545109314579247, guid: 85464c506dc97304a936dd8b8aaae722, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 391.839
+      value: 282.53882
       objectReference: {fileID: 0}
     - target: {fileID: 1651545109314579247, guid: 85464c506dc97304a936dd8b8aaae722, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 291.90338
+      value: 277.4995
       objectReference: {fileID: 0}
     - target: {fileID: 1651545109314579247, guid: 85464c506dc97304a936dd8b8aaae722, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
