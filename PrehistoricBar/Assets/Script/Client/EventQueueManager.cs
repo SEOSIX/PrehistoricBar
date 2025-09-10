@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Script.Bar;
 
 [System.Serializable]
 public class EventQueueManager : MonoBehaviour
@@ -20,7 +21,6 @@ public class EventQueueManager : MonoBehaviour
         GenerateRandomClient();
     }
 
-
     void GenerateRandomClient()
     {
         int nbClients = Random.Range(minClient, maxClient + 1);
@@ -28,16 +28,19 @@ public class EventQueueManager : MonoBehaviour
         for (int i = 0; i < nbClients; i++)
         {
             ClientData client = new ClientData();
-            
             client.name = possiblesNames[Random.Range(0, possiblesNames.Length)];
-            
-            int nbParts =  Random.Range(minCocktails, maxCocktails + 1);
-            client.imagesPrefab = new List<GameObject>();
 
-            for (int j = 0; j < nbParts; j++)
+            int nbCocktails = Random.Range(minCocktails, maxCocktails + 1);
+
+            for (int j = 0; j < nbCocktails; j++)
             {
+                CocktailClass cocktail = new CocktailClass();
+                cocktail.name = "Cocktail" + j;
+
                 GameObject prefab = possiblesCocktails[Random.Range(0, possiblesCocktails.Count)];
-                client.imagesPrefab.Add(prefab);
+                cocktail.cocktailsImage.Add(prefab);
+
+                client.cocktails.Add(cocktail);
             }
 
             eventClient.Enqueue(client);
