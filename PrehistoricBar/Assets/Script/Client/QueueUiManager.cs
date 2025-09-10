@@ -1,49 +1,44 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
-using Script.Client;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class QueueUiManager : MonoBehaviour
 {
-    [SerializeField] private EventQueueManager QueueManager;
-    [SerializeField] private TextMeshProUGUI messageText;
-    [SerializeField] private Transform imageContainer;
-    [SerializeField] private GameObject imagePrefab;
+    [SerializeField] private EventQueueManager queueManager;
+    [SerializeField] private Transform spawnContainer;
+    //[SerializeField] private TextMeshProUGUI nameText;
 
-    private EventData currentClient;
-    private void Update()
-    {
-        NewClient();
-    }
+
+    private ClientData currentClient;
 
     public void ShowNextClient()
     {
-        currentClient = QueueManager.GetNextClient();
-
-        foreach (Transform child in imageContainer)
-        {
+        currentClient = queueManager.GetNextClient();
+        
+        foreach (Transform child in spawnContainer)
             Destroy(child.gameObject);
-        }
 
-        if (currentClient != null)
+        if (currentClient == null)
         {
-            Debug.Log("journée terminée");
+            Debug.Log("Plus de clients !");
             return;
         }
-        messageText.text = currentClient.message;
-
-        foreach (var sprite in currentClient.images)
+        
+        foreach (var prefab in currentClient.imagesPrefab)
         {
-            GameObject go = Instantiate(imagePrefab, imageContainer);
-            go.GetComponent<Image>().sprite = sprite;
+            if (prefab != null)
+                Instantiate(prefab, spawnContainer);
         }
+        //name du client (si il y a un client récurent
+        //nameText.text = currentClient.name;
     }
 
-    void NewClient()
+    void OnNextClient(InputValue value)
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (value.isPressed)
         {
             ShowNextClient();
         }
