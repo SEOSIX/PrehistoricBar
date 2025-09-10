@@ -1,8 +1,10 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+[System.Serializable]
 public class ClientData
 {
-    public string Name;
-    public List<Sprite> images;
+    public string name;
+    public List<GameObject> imagesPrefab = new List<GameObject>(2);
 }
+
