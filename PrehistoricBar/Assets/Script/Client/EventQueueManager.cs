@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using Script.Bar;
+using Script.Objects;
 
 [System.Serializable]
 public class EventQueueManager : MonoBehaviour
@@ -35,19 +36,41 @@ public class EventQueueManager : MonoBehaviour
             for (int j = 0; j < nbCocktails; j++)
             {
                 CocktailClass cocktail = new CocktailClass();
-                cocktail.name = "Cocktail" + j;
-
                 GameObject prefab = possiblesCocktails[Random.Range(0, possiblesCocktails.Count)];
                 cocktail.cocktailsImage.Add(prefab);
 
-                client.cocktails.Add(cocktail);
+                var data = prefab.GetComponent<Cocktails>();
+                if (data != null)
+                {
+                    cocktail.name = string.IsNullOrEmpty(data.cocktailName) ? $"Cocktail{j}" : data.cocktailName;
+
+                    cocktail.index = j;
+
+                }
+                else
+                {
+                    cocktail.name = $"Cocktail{j}";
+                    cocktail.index = j;
+                }
+
+                bool alreadyChoosen = client.cocktails.Exists(c => c.name == cocktail.name);
+                if (!alreadyChoosen)
+                {
+                    client.cocktails.Add(cocktail);
+                }
+                else
+                {
+                    j--;
+                }
             }
 
             eventClient.Enqueue(client);
         }
-        
+
         Debug.Log($"File générée : {nbClients} clients.");
     }
+
+
 
     public ClientData GetNextClient()
     {
