@@ -10,6 +10,8 @@ using System.Collections;
 
 public class QueueUiManager : MonoBehaviour
 {
+    
+    public static QueueUiManager instance {get; private set;}
     [SerializeField] private EventQueueManager queueManager;
     [SerializeField] private Transform spawnContainer;
     
@@ -26,6 +28,10 @@ public class QueueUiManager : MonoBehaviour
 
     private Dictionary<CocktailClass, HashSet<IngredientIndex>> cocktailIngredientsRemaining = new();
 
+    void Awake()
+    {
+        instance = this;
+    }
     public void ShowNextClient()
     {
         currentClient = queueManager.GetNextClient();
@@ -110,7 +116,6 @@ public class QueueUiManager : MonoBehaviour
                 return;
             }
         }
-
         Debug.Log($"Ingrédient {ingredient} incorrect ou déjà utilisé !");
     }
 
@@ -153,10 +158,17 @@ public class QueueUiManager : MonoBehaviour
     {
         if (!value.isPressed) return;
         ValidateIngredient(ingredient);
+        //pour reset mais ca sera a mettre quand on appel le prochain client
+        ControlerPoints.instance.ResetReward();
     }
 
     void OnNextClient(InputValue value)
     {
         if (value.isPressed) ShowNextClient();
+    }
+
+    public bool HasFinnished()
+    {
+        return remainingCocktails.Count == 0;
     }
 }
