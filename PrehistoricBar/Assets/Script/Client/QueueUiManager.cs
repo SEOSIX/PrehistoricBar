@@ -1,9 +1,10 @@
 using System;
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
 using Script.Bar;
+using Script.Objects;
 
 public class QueueUiManager : MonoBehaviour
 {
@@ -12,21 +13,22 @@ public class QueueUiManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nameText;
 
     private ClientData currentClient;
-    private CocktailClass currentCocktail;
-    private int currentCocktailIndex = 0;
-
-    // Pour retrouver les instances instanciées en scène
     private List<GameObject> spawnedCocktails = new List<GameObject>();
+    private List<CocktailClass> remainingCocktails = new List<CocktailClass>();
+
+    // Pour chaque cocktail en cours, on garde les ingrédients restants à valider
+    private Dictionary<CocktailClass, HashSet<IngredientIndex>> cocktailIngredientsRemaining = new();
 
     public void ShowNextClient()
     {
         currentClient = queueManager.GetNextClient();
-        currentCocktailIndex = 0;
 
         foreach (Transform child in spawnContainer)
             Destroy(child.gameObject);
 
         spawnedCocktails.Clear();
+        remainingCocktails.Clear();
+        cocktailIngredientsRemaining.Clear();
 
         if (currentClient == null)
         {
@@ -37,50 +39,67 @@ public class QueueUiManager : MonoBehaviour
 
         foreach (var cocktail in currentClient.cocktails)
         {
+            remainingCocktails.Add(cocktail);
+            cocktailIngredientsRemaining[cocktail] = new HashSet<IngredientIndex>();
+
+            // Copie des ingrédients depuis le prefab
             foreach (var prefab in cocktail.cocktailsImage)
             {
                 if (prefab != null)
                 {
                     var instance = Instantiate(prefab, spawnContainer);
                     spawnedCocktails.Add(instance);
+
+                    var data = prefab.GetComponent<Cocktails>();
+                    if (data != null)
+                        foreach (var ingredient in data.cocktailIndices)
+                            cocktailIngredientsRemaining[cocktail].Add(ingredient);
                 }
             }
         }
 
-        if (currentClient.cocktails.Count > 0)
-            currentCocktail = currentClient.cocktails[0];
-
         nameText.text = currentClient.name;
+        Debug.Log($"Client {currentClient.name} avec {currentClient.cocktails.Count} cocktails");
     }
 
-    void NextCocktail()
+    private void ValidateIngredient(IngredientIndex ingredient)
     {
-        if (currentClient == null || currentClient.cocktails.Count == 0)
-            return;
+        if (currentClient == null) return;
 
-        if (currentCocktailIndex < currentClient.cocktails.Count)
+        foreach (var cocktail in remainingCocktails.ToArray())
         {
-            currentCocktail = currentClient.cocktails[currentCocktailIndex];
-            Debug.Log($"Cocktail en cours : {currentCocktail.name}");
+            if (cocktailIngredientsRemaining[cocktail].Contains(ingredient))
+            {
+                cocktailIngredientsRemaining[cocktail].Remove(ingredient);
+                Debug.Log($"Ingrédient {ingredient} correct pour {cocktail.name}");
+
+                if (cocktailIngredientsRemaining[cocktail].Count == 0)
+                {
+                    // Tous les ingrédients sont validés
+                    ValidateCocktail(cocktail);
+                }
+
+                return; // On ne valide l'ingrédient qu'une seule fois
+            }
         }
-        else
-        {
-            Debug.Log("Tous les cocktails de ce client sont servis !");
-        }
+
+        Debug.Log($"Ingrédient {ingredient} incorrect ou déjà utilisé !");
     }
 
-    private void ValidateCocktail()
+    private void ValidateCocktail(CocktailClass cocktail)
     {
-        if (currentCocktail != null)
-            ShowDoneText(currentCocktail);
+        if (cocktail != null)
+            ShowDoneText(cocktail);
 
-        currentCocktailIndex++;
-        NextCocktail();
+        remainingCocktails.Remove(cocktail);
+        cocktailIngredientsRemaining.Remove(cocktail);
+
+        if (remainingCocktails.Count == 0)
+            Debug.Log("Tous les cocktails du client sont servis !");
     }
 
     private void ShowDoneText(CocktailClass cocktail)
     {
-        // On prend la première image de ce cocktail pour attacher le texte
         if (cocktail.cocktailsImage.Count == 0) return;
 
         var targetImage = spawnedCocktails.Find(x => x.name.Contains(cocktail.cocktailsImage[0].name));
@@ -101,36 +120,16 @@ public class QueueUiManager : MonoBehaviour
         rect.pivot = new Vector2(0.5f, 1);
         rect.anchoredPosition = new Vector2(0, -20);
     }
+    void OnColors(InputValue value)   { TryValidateIngredient(IngredientIndex.cocktail0, value); }
+    void OnColors1(InputValue value)  { TryValidateIngredient(IngredientIndex.cocktail1, value); }
+    void OnColors2(InputValue value)  { TryValidateIngredient(IngredientIndex.cocktail2, value); }
+    void OnColors3(InputValue value)  { TryValidateIngredient(IngredientIndex.cocktail3, value); }
+    void OnColors4(InputValue value)  { TryValidateIngredient(IngredientIndex.cocktail4, value); }
 
-    // Inputs
-    void OnColors(InputValue value)
+    private void TryValidateIngredient(IngredientIndex ingredient, InputValue value)
     {
-        if (!value.isPressed || currentCocktail == null) return;
-        if (currentCocktail.name == "Cocktail0") ValidateCocktail();
-    }
-
-    void OnColors1(InputValue value)
-    {
-        if (!value.isPressed || currentCocktail == null) return;
-        if (currentCocktail.name == "Cocktail1") ValidateCocktail();
-    }
-
-    void OnColors2(InputValue value)
-    {
-        if (!value.isPressed || currentCocktail == null) return;
-        if (currentCocktail.name == "Cocktail2") ValidateCocktail();
-    }
-
-    void OnColors3(InputValue value)
-    {
-        if (!value.isPressed || currentCocktail == null) return;
-        if (currentCocktail.name == "Cocktail3") ValidateCocktail();
-    }
-
-    void OnColors4(InputValue value)
-    {
-        if (!value.isPressed || currentCocktail == null) return;
-        if (currentCocktail.name == "Cocktail4") ValidateCocktail();
+        if (!value.isPressed) return;
+        ValidateIngredient(ingredient);
     }
 
     void OnNextClient(InputValue value)
