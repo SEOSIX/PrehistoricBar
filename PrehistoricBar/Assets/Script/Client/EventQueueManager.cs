@@ -32,20 +32,25 @@ public class EventQueueManager : MonoBehaviour
             client.name = possiblesNames[Random.Range(0, possiblesNames.Length)];
 
             int nbCocktails = Random.Range(minCocktails, maxCocktails + 1);
+            List<GameObject> availablePrefabs = new List<GameObject>(possiblesCocktails);
 
             for (int j = 0; j < nbCocktails; j++)
             {
+                if (availablePrefabs.Count == 0) break; 
+
+                int randomIndex = Random.Range(0, availablePrefabs.Count);
+                GameObject prefab = availablePrefabs[randomIndex];
+
+                availablePrefabs.RemoveAt(randomIndex);
+
                 CocktailClass cocktail = new CocktailClass();
-                GameObject prefab = possiblesCocktails[Random.Range(0, possiblesCocktails.Count)];
                 cocktail.cocktailsImage.Add(prefab);
 
                 var data = prefab.GetComponent<Cocktails>();
                 if (data != null)
                 {
                     cocktail.name = string.IsNullOrEmpty(data.cocktailName) ? $"Cocktail{j}" : data.cocktailName;
-
                     cocktail.index = j;
-
                 }
                 else
                 {
@@ -53,15 +58,7 @@ public class EventQueueManager : MonoBehaviour
                     cocktail.index = j;
                 }
 
-                bool alreadyChoosen = client.cocktails.Exists(c => c.name == cocktail.name);
-                if (!alreadyChoosen)
-                {
-                    client.cocktails.Add(cocktail);
-                }
-                else
-                {
-                    j--;
-                }
+                client.cocktails.Add(cocktail);
             }
 
             eventClient.Enqueue(client);
@@ -69,9 +66,7 @@ public class EventQueueManager : MonoBehaviour
 
         Debug.Log($"File générée : {nbClients} clients.");
     }
-
-
-
+    
     public ClientData GetNextClient()
     {
         return eventClient.Count > 0 ? eventClient.Dequeue() : null;
@@ -80,5 +75,21 @@ public class EventQueueManager : MonoBehaviour
     public bool HasClient()
     {
         return eventClient.Count > 0;
+    }
+
+    public List<ClientData> PeakNextClient(int count)
+    {
+        List<ClientData> previewClients = new List<ClientData>();
+        int i = 0;
+        foreach (var clients in eventClient)
+        {
+            if (i >= count)
+            {
+                break;
+            }
+            previewClients.Add(clients);
+            i++;
+        }
+        return previewClients;
     }
 }
