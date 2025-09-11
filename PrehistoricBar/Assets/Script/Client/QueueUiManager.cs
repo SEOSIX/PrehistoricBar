@@ -5,18 +5,20 @@ using TMPro;
 using UnityEngine.InputSystem;
 using Script.Bar;
 using Script.Objects;
+using UnityEngine.UI;
 
 public class QueueUiManager : MonoBehaviour
 {
     [SerializeField] private EventQueueManager queueManager;
     [SerializeField] private Transform spawnContainer;
-    [SerializeField] private TextMeshProUGUI nameText;
+    //[SerializeField] private TextMeshProUGUI nameText;
+    [SerializeField] private Transform[] previewSlots;
+    [SerializeField] private GameObject previewPrefab;
 
     private ClientData currentClient;
     private List<GameObject> spawnedCocktails = new List<GameObject>();
     private List<CocktailClass> remainingCocktails = new List<CocktailClass>();
 
-    // Pour chaque cocktail en cours, on garde les ingrédients restants à valider
     private Dictionary<CocktailClass, HashSet<IngredientIndex>> cocktailIngredientsRemaining = new();
 
     public void ShowNextClient()
@@ -33,7 +35,7 @@ public class QueueUiManager : MonoBehaviour
         if (currentClient == null)
         {
             Debug.Log("Plus de clients !");
-            nameText.text = "Fin de la file";
+            //nameText.text = "Fin de la file";
             return;
         }
 
@@ -41,8 +43,6 @@ public class QueueUiManager : MonoBehaviour
         {
             remainingCocktails.Add(cocktail);
             cocktailIngredientsRemaining[cocktail] = new HashSet<IngredientIndex>();
-
-            // Copie des ingrédients depuis le prefab
             foreach (var prefab in cocktail.cocktailsImage)
             {
                 if (prefab != null)
@@ -57,10 +57,8 @@ public class QueueUiManager : MonoBehaviour
                 }
             }
         }
-
-        nameText.text = currentClient.name;
-        Debug.Log($"Client {currentClient.name} avec {currentClient.cocktails.Count} cocktails");
-    }
+        //nameText.text = currentClient.name;
+        Debug.Log($"Client {currentClient.name} avec {currentClient.cocktails.Count} cocktails"); }
 
     private void ValidateIngredient(IngredientIndex ingredient)
     {
@@ -75,11 +73,10 @@ public class QueueUiManager : MonoBehaviour
 
                 if (cocktailIngredientsRemaining[cocktail].Count == 0)
                 {
-                    // Tous les ingrédients sont validés
                     ValidateCocktail(cocktail);
                 }
 
-                return; // On ne valide l'ingrédient qu'une seule fois
+                return; 
             }
         }
 
@@ -110,15 +107,9 @@ public class QueueUiManager : MonoBehaviour
 
         var text = doneTextGO.AddComponent<TextMeshProUGUI>();
         text.text = "DONE";
-        text.fontSize = 28;
-        text.alignment = TextAlignmentOptions.Center;
+        text.fontSize = 18;
+        text.alignment = TextAlignmentOptions.BottomLeft;
         text.color = Color.green;
-
-        var rect = text.GetComponent<RectTransform>();
-        rect.anchorMin = new Vector2(0.5f, 0);
-        rect.anchorMax = new Vector2(0.5f, 0);
-        rect.pivot = new Vector2(0.5f, 1);
-        rect.anchoredPosition = new Vector2(0, -20);
     }
     void OnColors(InputValue value)   { TryValidateIngredient(IngredientIndex.cocktail0, value); }
     void OnColors1(InputValue value)  { TryValidateIngredient(IngredientIndex.cocktail1, value); }
