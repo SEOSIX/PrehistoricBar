@@ -6,14 +6,19 @@ using UnityEngine.InputSystem;
 using Script.Bar;
 using Script.Objects;
 using UnityEngine.UI;
+using System.Collections;
 
 public class QueueUiManager : MonoBehaviour
 {
     [SerializeField] private EventQueueManager queueManager;
     [SerializeField] private Transform spawnContainer;
-    //[SerializeField] private TextMeshProUGUI nameText;
-    [SerializeField] private Transform[] previewSlots;
-    [SerializeField] private GameObject previewPrefab;
+    
+
+    [Header("Timer")]
+    [SerializeField] private Slider timerSlider; 
+    [SerializeField] private float clientTime = 10f;
+    private float currentTime;
+    private Coroutine timerCoroutine;
 
     private ClientData currentClient;
     private List<GameObject> spawnedCocktails = new List<GameObject>();
@@ -35,7 +40,6 @@ public class QueueUiManager : MonoBehaviour
         if (currentClient == null)
         {
             Debug.Log("Plus de clients !");
-            //nameText.text = "Fin de la file";
             return;
         }
 
@@ -57,8 +61,35 @@ public class QueueUiManager : MonoBehaviour
                 }
             }
         }
-        //nameText.text = currentClient.name;
-        Debug.Log($"Client {currentClient.name} avec {currentClient.cocktails.Count} cocktails"); }
+
+        Debug.Log($"Client {currentClient.name} avec {currentClient.cocktails.Count} cocktails");
+        StartTimer(clientTime);
+    }
+    private void StartTimer(float duration)
+    {
+        if (timerCoroutine != null)
+            StopCoroutine(timerCoroutine);
+
+        currentTime = duration;
+        timerSlider.maxValue = duration;
+        timerSlider.value = duration;
+        timerCoroutine = StartCoroutine(TimerRoutine());
+    }
+
+    private IEnumerator TimerRoutine()
+    {
+        while (currentTime > 0)
+        {
+            currentTime -= Time.deltaTime;
+            if (currentTime < 0) currentTime = 0;
+
+            timerSlider.value = currentTime;
+            yield return null;
+        }
+
+        Debug.Log("tu t'es pas goon assez fort");
+  
+    }
 
     private void ValidateIngredient(IngredientIndex ingredient)
     {
@@ -76,7 +107,7 @@ public class QueueUiManager : MonoBehaviour
                     ValidateCocktail(cocktail);
                 }
 
-                return; 
+                return;
             }
         }
 
@@ -111,6 +142,7 @@ public class QueueUiManager : MonoBehaviour
         text.alignment = TextAlignmentOptions.BottomLeft;
         text.color = Color.green;
     }
+
     void OnColors(InputValue value)   { TryValidateIngredient(IngredientIndex.cocktail0, value); }
     void OnColors1(InputValue value)  { TryValidateIngredient(IngredientIndex.cocktail1, value); }
     void OnColors2(InputValue value)  { TryValidateIngredient(IngredientIndex.cocktail2, value); }
