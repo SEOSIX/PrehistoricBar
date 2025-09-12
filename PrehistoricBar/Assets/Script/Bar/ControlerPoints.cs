@@ -21,12 +21,21 @@ namespace Script.Bar
             CheckForWin(20);
         }
 
+		private void LosePoints()
+        {
+            bool loose = false;
+
+            if (QueueUiManager.instance != null && QueueUiManager.instance.timerSlider)
+            {
+                
+            }
+        }
         private void CheckForWin(int pointsToAdd)
         {
             if (QueueUiManager.instance.HasFinnished() && !rewardGiven)
             {
                 points += pointsToAdd;
-                pointsText.text = points.ToString();
+                pointsText.text = points.ToString("D9");
                 rewardGiven = true;
             }
         }
