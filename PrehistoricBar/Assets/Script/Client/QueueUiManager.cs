@@ -148,11 +148,9 @@ public class QueueUiManager : MonoBehaviour
         text.color = Color.green;
     }
 
-    void OnColors(InputValue value)   { TryValidateIngredient(IngredientIndex.cocktail0, value); }
-    void OnColors1(InputValue value)  { TryValidateIngredient(IngredientIndex.cocktail1, value); }
-    void OnColors2(InputValue value)  { TryValidateIngredient(IngredientIndex.cocktail2, value); }
-    void OnColors3(InputValue value)  { TryValidateIngredient(IngredientIndex.cocktail3, value); }
-    void OnColors4(InputValue value)  { TryValidateIngredient(IngredientIndex.cocktail4, value); }
+    void OnColors(InputValue value)   { TryValidateIngredient(IngredientIndex.Laitdemammouth, value); }
+    void OnColors1(InputValue value)  { TryValidateIngredient(IngredientIndex.Alcooldefougere, value); }
+    void OnColors2(InputValue value)  { TryValidateIngredient(IngredientIndex.Bavedeboeuf, value); }
 
     private void TryValidateIngredient(IngredientIndex ingredient, InputValue value)
     {

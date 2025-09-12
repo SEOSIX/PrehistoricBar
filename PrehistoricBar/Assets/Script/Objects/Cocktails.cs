@@ -7,11 +7,9 @@ namespace Script.Objects
     
     public enum IngredientIndex
     {
-        cocktail0,
-        cocktail1,
-        cocktail2,
-        cocktail3,
-        cocktail4
+        Laitdemammouth,
+        Alcooldefougere,
+        Bavedeboeuf
     }
 
 
