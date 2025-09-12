@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 1835647256195002814}
   - component: {fileID: -4962834539135106580}
   m_Layer: 5
-  m_Name: Cocktail bizzare
+  m_Name: Babavo rhume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,12 +164,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ee0e52ca784e0a89d6f86087ba1c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Script.Objects.Cocktails
-  cocktailIndices: 0000000005000000
-  cocktailName: 
+  cocktailIndices: 010000000200000006000000
+  cocktailName: Babavo rhume
   recette:
-  - description: Lait de mamouth
-    ingredientIndex: 0
+  - description: Alcool de fougere
+    ingredientIndex: 1
     isDone: 0
-  - description: glacon
-    ingredientIndex: 5
+  - description: Bave de boeuf
+    ingredientIndex: 2
+    isDone: 0
+  - description: Bababe
+    ingredientIndex: 6
     isDone: 0
