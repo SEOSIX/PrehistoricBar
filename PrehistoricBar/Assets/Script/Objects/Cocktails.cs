@@ -9,7 +9,15 @@ namespace Script.Objects
     {
         Laitdemammouth,
         Alcooldefougere,
-        Bavedeboeuf
+        Bavedeboeuf,
+        Froz,
+        Mouche,
+        Glacon,
+        Bababe,
+        Cacao,
+        Kitron,
+        Qassos,
+        JusLarve
     }
 
 
