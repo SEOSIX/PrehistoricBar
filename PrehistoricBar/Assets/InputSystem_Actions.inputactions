@@ -50,6 +50,69 @@
                     "processors": "",
                     "interactions": "Press",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Bababe",
+                    "type": "Button",
+                    "id": "2009e967-92c3-44a2-a5fe-d5e26078e04f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CacaoLaid",
+                    "type": "Button",
+                    "id": "c55b701f-bb68-4093-adc2-e8662d041443",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Bababe2",
+                    "type": "Button",
+                    "id": "b0b7db16-3299-49ad-bcdc-b3694eaa3eee",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Bababe3",
+                    "type": "Button",
+                    "id": "32790669-4a4b-48cb-93f2-e96f3232d62a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Bababe4",
+                    "type": "Button",
+                    "id": "0dc3ddd1-b19a-4cd1-81f7-a51bd6236360",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Bababe5",
+                    "type": "Button",
+                    "id": "fdb52987-4217-4a47-b0b9-ba624cbcae6b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Bababe6",
+                    "type": "Button",
+                    "id": "5561d431-0a46-4ea5-81e7-55aad5aa97da",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -67,7 +130,7 @@
                 {
                     "name": "",
                     "id": "7f53b94b-4fbb-4f47-90c2-83f7b38e6013",
-                    "path": "<Keyboard>/z",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -78,7 +141,7 @@
                 {
                     "name": "",
                     "id": "7a47202c-1b01-4c31-a342-10896eea6e53",
-                    "path": "<Keyboard>/x",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -89,7 +152,7 @@
                 {
                     "name": "",
                     "id": "d737eb03-ea8e-4b95-9486-ccde4a09242b",
-                    "path": "<Keyboard>/c",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -105,6 +168,83 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Goon",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c8107679-26ef-4ee5-b6e2-e5592b3c148a",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Bababe",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "761e2f1a-04c1-4113-91e5-dd75c4dfaaa8",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CacaoLaid",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f031b41f-e511-4dec-ad7d-bce552ad113f",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Bababe2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cb07f577-4271-4eba-9b74-50b13b1ede64",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Bababe3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "966642c9-4e6d-4c31-8e08-9d9e66cfb893",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Bababe4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "409adee3-38b3-4771-ac39-6e090cf18570",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Bababe5",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b51b283e-c19b-41c0-97ba-37e03b39da24",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Bababe6",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

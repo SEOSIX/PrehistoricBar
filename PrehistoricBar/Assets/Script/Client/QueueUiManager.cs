@@ -178,12 +178,15 @@ public class QueueUiManager : MonoBehaviour
         text.text = "DONE";
         text.fontSize = 18;
         text.alignment = TextAlignmentOptions.BottomLeft;
-        text.color = Color.green;
+        text.color = Color.darkGreen;
     }
 
-    void OnColors(InputValue value)   { TryValidateIngredient(IngredientIndex.cocktail0, value); }
-    void OnColors1(InputValue value)  { TryValidateIngredient(IngredientIndex.cocktail1, value); }
-    void OnColors2(InputValue value)  { TryValidateIngredient(IngredientIndex.cocktail2, value); }
+    void OnColors(InputValue value)   { TryValidateIngredient(IngredientIndex.Laitdemammouth, value); }
+    void OnColors1(InputValue value)  { TryValidateIngredient(IngredientIndex.Alcooldefougere, value); }
+    void OnColors2(InputValue value)  { TryValidateIngredient(IngredientIndex.Bavedeboeuf, value); }
+    //la meme chose qu'en haut comme OnColors mais avec le nom des enums des ingrdients
+    
+    
 
     private void TryValidateIngredient(IngredientIndex ingredient, InputValue value)
     {
