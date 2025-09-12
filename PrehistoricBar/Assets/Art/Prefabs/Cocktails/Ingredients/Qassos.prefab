@@ -88,5 +88,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ee0e52ca784e0a89d6f86087ba1c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Script.Objects.Cocktails
-  cocktailIndices: 00000000
+  cocktailIndices: 09000000
   cocktailName: 
