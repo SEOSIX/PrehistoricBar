@@ -70,7 +70,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Bababe2",
+                    "name": "Froz",
                     "type": "Button",
                     "id": "b0b7db16-3299-49ad-bcdc-b3694eaa3eee",
                     "expectedControlType": "",
@@ -79,7 +79,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Bababe3",
+                    "name": "Ice",
                     "type": "Button",
                     "id": "32790669-4a4b-48cb-93f2-e96f3232d62a",
                     "expectedControlType": "",
@@ -88,7 +88,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Bababe4",
+                    "name": "KitronVert",
                     "type": "Button",
                     "id": "0dc3ddd1-b19a-4cd1-81f7-a51bd6236360",
                     "expectedControlType": "",
@@ -97,7 +97,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Bababe5",
+                    "name": "Fly",
                     "type": "Button",
                     "id": "fdb52987-4217-4a47-b0b9-ba624cbcae6b",
                     "expectedControlType": "",
@@ -106,9 +106,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Bababe6",
+                    "name": "Qassos",
                     "type": "Button",
                     "id": "5561d431-0a46-4ea5-81e7-55aad5aa97da",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Grind",
+                    "type": "Button",
+                    "id": "03cfd3b0-f132-4421-9ab3-2a0f12d37c96",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "Press",
@@ -163,7 +172,7 @@
                 {
                     "name": "",
                     "id": "2bcd460d-a13c-4183-ad11-3b6a7f7e4cb4",
-                    "path": "<Keyboard>/g",
+                    "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -200,7 +209,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Bababe2",
+                    "action": "Froz",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -211,7 +220,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Bababe3",
+                    "action": "Ice",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -222,7 +231,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Bababe4",
+                    "action": "KitronVert",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -233,7 +242,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Bababe5",
+                    "action": "Fly",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -244,7 +253,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Bababe6",
+                    "action": "Qassos",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a5d675b5-9dbd-4c1e-b8b0-9aa561c8e902",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Grind",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

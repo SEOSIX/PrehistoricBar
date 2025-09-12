@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Net.Mime;
+using Script.Bar;
 
 namespace Script.Objects
 {
@@ -25,5 +27,6 @@ namespace Script.Objects
     {
         public List<IngredientIndex> cocktailIndices = new List<IngredientIndex>();     
         public string cocktailName;
+        public List<RecetteStep> recette = new List<RecetteStep>();
     }
 }

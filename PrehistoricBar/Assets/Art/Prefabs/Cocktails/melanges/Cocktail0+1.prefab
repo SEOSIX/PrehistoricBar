@@ -166,3 +166,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Script.Objects.Cocktails
   cocktailIndices: 0000000001000000
   cocktailName: 
+  recette:
+  - description: lait de mamlouth
+    ingredientIndex: 0
+    isDone: 1
+  - description: Aloccol de fougere
+    ingredientIndex: 1
+    isDone: 1
