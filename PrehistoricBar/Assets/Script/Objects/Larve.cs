@@ -22,5 +22,7 @@ namespace Script.Objects
                 larve.value ++;
             }
         }
+        
+        //quand le slider est a fond oont peut utiliser la tireuse
     }
 }
