@@ -43,24 +43,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Colors3",
-                    "type": "Button",
-                    "id": "e766a31b-2511-4ad3-9adc-1e1a3b9b2d14",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "Press",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Colors4",
-                    "type": "Button",
-                    "id": "bb129086-8591-4bb1-9889-5f3faf3bd763",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "Press",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Goon",
                     "type": "Button",
                     "id": "afee56cf-1239-4f95-9f8e-82f02d249865",
@@ -112,28 +94,6 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Colors2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c6b1a186-4181-4e33-944a-d11595975e85",
-                    "path": "<Keyboard>/v",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Colors3",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0ce201e2-06db-4457-8d3e-d571403e1f69",
-                    "path": "<Keyboard>/b",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Colors4",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
