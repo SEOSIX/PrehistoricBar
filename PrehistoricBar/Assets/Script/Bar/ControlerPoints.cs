@@ -8,7 +8,7 @@ namespace Script.Bar
     {
         public static ControlerPoints instance {get; private set;}
         [SerializeField] private TextMeshProUGUI pointsText;
-        private int points = 0;
+        public int points = 0;
         private bool rewardGiven = false;
 
         private void Awake()
