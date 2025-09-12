@@ -1383,7 +1383,7 @@ MonoBehaviour:
   queueManager: {fileID: 784911050}
   spawnContainer: {fileID: 427255814}
   timerSlider: {fileID: 1735919063}
-  clientTime: 15
+  clientTime: 29
 --- !u!114 &1311683624
 MonoBehaviour:
   m_ObjectHideFlags: 0

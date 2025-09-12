@@ -17,7 +17,7 @@ public class QueueUiManager : MonoBehaviour
     
 
     [Header("Timer")]
-    [SerializeField] private Slider timerSlider; 
+    public Slider timerSlider; 
     [SerializeField] private float clientTime = 10f;
     private float currentTime;
     private Coroutine timerCoroutine;
