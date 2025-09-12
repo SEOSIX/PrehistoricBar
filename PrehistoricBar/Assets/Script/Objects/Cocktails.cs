@@ -10,8 +10,6 @@ namespace Script.Objects
         cocktail0,
         cocktail1,
         cocktail2,
-        cocktail3,
-        cocktail4
     }
 
 

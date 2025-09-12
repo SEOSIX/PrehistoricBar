@@ -21,6 +21,7 @@ public class QueueUiManager : MonoBehaviour
     [SerializeField] private float clientTime = 10f;
     private float currentTime;
     private Coroutine timerCoroutine;
+    private Coroutine blinkCoroutine;
 
     private ClientData currentClient;
     private List<GameObject> spawnedCocktails = new List<GameObject>();
@@ -67,8 +68,6 @@ public class QueueUiManager : MonoBehaviour
                 }
             }
         }
-
-        Debug.Log($"Client {currentClient.name} avec {currentClient.cocktails.Count} cocktails");
         StartTimer(clientTime);
     }
     private void StartTimer(float duration)
@@ -76,25 +75,59 @@ public class QueueUiManager : MonoBehaviour
         if (timerCoroutine != null)
             StopCoroutine(timerCoroutine);
 
+        if (blinkCoroutine != null)
+        {
+            StopCoroutine(blinkCoroutine);
+            blinkCoroutine = null;
+            timerSlider.fillRect.GetComponent<Image>().color = Color.white;
+        }
         currentTime = duration;
         timerSlider.maxValue = duration;
         timerSlider.value = duration;
         timerCoroutine = StartCoroutine(TimerRoutine());
     }
 
+    
     private IEnumerator TimerRoutine()
     {
+        bool blinkingStarted = false;
+
         while (currentTime > 0)
         {
             currentTime -= Time.deltaTime;
             if (currentTime < 0) currentTime = 0;
 
             timerSlider.value = currentTime;
+
+            if (!blinkingStarted && currentTime <= clientTime / 4f)
+            {
+                blinkingStarted = true;
+                blinkCoroutine = StartCoroutine(BlinkTimer());
+            }
+
             yield return null;
         }
 
-        Debug.Log("tu t'es pas goon assez fort");
-  
+        if (blinkCoroutine != null) StopCoroutine(blinkCoroutine);
+        timerSlider.fillRect.GetComponent<Image>().color = Color.white;
+    }
+
+    private IEnumerator BlinkTimer()
+    {
+        var img = timerSlider.fillRect.GetComponent<Image>();
+        Color baseColor = Color.white;
+        Color blinkColor = Color.red;
+
+        while (true)
+        {
+            float blinkSpeed = Mathf.Lerp(0.5f, 0.05f, 1f - (currentTime / (clientTime / 4f)));
+
+            img.color = blinkColor;
+            yield return new WaitForSeconds(blinkSpeed);
+
+            img.color = baseColor;
+            yield return new WaitForSeconds(blinkSpeed);
+        }
     }
 
     private void ValidateIngredient(IngredientIndex ingredient)
@@ -151,8 +184,6 @@ public class QueueUiManager : MonoBehaviour
     void OnColors(InputValue value)   { TryValidateIngredient(IngredientIndex.cocktail0, value); }
     void OnColors1(InputValue value)  { TryValidateIngredient(IngredientIndex.cocktail1, value); }
     void OnColors2(InputValue value)  { TryValidateIngredient(IngredientIndex.cocktail2, value); }
-    void OnColors3(InputValue value)  { TryValidateIngredient(IngredientIndex.cocktail3, value); }
-    void OnColors4(InputValue value)  { TryValidateIngredient(IngredientIndex.cocktail4, value); }
 
     private void TryValidateIngredient(IngredientIndex ingredient, InputValue value)
     {
