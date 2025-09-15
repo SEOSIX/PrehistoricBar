@@ -30,6 +30,13 @@ public class QueueUiManager : MonoBehaviour
     [SerializeField] private float tireuseBaveSpeed;
     [SerializeField] private float tireuseAlcoolSpeed;
     
+    [Header("Positions des ingrédients")]
+    [SerializeField] private Transform laitPos;
+    [SerializeField] private Transform bavePos;
+    [SerializeField] private Transform alcoolPos;
+    
+    [SerializeField] private float moveSpeed = 5f;
+    
     private float baseTireuseLaitSpeed;
     private float baseTireuseBaveSpeed;
     private float baseTireuseAlcoolSpeed;
@@ -277,19 +284,17 @@ public class QueueUiManager : MonoBehaviour
     private void TryValidateIngredient(IngredientIndex ingredient, InputValue value)
     {
         if (!value.isPressed) return;
-        
-        switch (ingredient)
+
+        Transform targetPos = ingredient switch
         {
-            case IngredientIndex.Laitdemammouth:
-                StartCoroutine(FillRoutine(ingredient, tireuseLaitSpeed, InputSystem.actions["Colors"]));
-                break;
-            case IngredientIndex.Alcooldefougere:
-                StartCoroutine(FillRoutine(ingredient, tireuseAlcoolSpeed, InputSystem.actions["Colors1"]));
-                break;
-            case IngredientIndex.Bavedeboeuf:
-                StartCoroutine(FillRoutine(ingredient, tireuseBaveSpeed, InputSystem.actions["Colors2"]));
-                break;
-        }
+            IngredientIndex.Laitdemammouth => laitPos,
+            IngredientIndex.Bavedeboeuf => bavePos,
+            IngredientIndex.Alcooldefougere => alcoolPos,
+            _ => null
+        };
+
+        if (targetPos != null)
+            StartMove(ingredient, targetPos);
     }
 
     IEnumerator FillRoutine(IngredientIndex ingredient, float speed, InputAction action)
@@ -351,6 +356,58 @@ public class QueueUiManager : MonoBehaviour
         if (laitPressed) SetAllSpeeds(baseTireuseLaitSpeed);
         else if (alcoolPressed) SetAllSpeeds(baseTireuseAlcoolSpeed);
         else if (bavePressed) SetAllSpeeds(baseTireuseBaveSpeed);
-        else ResetSpeeds(); // Aucun bouton pressé
+        else ResetSpeeds(); 
     }
+
+    #region moving
+
+[SerializeField] private Vector2 offset = new Vector2(0, -350f);
+private Coroutine currentMoveCoroutine;
+
+private void StartMove(IngredientIndex ingredient, Transform target)
+{
+    if (currentMoveCoroutine != null)
+        StopCoroutine(currentMoveCoroutine);
+
+    currentMoveCoroutine = StartCoroutine(MoveAndFill(ingredient, target));
+}
+
+private IEnumerator MoveCupTo(Transform target)
+{
+    RectTransform cupRect = cup.GetComponent<RectTransform>();
+    RectTransform targetRect = target.GetComponent<RectTransform>();
+
+    Vector2 targetPos = targetRect.anchoredPosition + offset;
+    while (Vector2.Distance(cupRect.anchoredPosition, targetPos) > 0.1f)
+    {
+        cupRect.anchoredPosition = Vector2.MoveTowards(cupRect.anchoredPosition, targetPos, moveSpeed * Time.deltaTime);
+        yield return null;
+    }
+
+    cupRect.anchoredPosition = targetPos;
+    currentMoveCoroutine = null;
+}
+
+private IEnumerator MoveAndFill(IngredientIndex ingredient, Transform target)
+{
+    yield return StartCoroutine(MoveCupTo(target));
+    float speed = ingredient switch
+    {
+        IngredientIndex.Laitdemammouth => tireuseLaitSpeed,
+        IngredientIndex.Bavedeboeuf => tireuseBaveSpeed,
+        IngredientIndex.Alcooldefougere => tireuseAlcoolSpeed,
+        _ => 0f
+    };
+    InputAction action = ingredient switch
+    {
+        IngredientIndex.Laitdemammouth => InputSystem.actions["Colors"],
+        IngredientIndex.Bavedeboeuf => InputSystem.actions["Colors2"],
+        IngredientIndex.Alcooldefougere => InputSystem.actions["Colors1"],
+        _ => null
+    };
+    if (action != null)
+        yield return StartCoroutine(FillRoutine(ingredient, speed, action));
+}
+
+#endregion
 }

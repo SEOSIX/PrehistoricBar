@@ -2393,10 +2393,10 @@ MonoBehaviour:
   laitPos: {fileID: 164399321}
   bavePos: {fileID: 375029486}
   alcoolPos: {fileID: 1874701842}
-  moveSpeed: 779.3
+  moveSpeed: 5
   recetteContainer: {fileID: 583896870}
   recetteTextPrefab: {fileID: 2744933180135251576, guid: 8ee13c3aca6009746bd7bcb291c83365, type: 3}
-  offset: {x: 0, y: -400.7}
+  offset: {x: 0, y: -0.5}
 --- !u!114 &1311683624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3471,11 +3471,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1092041411155658727, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 39.884583
+      value: 142
       objectReference: {fileID: 0}
     - target: {fileID: 1092041411155658727, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -153.23273
+      value: -157
       objectReference: {fileID: 0}
     - target: {fileID: 1092041411155658727, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
