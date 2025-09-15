@@ -29,6 +29,11 @@ public class QueueUiManager : MonoBehaviour
     [SerializeField] private float tireuseLaitSpeed;
     [SerializeField] private float tireuseBaveSpeed;
     [SerializeField] private float tireuseAlcoolSpeed;
+    
+    private float baseTireuseLaitSpeed;
+    private float baseTireuseBaveSpeed;
+    private float baseTireuseAlcoolSpeed;
+    
 
     private ClientData currentClient;
     private List<GameObject> spawnedCocktails = new List<GameObject>();
@@ -42,10 +47,16 @@ public class QueueUiManager : MonoBehaviour
     [SerializeField] private GameObject recetteTextPrefab;
 
     private Dictionary<CocktailClass, List<TextMeshProUGUI>> recetteTexts = new();
+    
+    
 
     void Awake()
     {
         instance = this;
+        
+        baseTireuseLaitSpeed = tireuseLaitSpeed;
+        baseTireuseBaveSpeed = tireuseBaveSpeed;
+        baseTireuseAlcoolSpeed = tireuseAlcoolSpeed;
     }
 
     public void ShowNextClient()
@@ -243,10 +254,25 @@ public class QueueUiManager : MonoBehaviour
 
     void OnColors(InputValue value)
     {
+        laitPressed = value.isPressed;
+        UpdateSpeeds();
         TryValidateIngredient(IngredientIndex.Laitdemammouth, value);
     }
-    void OnColors1(InputValue value)  { TryValidateIngredient(IngredientIndex.Alcooldefougere, value); }
-    void OnColors2(InputValue value)  { TryValidateIngredient(IngredientIndex.Bavedeboeuf, value); }
+
+    void OnColors1(InputValue value)
+    {
+        alcoolPressed = value.isPressed;
+        UpdateSpeeds();
+        TryValidateIngredient(IngredientIndex.Alcooldefougere, value);
+    }
+
+    void OnColors2(InputValue value)
+    {
+        bavePressed = value.isPressed;
+        UpdateSpeeds();
+        TryValidateIngredient(IngredientIndex.Bavedeboeuf, value);
+    }
+
 
     private void TryValidateIngredient(IngredientIndex ingredient, InputValue value)
     {
@@ -258,10 +284,10 @@ public class QueueUiManager : MonoBehaviour
                 StartCoroutine(FillRoutine(ingredient, tireuseLaitSpeed, InputSystem.actions["Colors"]));
                 break;
             case IngredientIndex.Alcooldefougere:
-                StartCoroutine(FillRoutine(ingredient, tireuseBaveSpeed, InputSystem.actions["Colors1"]));
+                StartCoroutine(FillRoutine(ingredient, tireuseAlcoolSpeed, InputSystem.actions["Colors1"]));
                 break;
             case IngredientIndex.Bavedeboeuf:
-                StartCoroutine(FillRoutine(ingredient, tireuseAlcoolSpeed, InputSystem.actions["Colors2"]));
+                StartCoroutine(FillRoutine(ingredient, tireuseBaveSpeed, InputSystem.actions["Colors2"]));
                 break;
         }
     }
@@ -270,6 +296,15 @@ public class QueueUiManager : MonoBehaviour
     {
         do
         {
+            if (cup == null) yield break;
+            if (cup.TotalAmount <= 0) yield return null;
+            
+            if (cup != null && cup.GetType().GetField("isLocked", 
+                    System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(cup) is bool locked && locked)
+            {
+                yield break;
+            }
+            
             Debug.Log(action.name);
             cup.Fill(ingredient, speed * Time.deltaTime);
             yield return null;
@@ -293,5 +328,29 @@ public class QueueUiManager : MonoBehaviour
     {
         ValidateIngredient(ingredient);
         ControlerPoints.instance.ResetReward();
+    }
+    private void SetAllSpeeds(float speed)
+    {
+        tireuseLaitSpeed = speed;
+        tireuseBaveSpeed = speed;
+        tireuseAlcoolSpeed = speed;
+    }
+    private void ResetSpeeds()
+    {
+        tireuseLaitSpeed = baseTireuseLaitSpeed;
+        tireuseBaveSpeed = baseTireuseBaveSpeed;
+        tireuseAlcoolSpeed = baseTireuseAlcoolSpeed;
+    }
+    
+    private bool laitPressed;
+    private bool alcoolPressed;
+    private bool bavePressed;
+    
+    private void UpdateSpeeds()
+    {
+        if (laitPressed) SetAllSpeeds(baseTireuseLaitSpeed);
+        else if (alcoolPressed) SetAllSpeeds(baseTireuseAlcoolSpeed);
+        else if (bavePressed) SetAllSpeeds(baseTireuseBaveSpeed);
+        else ResetSpeeds(); // Aucun bouton pressé
     }
 }

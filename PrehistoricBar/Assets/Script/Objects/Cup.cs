@@ -20,6 +20,8 @@ namespace Script.Objects
         
         [HideInInspector] public float targetDosage;
         
+        private bool isLocked = false;
+        
         public Dictionary<IngredientIndex, float> content = new Dictionary<IngredientIndex, float>()
         {
             { IngredientIndex.Laitdemammouth, 0f},
@@ -44,6 +46,9 @@ namespace Script.Objects
 
         public void Fill(IngredientIndex ingredientType, float amount)
         {
+            
+            if (isLocked) return;
+            
             switch (ingredientType)
             {
                 case IngredientIndex.Laitdemammouth :
@@ -101,12 +106,32 @@ namespace Script.Objects
             return 0f;
         }
 
+
+        private void CheckFullCup()
+        {
+            if (sliderLait.value >= sliderLait.maxValue || sliderBave.value >= sliderBave.maxValue 
+            || sliderAlcool.value >= sliderAlcool.maxValue || sliderJus.value >= sliderJus.maxValue)
+            {
+                BlockAll();
+                isLocked = true;
+            }
+        }
+        
+        void BlockAll()
+        {
+            sliderLait.interactable = false;
+            sliderBave.interactable = false;
+            sliderAlcool.interactable = false;
+            sliderJus.interactable = false;
+        }
         private void SetSliders()
         {
             sliderLait.value = content[IngredientIndex.Laitdemammouth];
             sliderBave.value = content[IngredientIndex.Bavedeboeuf];
             sliderAlcool.value = content[IngredientIndex.Alcooldefougere];
             sliderJus.value = content[IngredientIndex.JusLarve];
+            
+            CheckFullCup();
         }
     }
 }
