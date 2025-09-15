@@ -1,23 +1,23 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using Script.Bar;
 using Script.Objects;
-using UnityEngine.UI;
-using System.Collections;
 
 public class QueueUiManager : MonoBehaviour
 {
-    
-    public static QueueUiManager instance {get; private set;}
+    public static QueueUiManager instance { get; private set; }
+
     [SerializeField] private EventQueueManager queueManager;
     [SerializeField] private Transform spawnContainer;
-    
+    [SerializeField] private GameObject Over;
 
     [Header("Timer")]
-    public Slider timerSlider; 
+    public Slider timerSlider;
     [SerializeField] private float clientTime = 10f;
     private float currentTime;
     private Coroutine timerCoroutine;
@@ -35,25 +35,46 @@ public class QueueUiManager : MonoBehaviour
     private List<CocktailClass> remainingCocktails = new List<CocktailClass>();
 
     private Dictionary<CocktailClass, HashSet<IngredientIndex>> cocktailIngredientsRemaining = new();
+    private Dictionary<CocktailClass, List<RecetteStep>> cocktailRecettes = new();
+
+    [Header("UI Recette")]
+    [SerializeField] private Transform recetteContainer;
+    [SerializeField] private GameObject recetteTextPrefab;
+
+    private Dictionary<CocktailClass, List<TextMeshProUGUI>> recetteTexts = new();
 
     void Awake()
     {
         instance = this;
     }
+
     public void ShowNextClient()
     {
+        Over.SetActive(false);
         currentClient = queueManager.GetNextClient();
 
         foreach (Transform child in spawnContainer)
             Destroy(child.gameObject);
 
+        foreach (Transform child in recetteContainer)
+            Destroy(child.gameObject);
+
         spawnedCocktails.Clear();
         remainingCocktails.Clear();
         cocktailIngredientsRemaining.Clear();
+        cocktailRecettes.Clear();
+        recetteTexts.Clear();
 
         if (currentClient == null)
         {
             Debug.Log("Plus de clients !");
+            StopAllCoroutines();
+            timerCoroutine = null;
+            blinkCoroutine = null;
+
+            Over.SetActive(true);
+            timerSlider.value = 0;
+            timerSlider.fillRect.GetComponent<Image>().color = Color.white;
             return;
         }
 
@@ -61,6 +82,8 @@ public class QueueUiManager : MonoBehaviour
         {
             remainingCocktails.Add(cocktail);
             cocktailIngredientsRemaining[cocktail] = new HashSet<IngredientIndex>();
+            recetteTexts[cocktail] = new List<TextMeshProUGUI>();
+
             foreach (var prefab in cocktail.cocktailsImage)
             {
                 if (prefab != null)
@@ -70,13 +93,27 @@ public class QueueUiManager : MonoBehaviour
 
                     var data = prefab.GetComponent<Cocktails>();
                     if (data != null)
+                    {
                         foreach (var ingredient in data.cocktailIndices)
                             cocktailIngredientsRemaining[cocktail].Add(ingredient);
+
+                        cocktailRecettes[cocktail] = new List<RecetteStep>(data.recette);
+
+                        foreach (var step in cocktailRecettes[cocktail])
+                        {
+                            var textObj = Instantiate(recetteTextPrefab, recetteContainer);
+                            var textMesh = textObj.GetComponent<TextMeshProUGUI>();
+                            textMesh.text = step.description;
+                            recetteTexts[cocktail].Add(textMesh);
+                        }
+                    }
                 }
             }
         }
+
         StartTimer(clientTime);
     }
+
     private void StartTimer(float duration)
     {
         if (timerCoroutine != null)
@@ -88,13 +125,13 @@ public class QueueUiManager : MonoBehaviour
             blinkCoroutine = null;
             timerSlider.fillRect.GetComponent<Image>().color = Color.white;
         }
+
         currentTime = duration;
         timerSlider.maxValue = duration;
         timerSlider.value = duration;
         timerCoroutine = StartCoroutine(TimerRoutine());
     }
 
-    
     private IEnumerator TimerRoutine()
     {
         bool blinkingStarted = false;
@@ -148,6 +185,20 @@ public class QueueUiManager : MonoBehaviour
                 cocktailIngredientsRemaining[cocktail].Remove(ingredient);
                 Debug.Log($"Ingrédient {ingredient} correct pour {cocktail.name}");
 
+                if (cocktailRecettes.ContainsKey(cocktail))
+                {
+                    var steps = cocktailRecettes[cocktail];
+                    for (int i = 0; i < steps.Count; i++)
+                    {
+                        if (!steps[i].isDone && steps[i].ingredientIndex == ingredient)
+                        {
+                            steps[i].isDone = true;
+                            recetteTexts[cocktail][i].text = $"<color=green>{steps[i].description}</color>";
+                            break;
+                        }
+                    }
+                }
+
                 if (cocktailIngredientsRemaining[cocktail].Count == 0)
                 {
                     ValidateCocktail(cocktail);
@@ -166,6 +217,8 @@ public class QueueUiManager : MonoBehaviour
 
         remainingCocktails.Remove(cocktail);
         cocktailIngredientsRemaining.Remove(cocktail);
+        cocktailRecettes.Remove(cocktail);
+        recetteTexts.Remove(cocktail);
 
         if (remainingCocktails.Count == 0)
             Debug.Log("Tous les cocktails du client sont servis !");
@@ -185,7 +238,7 @@ public class QueueUiManager : MonoBehaviour
         text.text = "DONE";
         text.fontSize = 18;
         text.alignment = TextAlignmentOptions.BottomLeft;
-        text.color = Color.green;
+        text.color = Color.cyan;
     }
 
     void OnColors(InputValue value)
@@ -223,7 +276,6 @@ public class QueueUiManager : MonoBehaviour
         } while (action.inProgress);
         
         ValidateIngredient(ingredient);
-        //pour reset mais ca sera a mettre quand on appel le prochain client
         ControlerPoints.instance.ResetReward();
     }
 
@@ -235,5 +287,11 @@ public class QueueUiManager : MonoBehaviour
     public bool HasFinnished()
     {
         return remainingCocktails.Count == 0;
+    }
+
+    public void SendIngredient(IngredientIndex ingredient)
+    {
+        ValidateIngredient(ingredient);
+        ControlerPoints.instance.ResetReward();
     }
 }
