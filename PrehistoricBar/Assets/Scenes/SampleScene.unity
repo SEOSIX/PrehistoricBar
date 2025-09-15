@@ -1083,9 +1083,9 @@ MonoBehaviour:
   timerSlider: {fileID: 1735919063}
   clientTime: 10
   cup: {fileID: 340537000}
-  tireuseLaitSpeed: 1
-  tireuseBaveSpeed: 1
-  tireuseAlcoolSpeed: 1
+  tireuseLaitSpeed: 6.24
+  tireuseBaveSpeed: 4.67
+  tireuseAlcoolSpeed: 7.15
 --- !u!114 &1311683624
 MonoBehaviour:
   m_ObjectHideFlags: 0

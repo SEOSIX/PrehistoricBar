@@ -44,6 +44,24 @@ namespace Script.Objects
 
         public void Fill(IngredientIndex ingredientType, float amount)
         {
+            switch (ingredientType)
+            {
+                case IngredientIndex.Laitdemammouth :
+                    content[IngredientIndex.Laitdemammouth] += amount;
+                    content[IngredientIndex.Alcooldefougere] += amount;
+                    content[IngredientIndex.Bavedeboeuf] += amount;
+                    break;
+                
+                case IngredientIndex.Bavedeboeuf :
+                    content[IngredientIndex.Bavedeboeuf] += amount;
+                    content[IngredientIndex.Alcooldefougere] += amount;
+                    break;
+                
+                case IngredientIndex.Alcooldefougere :
+                    content[IngredientIndex.Bavedeboeuf] += amount;
+                    break;
+            }
+            
             content[ingredientType] += amount;
 
             SetSliders();
