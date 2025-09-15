@@ -29,6 +29,18 @@ public class QueueUiManager : MonoBehaviour
     [SerializeField] private float tireuseLaitSpeed;
     [SerializeField] private float tireuseBaveSpeed;
     [SerializeField] private float tireuseAlcoolSpeed;
+    
+    [Header("Positions des ingrédients")]
+    [SerializeField] private Transform laitPos;
+    [SerializeField] private Transform bavePos;
+    [SerializeField] private Transform alcoolPos;
+    
+    [SerializeField] private float moveSpeed = 5f;
+    
+    private float baseTireuseLaitSpeed;
+    private float baseTireuseBaveSpeed;
+    private float baseTireuseAlcoolSpeed;
+    
 
     private ClientData currentClient;
     private List<GameObject> spawnedCocktails = new List<GameObject>();
@@ -198,17 +210,17 @@ public class QueueUiManager : MonoBehaviour
     private void TryValidateIngredient(IngredientIndex ingredient, InputValue value)
     {
         if (!value.isPressed) return;
-        
-        switch (ingredient)
+
+        Transform targetPos = ingredient switch
         {
             case IngredientIndex.Laitdemammouth:
                 StartCoroutine(FillRoutine(ingredient, tireuseLaitSpeed, InputSystem.actions["Colors"]));
                 break;
             case IngredientIndex.Alcooldefougere:
-                StartCoroutine(FillRoutine(ingredient, tireuseBaveSpeed, InputSystem.actions["Colors1"]));
+                StartCoroutine(FillRoutine(ingredient, tireuseAlcoolSpeed, InputSystem.actions["Colors1"]));
                 break;
             case IngredientIndex.Bavedeboeuf:
-                StartCoroutine(FillRoutine(ingredient, tireuseAlcoolSpeed, InputSystem.actions["Colors2"]));
+                StartCoroutine(FillRoutine(ingredient, tireuseBaveSpeed, InputSystem.actions["Colors2"]));
                 break;
         }
     }
@@ -235,5 +247,35 @@ public class QueueUiManager : MonoBehaviour
     public bool HasFinnished()
     {
         return remainingCocktails.Count == 0;
+    }
+
+    public void SendIngredient(IngredientIndex ingredient)
+    {
+        ValidateIngredient(ingredient);
+        ControlerPoints.instance.ResetReward();
+    }
+    private void SetAllSpeeds(float speed)
+    {
+        tireuseLaitSpeed = speed;
+        tireuseBaveSpeed = speed;
+        tireuseAlcoolSpeed = speed;
+    }
+    private void ResetSpeeds()
+    {
+        tireuseLaitSpeed = baseTireuseLaitSpeed;
+        tireuseBaveSpeed = baseTireuseBaveSpeed;
+        tireuseAlcoolSpeed = baseTireuseAlcoolSpeed;
+    }
+    
+    private bool laitPressed;
+    private bool alcoolPressed;
+    private bool bavePressed;
+    
+    private void UpdateSpeeds()
+    {
+        if (laitPressed) SetAllSpeeds(baseTireuseLaitSpeed);
+        else if (alcoolPressed) SetAllSpeeds(baseTireuseAlcoolSpeed);
+        else if (bavePressed) SetAllSpeeds(baseTireuseBaveSpeed);
+        else ResetSpeeds(); // Aucun bouton pressé
     }
 }
