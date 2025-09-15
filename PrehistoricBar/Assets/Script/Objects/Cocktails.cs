@@ -21,8 +21,6 @@ namespace Script.Objects
         Qassos,
         JusLarve
     }
-
-
     public class Cocktails : MonoBehaviour
     {
         public List<IngredientIndex> cocktailIndices = new List<IngredientIndex>();     
