@@ -6,27 +6,30 @@ namespace Script.Objects
 {
     public class Cup : MonoBehaviour
     {
-        [Header("Score mult")]
+        [Header("Score Mult")]
         [SerializeField] private float scoreMult1;
         [SerializeField] private float scoreMult2;
         [SerializeField] private float scoreMult3;
         [SerializeField] private float scoreMult4;
-        
-        [Header("Sliders")]
-        [SerializeField] private Slider sliderLait;
-        [SerializeField] private Slider sliderBave;
-        [SerializeField] private Slider sliderAlcool;
-        [SerializeField] private Slider sliderJus;
-        
+
+        [Header("UI")]
+        [SerializeField] private Slider cupSlider; 
+        [SerializeField] private Image fillImage;
+
+        [Header("Colors")]
+        [SerializeField] private Color laitColor;
+        [SerializeField] private Color baveColor;
+        [SerializeField] private Color alcoolColor;
+        [SerializeField] private Color jusColor;
+
         [HideInInspector] public float targetDosage;
-        
         private bool isLocked = false;
-        
+
         public Dictionary<IngredientIndex, float> content = new Dictionary<IngredientIndex, float>()
         {
-            { IngredientIndex.Laitdemammouth, 0f},
-            { IngredientIndex.Alcooldefougere, 0f},
-            { IngredientIndex.Bavedeboeuf, 0f},
+            { IngredientIndex.Laitdemammouth, 0f },
+            { IngredientIndex.Alcooldefougere, 0f },
+            { IngredientIndex.Bavedeboeuf, 0f },
             { IngredientIndex.JusLarve, 0f }
         };
 
@@ -34,104 +37,65 @@ namespace Script.Objects
         {
             get
             {
-                float fillAmount = 0f;
-                foreach (var ingredient in content.Keys)
-                {
-                    fillAmount += content[ingredient];
-                }
-                
-                return fillAmount;
+                float total = 0f;
+                foreach (var val in content.Values)
+                    total += val;
+                return total;
             }
         }
-
         public void Fill(IngredientIndex ingredientType, float amount)
         {
-            
             if (isLocked) return;
-            
-            switch (ingredientType)
-            {
-                case IngredientIndex.Laitdemammouth :
-                    content[IngredientIndex.Laitdemammouth] += amount;
-                    content[IngredientIndex.Alcooldefougere] += amount;
-                    content[IngredientIndex.Bavedeboeuf] += amount;
-                    break;
-                
-                case IngredientIndex.Bavedeboeuf :
-                    content[IngredientIndex.Bavedeboeuf] += amount;
-                    content[IngredientIndex.Alcooldefougere] += amount;
-                    break;
-                
-                case IngredientIndex.Alcooldefougere :
-                    content[IngredientIndex.Bavedeboeuf] += amount;
-                    break;
-            }
-            
+
             content[ingredientType] += amount;
 
-            SetSliders();
+            UpdateUI();
         }
-
         public void EmptyCup()
         {
-            content = new Dictionary<IngredientIndex, float>()
-            {
-                { IngredientIndex.Laitdemammouth, 0f},
-                { IngredientIndex.Alcooldefougere, 0f},
-                { IngredientIndex.Bavedeboeuf, 0f},
-                { IngredientIndex.JusLarve, 0f }
-            };
-            
-            SetSliders();
-        }
+            foreach (var key in content.Keys)
+                content[key] = 0f;
 
+            isLocked = false;
+            UpdateUI();
+        }
+        
         public void SetTargetDosage(float amount)
         {
             targetDosage = amount + TotalAmount;
         }
-
         public float EvaluateScoreMult()
         {
             float targetDif = Mathf.Abs(TotalAmount - targetDosage);
-            
-            if (targetDif <= 5f)
-                return scoreMult1;
-            if (targetDif <= 10f)
-                return scoreMult2;
-            if (targetDif <= 15f)
-                return scoreMult3;
-            if (targetDif <= 20f)
-                return scoreMult4;
-            
+
+            if (targetDif <= 5f) return scoreMult1;
+            if (targetDif <= 10f) return scoreMult2;
+            if (targetDif <= 15f) return scoreMult3;
+            if (targetDif <= 20f) return scoreMult4;
+
             return 0f;
         }
-
-
-        private void CheckFullCup()
+        private void UpdateUI()
         {
-            if (sliderLait.value >= sliderLait.maxValue || sliderBave.value >= sliderBave.maxValue 
-            || sliderAlcool.value >= sliderAlcool.maxValue || sliderJus.value >= sliderJus.maxValue)
-            {
-                BlockAll();
+            cupSlider.value = TotalAmount;
+
+            fillImage.color = MixColors();
+            if (cupSlider.value >= cupSlider.maxValue)
                 isLocked = true;
-            }
         }
-        
-        void BlockAll()
+        private Color MixColors()
         {
-            sliderLait.interactable = false;
-            sliderBave.interactable = false;
-            sliderAlcool.interactable = false;
-            sliderJus.interactable = false;
-        }
-        private void SetSliders()
-        {
-            sliderLait.value = content[IngredientIndex.Laitdemammouth];
-            sliderBave.value = content[IngredientIndex.Bavedeboeuf];
-            sliderAlcool.value = content[IngredientIndex.Alcooldefougere];
-            sliderJus.value = content[IngredientIndex.JusLarve];
-            
-            CheckFullCup();
+            float total = TotalAmount;
+            if (total <= 0f) return Color.clear;
+
+            Color result = Color.black;
+
+            result += laitColor   * (content[IngredientIndex.Laitdemammouth] / total);
+            result += baveColor   * (content[IngredientIndex.Bavedeboeuf] / total);
+            result += alcoolColor * (content[IngredientIndex.Alcooldefougere] / total);
+            result += jusColor    * (content[IngredientIndex.JusLarve] / total);
+
+            return result;
         }
     }
 }

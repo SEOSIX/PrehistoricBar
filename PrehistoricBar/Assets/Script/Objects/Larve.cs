@@ -19,6 +19,7 @@ namespace Script.Objects
         {
             if (_value.isPressed)
             {
+                Debug.Log("pk");
                 larve.value ++;
             }
         }

@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: af7d22451e77cf3459c393e44c92ef98
+guid: 4d94d0fae5fb1b54897df61c9baf1d7e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6003970586217023968
-    second: liquide_0
+      213: 6181373621587311781
+    second: liquide 1_0
   - first:
-      213: 2545748928157711918
-    second: liquide_1
+      213: 5704585805759521562
+    second: liquide 1_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: liquide_0
+      name: liquide 1_0
       rect:
         serializedVersion: 2
         x: 303
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 026f3aeef8c9daca0800000000000000
-      internalID: -6003970586217023968
+      spriteID: 5ac7eaafe86a8c550800000000000000
+      internalID: 6181373621587311781
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: liquide_1
+      name: liquide 1_1
       rect:
         serializedVersion: 2
         x: 736
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e2efb268921545320800000000000000
-      internalID: 2545748928157711918
+      spriteID: a13280fe092ca2f40800000000000000
+      internalID: 5704585805759521562
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      liquide_0: -6003970586217023968
-      liquide_1: 2545748928157711918
+      liquide 1_0: 6181373621587311781
+      liquide 1_1: 5704585805759521562
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
