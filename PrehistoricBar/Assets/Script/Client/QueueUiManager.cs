@@ -204,10 +204,10 @@ public class QueueUiManager : MonoBehaviour
             case IngredientIndex.Laitdemammouth:
                 StartCoroutine(FillRoutine(ingredient, tireuseLaitSpeed, InputSystem.actions["Colors"]));
                 break;
-            case IngredientIndex.Bavedeboeuf:
+            case IngredientIndex.Alcooldefougere:
                 StartCoroutine(FillRoutine(ingredient, tireuseBaveSpeed, InputSystem.actions["Colors1"]));
                 break;
-            case IngredientIndex.Alcooldefougere:
+            case IngredientIndex.Bavedeboeuf:
                 StartCoroutine(FillRoutine(ingredient, tireuseAlcoolSpeed, InputSystem.actions["Colors2"]));
                 break;
         }
@@ -215,12 +215,12 @@ public class QueueUiManager : MonoBehaviour
 
     IEnumerator FillRoutine(IngredientIndex ingredient, float speed, InputAction action)
     {
-        while (action.inProgress)
+        do
         {
-            Debug.Log("jaaj");
+            Debug.Log(action.name);
             cup.Fill(ingredient, speed * Time.deltaTime);
             yield return null;
-        }
+        } while (action.inProgress);
         
         ValidateIngredient(ingredient);
         //pour reset mais ca sera a mettre quand on appel le prochain client
