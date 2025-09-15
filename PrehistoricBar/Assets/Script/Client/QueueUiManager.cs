@@ -22,6 +22,13 @@ public class QueueUiManager : MonoBehaviour
     private float currentTime;
     private Coroutine timerCoroutine;
     private Coroutine blinkCoroutine;
+    
+    [Header("Tireuse")]
+    public Cup cup;
+    [Space(5f)]
+    [SerializeField] private float tireuseLaitSpeed;
+    [SerializeField] private float tireuseBaveSpeed;
+    [SerializeField] private float tireuseAlcoolSpeed;
 
     private ClientData currentClient;
     private List<GameObject> spawnedCocktails = new List<GameObject>();
@@ -181,13 +188,40 @@ public class QueueUiManager : MonoBehaviour
         text.color = Color.green;
     }
 
-    void OnColors(InputValue value)   { TryValidateIngredient(IngredientIndex.cocktail0, value); }
-    void OnColors1(InputValue value)  { TryValidateIngredient(IngredientIndex.cocktail1, value); }
-    void OnColors2(InputValue value)  { TryValidateIngredient(IngredientIndex.cocktail2, value); }
+    void OnColors(InputValue value)
+    {
+        TryValidateIngredient(IngredientIndex.Laitdemammouth, value);
+    }
+    void OnColors1(InputValue value)  { TryValidateIngredient(IngredientIndex.Alcooldefougere, value); }
+    void OnColors2(InputValue value)  { TryValidateIngredient(IngredientIndex.Bavedeboeuf, value); }
 
     private void TryValidateIngredient(IngredientIndex ingredient, InputValue value)
     {
         if (!value.isPressed) return;
+        
+        switch (ingredient)
+        {
+            case IngredientIndex.Laitdemammouth:
+                StartCoroutine(FillRoutine(ingredient, tireuseLaitSpeed, InputSystem.actions["Colors"]));
+                break;
+            case IngredientIndex.Bavedeboeuf:
+                StartCoroutine(FillRoutine(ingredient, tireuseBaveSpeed, InputSystem.actions["Colors1"]));
+                break;
+            case IngredientIndex.Alcooldefougere:
+                StartCoroutine(FillRoutine(ingredient, tireuseAlcoolSpeed, InputSystem.actions["Colors2"]));
+                break;
+        }
+    }
+
+    IEnumerator FillRoutine(IngredientIndex ingredient, float speed, InputAction action)
+    {
+        while (action.inProgress)
+        {
+            Debug.Log("jaaj");
+            cup.Fill(ingredient, speed * Time.deltaTime);
+            yield return null;
+        }
+        
         ValidateIngredient(ingredient);
         //pour reset mais ca sera a mettre quand on appel le prochain client
         ControlerPoints.instance.ResetReward();
