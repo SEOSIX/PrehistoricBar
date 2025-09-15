@@ -23,7 +23,6 @@ namespace Script.Bar
 
         private void Update()
         {
-            CheckForWin(20);
             CheckForLoose();
         }
 
@@ -32,6 +31,10 @@ namespace Script.Bar
             if (QueueUiManager.instance.timerSlider.value <= 0)
             {
                 LoseLife();
+            }
+            else
+            {
+                CheckForWin(20);
             }
         }
 

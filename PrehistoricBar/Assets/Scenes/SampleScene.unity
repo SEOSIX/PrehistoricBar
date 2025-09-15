@@ -2019,7 +2019,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -348.7, y: -193.2}
+  m_AnchoredPosition: {x: -306, y: 40}
   m_SizeDelta: {x: 176.8684, y: 48.7623}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1075305674
@@ -2067,7 +2067,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 25
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -2432,6 +2432,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Script.Objects.Larve
   larve: {fileID: 1075305674}
+  cup: {fileID: 1349265933}
+  transferAmount: 10
+  fillStep: 1
 --- !u!114 &1311683625
 MonoBehaviour:
   m_ObjectHideFlags: 0

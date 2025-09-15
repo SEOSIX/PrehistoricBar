@@ -122,6 +122,15 @@
                     "processors": "",
                     "interactions": "Press",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Transfer",
+                    "type": "Button",
+                    "id": "a792f57e-011d-4785-8dfa-38b3c51a3ef7",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -175,7 +184,7 @@
                     "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button12",
                     "interactions": "Press",
                     "processors": "",
-                    "groups": ";Touch",
+                    "groups": "",
                     "action": "Goon",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -276,6 +285,17 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Grind",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "10a13b47-983c-4525-b900-432fdca82225",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button11",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Transfer",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

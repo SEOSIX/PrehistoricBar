@@ -1,4 +1,3 @@
-using System;
 using Script.Bar;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,6 +8,9 @@ namespace Script.Objects
     public class Larve : MonoBehaviour
     {
         [SerializeField] private Slider larve;
+        [SerializeField] private Cup cup;
+        [SerializeField] private float transferAmount = 10f;
+        [SerializeField] private float fillStep = 1f;
 
         private void Start()
         {
@@ -19,11 +21,26 @@ namespace Script.Objects
         {
             if (_value.isPressed)
             {
-                Debug.Log("pk");
-                larve.value ++;
+                larve.value += fillStep;
+                larve.value = Mathf.Clamp(larve.value, larve.minValue, larve.maxValue);
             }
         }
-        
-        //quand le slider est a fond oont peut utiliser la tireuse
+
+        void OnTransfer(InputValue _value)
+        {
+            if (larve.value >= larve.maxValue)
+                TransferToCup();
+            else
+            {
+                return;
+            }
+        }
+
+        private void TransferToCup()
+        {
+            if (cup == null) return;
+            larve.value = larve.minValue;
+            cup.Fill(IngredientIndex.JusLarve, transferAmount);
+        }
     }
 }
