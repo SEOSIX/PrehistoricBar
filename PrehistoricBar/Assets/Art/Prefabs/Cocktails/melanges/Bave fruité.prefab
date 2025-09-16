@@ -169,10 +169,13 @@ MonoBehaviour:
   recette:
   - description: Bababe
     ingredientIndex: 6
+    amount: 1
     isDone: 0
   - description: Froz
     ingredientIndex: 3
+    amount: 1
     isDone: 0
   - description: Bave de boeuf
     ingredientIndex: 2
+    amount: 40
     isDone: 0

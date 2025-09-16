@@ -169,7 +169,9 @@ MonoBehaviour:
   recette:
   - description: Lait de mamouth
     ingredientIndex: 0
+    amount: 70
     isDone: 0
   - description: Bave de boeuf
     ingredientIndex: 2
+    amount: 20
     isDone: 0

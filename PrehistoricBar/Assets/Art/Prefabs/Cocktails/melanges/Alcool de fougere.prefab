@@ -169,4 +169,5 @@ MonoBehaviour:
   recette:
   - description: Alcool de fougere
     ingredientIndex: 1
+    amount: 60
     isDone: 0
