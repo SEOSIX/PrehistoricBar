@@ -173,7 +173,7 @@ MonoBehaviour:
     isDone: 1
   - description: Froz
     ingredientIndex: 3
-    amount: 1
+    amount: 5
     isDone: 1
   - description: Jus de larve
     ingredientIndex: 10

@@ -1822,6 +1822,7 @@ MonoBehaviour:
   possiblesCocktails:
   - {fileID: 6949938112487522110, guid: a3f4c4a3e44e70549b6b74d9ac120339, type: 3}
   - {fileID: 6949938112487522110, guid: 8f48f3ef1169c204c9b105b7f3aee120, type: 3}
+  - {fileID: 6949938112487522110, guid: 46dd4d2cadcf7e04b8f391966f61615e, type: 3}
   minClient: 8
   maxClient: 17
   minCocktails: 1
@@ -2523,6 +2524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33c98db6af19408a85659ded873bbe0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Script.Objects.Mortier
+  currentIngredientText: {fileID: 0}
 --- !u!114 &1311683626
 MonoBehaviour:
   m_ObjectHideFlags: 0
