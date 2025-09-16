@@ -7,8 +7,9 @@ public class Garbage : MonoBehaviour
     {
         if (!value.isPressed) return;
 
-        if (QueueUiManager.instance != null)
+        if (QueueUiManager.instance != null && value.isPressed)
         {
+            Debug.Log("poubelle");
             QueueUiManager.instance.RestartCurrentCocktail();
         }
     }   

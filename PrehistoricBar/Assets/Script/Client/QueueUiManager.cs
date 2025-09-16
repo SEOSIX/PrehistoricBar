@@ -448,36 +448,69 @@ public void SendCup()
 }
 #endregion
 
-public void RestartCurrentCocktail()
+#region Restart
+
+    public void RestartCurrentCocktail()
 {
     if (currentClient == null) return;
+
+    foreach (var go in spawnedCocktails.ToArray())
+    {
+        if (go == null) continue;
+        var done = go.transform.Find("DoneText");
+        if (done != null) Destroy(done.gameObject);
+    }
+    foreach (Transform child in recetteContainer)
+        Destroy(child.gameObject);
+
+    remainingCocktails.Clear();
+    cocktailIngredientsRemaining.Clear();
+    cocktailRecettes.Clear();
+    recetteTexts.Clear();
+
     foreach (var cocktail in currentClient.clients)
     {
-        if (cocktailRecettes.ContainsKey(cocktail))
-        {
-            var steps = cocktailRecettes[cocktail];
-            foreach (var step in steps)
-                step.isDone = false;
+        remainingCocktails.Add(cocktail);
 
-            if (recetteTexts.ContainsKey(cocktail))
+        var set = new HashSet<IngredientIndex>();
+        cocktailIngredientsRemaining[cocktail] = set;
+
+        foreach (var prefab in cocktail.cocktailsImage)
+        {
+            if (prefab == null) continue;
+            var data = prefab.GetComponent<Script.Objects.Cocktails>();
+            if (data != null)
             {
-                var texts = recetteTexts[cocktail];
-                for (int i = 0; i < texts.Count; i++)
-                    texts[i].text = steps[i].description; 
+                foreach (var ing in data.cocktailIndices)
+                    set.Add(ing);
             }
         }
-
-        if (cocktailIngredientsRemaining.ContainsKey(cocktail))
+        cocktailRecettes[cocktail] = new List<RecetteStep>();
+        recetteTexts[cocktail] = new List<TextMeshProUGUI>();
+        Script.Objects.Cocktails sourceData = null;
+        foreach (var prefab in cocktail.cocktailsImage)
         {
-            cocktailIngredientsRemaining[cocktail].Clear();
-            foreach (var prefab in cocktail.cocktailsImage)
+            if (prefab == null) continue;
+            sourceData = prefab.GetComponent<Script.Objects.Cocktails>();
+            if (sourceData != null) break;
+        }
+
+        if (sourceData != null)
+        {
+            foreach (var step in sourceData.recette)
             {
-                var data = prefab.GetComponent<Script.Objects.Cocktails>();
-                if (data != null)
+                var newStep = new RecetteStep
                 {
-                    foreach (var ingredient in data.cocktailIndices)
-                        cocktailIngredientsRemaining[cocktail].Add(ingredient);
-                }
+                    ingredientIndex = step.ingredientIndex,
+                    description = step.description,
+                    isDone = false
+                };
+                cocktailRecettes[cocktail].Add(newStep);
+
+                var textObj = Instantiate(recetteTextPrefab, recetteContainer);
+                var textMesh = textObj.GetComponent<TextMeshProUGUI>();
+                textMesh.text = newStep.description;
+                recetteTexts[cocktail].Add(textMesh);
             }
         }
     }
@@ -488,4 +521,5 @@ public void RestartCurrentCocktail()
     baveLocked = false;
 }
 
+#endregion
 }
