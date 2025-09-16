@@ -2407,7 +2407,7 @@ MonoBehaviour:
   spawnContainer: {fileID: 7567705488534709600}
   Over: {fileID: 587429603}
   timerSlider: {fileID: 1735919063}
-  clientTime: 50.92
+  clientTime: 10.8
   cup: {fileID: 1349265933}
   tireuseLaitSpeed: 6.61
   tireuseBaveSpeed: 7.39

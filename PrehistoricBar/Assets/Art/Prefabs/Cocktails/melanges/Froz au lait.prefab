@@ -169,7 +169,7 @@ MonoBehaviour:
   recette:
   - description: lait de mamlouth
     ingredientIndex: 0
-    isDone: 1
+    isDone: 0
   - description: Froz
     ingredientIndex: 3
     isDone: 1

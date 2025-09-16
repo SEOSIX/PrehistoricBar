@@ -52,7 +52,7 @@ public class EventQueueManager : MonoBehaviour
                     cocktail.index = j;
                 }
                 else
-                {
+                { 
                     cocktail.index = j;
                 }
 
