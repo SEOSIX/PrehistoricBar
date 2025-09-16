@@ -169,10 +169,13 @@ MonoBehaviour:
   recette:
   - description: Alcool de fougere
     ingredientIndex: 1
+    amount: 60
     isDone: 0
   - description: Bave de boeuf
     ingredientIndex: 2
+    amount: 30
     isDone: 0
   - description: Bababe
     ingredientIndex: 6
+    amount: 1
     isDone: 0

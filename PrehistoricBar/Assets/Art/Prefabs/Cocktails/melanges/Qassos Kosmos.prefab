@@ -169,13 +169,17 @@ MonoBehaviour:
   recette:
   - description: Alcool de fougere
     ingredientIndex: 1
+    amount: 60
     isDone: 0
   - description: Qassos
     ingredientIndex: 9
+    amount: 1
     isDone: 0
   - description: Jus de larve
     ingredientIndex: 10
+    amount: 1
     isDone: 0
   - description: Glacon
     ingredientIndex: 5
+    amount: 1
     isDone: 0

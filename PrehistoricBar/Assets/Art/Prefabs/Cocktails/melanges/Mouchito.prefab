@@ -169,10 +169,13 @@ MonoBehaviour:
   recette:
   - description: "Alcool de foug\xE8re"
     ingredientIndex: 1
+    amount: 60
     isDone: 0
   - description: Mouche
     ingredientIndex: 4
+    amount: 1
     isDone: 0
   - description: Jus de larve
     ingredientIndex: 10
+    amount: 1
     isDone: 0
