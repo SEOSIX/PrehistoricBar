@@ -60,9 +60,30 @@ namespace Script.Objects
             UpdateUI();
         }
         
-        public void SetTargetDosage(float amount)
+        public void SetTargetDosage(IngredientIndex ingredient)
         {
-            targetDosage = amount + TotalAmount;
+            if (EventQueueManager.GetCurrentStep() != null)
+            {
+                if (EventQueueManager.GetCurrentStep().ingredientIndex == ingredient)
+                {
+                    float amount = EventQueueManager.GetCurrentStep().amount;
+                    targetDosage = amount + TotalAmount;
+                    Debug.Log(targetDosage);
+                    
+                    return;
+                }
+                else
+                {
+                    Debug.LogWarning("Tireuse : Mauvais liquide sélectionné");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Tireuse : Aucune étape de recette");
+            }
+            
+            Debug.Log("Tireuse : Dosage invalide");
+            targetDosage = 0f;
         }
         public float EvaluateScoreMult()
         {

@@ -285,13 +285,7 @@ public class QueueUiManager : MonoBehaviour
         if (!value.isPressed) return;
 
         // Placer le trait de dosage
-        if (EventQueueManager.GetCurrentStep() != null)
-        {
-            if (EventQueueManager.GetCurrentStep().ingredientIndex == ingredient)
-            {
-                cup.SetTargetDosage(EventQueueManager.GetCurrentStep().amount);
-            }
-        };
+        cup.SetTargetDosage(ingredient);
         
         Transform targetPos = ingredient switch
         {
@@ -318,7 +312,6 @@ public class QueueUiManager : MonoBehaviour
                 yield break;
             }
             
-            Debug.Log(action.name);
             cup.Fill(ingredient, speed * Time.deltaTime);
             yield return null;
         } while (action.inProgress);
