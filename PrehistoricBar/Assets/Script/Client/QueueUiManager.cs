@@ -245,7 +245,7 @@ public class QueueUiManager : MonoBehaviour
     {
         if (cocktail.cocktailsImage.Count == 0) return;
 
-        var targetImage = spawnedCocktails.Find(x => x.name.Contains(cocktail.cocktailsImage[0].name));
+        var targetImage = spawnedCocktails.Find(x => x.name.Contains(cocktail.cocktailsImage.Peek().name));
         if (targetImage == null) return;
 
         var doneTextGO = new GameObject("DoneText");

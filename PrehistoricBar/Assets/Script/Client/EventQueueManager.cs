@@ -53,7 +53,7 @@ public class EventQueueManager : MonoBehaviour
                 availablePrefabs.RemoveAt(randomIndex);
 
                 ClientClass client = new ClientClass();
-                client.cocktailsImage.Add(prefab);
+                client.cocktailsImage.Enqueue(prefab);
 
                 var data = prefab.GetComponent<Cocktails>();
                 if (data != null)
