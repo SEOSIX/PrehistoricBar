@@ -167,19 +167,19 @@ MonoBehaviour:
   cocktailIndices: 01000000090000000a00000005000000
   cocktailName: Qassos Kosmos
   recette:
-  - description: Alcool de fougere
+  - description: "Versez 60 ml d'alcool de foug\xE8re"
     ingredientIndex: 1
     amount: 60
     isDone: 0
-  - description: Qassos
+  - description: Broyez des Qassos
     ingredientIndex: 9
     amount: 1
     isDone: 0
-  - description: Jus de larve
+  - description: Versez du jus de larve
     ingredientIndex: 10
     amount: 1
     isDone: 0
-  - description: Glacon
+  - description: "Broyez des gla\xE7ons"
     ingredientIndex: 5
     amount: 1
     isDone: 0

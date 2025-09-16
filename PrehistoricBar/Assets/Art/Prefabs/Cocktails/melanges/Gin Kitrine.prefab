@@ -167,19 +167,19 @@ MonoBehaviour:
   cocktailIndices: 01000000080000000a00000005000000
   cocktailName: Gin Kitrine
   recette:
-  - description: Alcool de fougere
+  - description: "Versez 60 ml d'alcool de foug\xE8re"
     ingredientIndex: 1
     amount: 60
     isDone: 1
-  - description: Kitron vert
+  - description: Broyez du kitron vert
     ingredientIndex: 8
     amount: 1
     isDone: 1
-  - description: Jus de larve
+  - description: Versez du jus de larve
     ingredientIndex: 10
     amount: 1
     isDone: 1
-  - description: Glacon
+  - description: "Broyez des gla\xE7ons"
     ingredientIndex: 5
     amount: 1
     isDone: 1
