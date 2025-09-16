@@ -55,8 +55,9 @@ public class QueueUiManager : MonoBehaviour
 
     private Dictionary<ClientClass, List<TextMeshProUGUI>> recetteTexts = new();
     
-    
-
+    private bool laitLocked = false;
+    private bool alcoolLocked = false;
+    private bool baveLocked = false;
     void Awake()
     {
         instance = this;
@@ -82,6 +83,10 @@ public class QueueUiManager : MonoBehaviour
     cocktailIngredientsRemaining.Clear();
     cocktailRecettes.Clear();
     recetteTexts.Clear();
+    
+    laitLocked = false;
+    alcoolLocked = false;
+    baveLocked = false;
 
     if (currentClient == null)
     {
@@ -270,23 +275,29 @@ public class QueueUiManager : MonoBehaviour
 
     void OnColors(InputValue value)
     {
+        if (laitLocked) return;  
         laitPressed = value.isPressed;
         UpdateSpeeds();
         TryValidateIngredient(IngredientIndex.Laitdemammouth, value);
+        if (value.isPressed) laitLocked = true; 
     }
 
     void OnColors1(InputValue value)
     {
+        if (alcoolLocked) return;
         alcoolPressed = value.isPressed;
         UpdateSpeeds();
         TryValidateIngredient(IngredientIndex.Alcooldefougere, value);
+        if (value.isPressed) alcoolLocked = true;
     }
 
     void OnColors2(InputValue value)
     {
+        if (baveLocked) return;
         bavePressed = value.isPressed;
         UpdateSpeeds();
         TryValidateIngredient(IngredientIndex.Bavedeboeuf, value);
+        if (value.isPressed) baveLocked = true;
     }
 
 
