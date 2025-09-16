@@ -65,7 +65,7 @@ public class EventQueueManager : MonoBehaviour
                     client.index = j;
                 }
 
-                service.clients.Add(client);
+                service.clients.Enqueue(client);
             }
 
             eventService.Enqueue(service);

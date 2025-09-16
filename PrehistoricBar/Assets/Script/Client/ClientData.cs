@@ -6,6 +6,6 @@ using Script.Bar;
 public class ServiceData
 {
     public string name;
-    public List<ClientClass> clients = new List<ClientClass>(2);
+    public Queue<ClientClass> clients = new Queue<ClientClass>(2);
 }
 
