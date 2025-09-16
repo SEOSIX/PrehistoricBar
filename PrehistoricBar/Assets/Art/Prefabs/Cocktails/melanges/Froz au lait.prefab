@@ -169,13 +169,17 @@ MonoBehaviour:
   recette:
   - description: lait de mamlouth
     ingredientIndex: 0
+    amount: 70
     isDone: 1
   - description: Froz
     ingredientIndex: 3
+    amount: 1
     isDone: 1
   - description: Jus de larve
     ingredientIndex: 10
+    amount: 1
     isDone: 1
   - description: Glacon
     ingredientIndex: 5
+    amount: 1
     isDone: 1
