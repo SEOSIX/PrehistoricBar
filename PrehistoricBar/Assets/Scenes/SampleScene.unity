@@ -1794,6 +1794,7 @@ GameObject:
   - component: {fileID: 784911051}
   - component: {fileID: 784911050}
   - component: {fileID: 784911052}
+  - component: {fileID: 784911053}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -1857,6 +1858,34 @@ MonoBehaviour:
   pointsText: {fileID: 1918850331}
   points: 0
   life: 2
+--- !u!114 &784911053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784911049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15fb27d51484fa34891144ae2863b9d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SounfManager
+  sounds:
+  - {fileID: 8300000, guid: bc543387076afc644b5a4385589fabf3, type: 3}
+  - {fileID: 8300000, guid: 94f4485e2724f06429f9d2ff9056e5de, type: 3}
+  - {fileID: 8300000, guid: 86f424fa6ac622247af91ce333b70b3b, type: 3}
+  - {fileID: 8300000, guid: 4d4161efcab900a4791fdedbb298207c, type: 3}
+  - {fileID: 8300000, guid: af89cf2c010b5424ba8545ad65165aa8, type: 3}
+  - {fileID: 8300000, guid: 5167856ec55880a4091688c15eb046db, type: 3}
+  - {fileID: 8300000, guid: 492c593cab1f68a4aa9b45adfdcdfc06, type: 3}
+  - {fileID: 8300000, guid: fdd5ff579c7be2e459629899755f7902, type: 3}
+  - {fileID: 8300000, guid: f03740a7becc6594a8edc62108d050ac, type: 3}
+  - {fileID: 8300000, guid: dc0643205cce5e344b31b4c16ab58f28, type: 3}
+  - {fileID: 8300000, guid: 66719607680a7e34493185cde31ce370, type: 3}
+  - {fileID: 8300000, guid: 11afe2784e9c7bf43a02a016e9c8bf20, type: 3}
+  - {fileID: 8300000, guid: 0d9037d342a2cbd42adce171bfa42a13, type: 3}
+  - {fileID: 8300000, guid: f62c298e57cfb664ab5a1817656e14a6, type: 3}
+  soundToPlay: {fileID: 0}
 --- !u!1 &914608976
 GameObject:
   m_ObjectHideFlags: 0
