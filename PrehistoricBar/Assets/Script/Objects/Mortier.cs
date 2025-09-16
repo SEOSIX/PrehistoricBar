@@ -1,55 +1,47 @@
-using UnityEngine;
-using UnityEngine.InputSystem;
 using Script.Bar;
-using Script.Objects;
+using UnityEngine;
+using TMPro;
+using UnityEngine.InputSystem;
 
 namespace Script.Objects
 {
     public class Mortier : MonoBehaviour
     {
-        private IngredientIndex? selectedIngredient = null;
+        [SerializeField] private TextMeshProUGUI currentIngredientText;
+        private RecetteStep currentStep;
+        private ClientClass currentCocktail;
+        
+        private int grindPressCount = 0;
+        private int requiredPresses = 0;
 
-        private void SelectIngredient(IngredientIndex ingredient)
+        public void SetStep(RecetteStep step, ClientClass cocktail)
         {
-            selectedIngredient = ingredient;
-            Debug.Log($"[Mortier] Ingrédient sélectionné: {ingredient}");
+            if (step == null || cocktail == null) return;
+            currentStep = step;
+            currentCocktail = cocktail;
+            grindPressCount = 0;
+            requiredPresses = Mathf.Max(1, Mathf.RoundToInt(step.amount));
+            if (currentIngredientText != null)
+                currentIngredientText.text = $"Broyer: {step.ingredientIndex}";
         }
-        
-        void OnBababe(InputValue value)  
-        { if (value.isPressed) SelectIngredient(IngredientIndex.Bababe); }
-
-        void OnFroz(InputValue value)  
-        { if (value.isPressed) SelectIngredient(IngredientIndex.Froz); }
-
-        void OnIce(InputValue value)  
-        { if (value.isPressed) SelectIngredient(IngredientIndex.Glacon); }
-
-        void OnKitronVert(InputValue value)  
-        { if (value.isPressed) SelectIngredient(IngredientIndex.Kitron); }
-
-        void OnFly(InputValue value)  
-        { if (value.isPressed) SelectIngredient(IngredientIndex.Mouche); }
-
-        void OnCacaoLaid(InputValue value)
-        { if (value.isPressed) SelectIngredient(IngredientIndex.Cacao); }
-        
-
-        void OnQassos(InputValue value)  
-        { if (value.isPressed) SelectIngredient(IngredientIndex.Qassos); }
 
         void OnGrind(InputValue value)
         {
             if (!value.isPressed) return;
+            if (currentStep == null || currentCocktail == null) return;
 
-            if (selectedIngredient.HasValue && value.isPressed)
+            grindPressCount++;
+            if (currentIngredientText != null)
+                currentIngredientText.text = $"Broyer: {currentStep.ingredientIndex} ({grindPressCount}/{requiredPresses})";
+
+            if (grindPressCount >= requiredPresses)
             {
-                QueueUiManager.instance.SendIngredient(selectedIngredient.Value);
-                Debug.Log($"[Mortier] Ingrédient {selectedIngredient.Value} broyé !");
-                selectedIngredient = null;
-            }
-            else
-            {
-                Debug.Log("[Mortier] Aucun ingrédient sélectionné !");
+                QueueUiManager.instance.ValidateStep(currentCocktail, currentStep);
+                currentStep = null;
+                currentCocktail = null;
+                grindPressCount = 0;
+                requiredPresses = 0;
+                if (currentIngredientText != null) currentIngredientText.text = "";
             }
         }
     }
