@@ -100,13 +100,24 @@ public class EventQueueManager : MonoBehaviour
         return previewClients;
     }
 
-    public static ServiceData GetcurrentClient()
+    public static ClientClass GetcurrentClient()
     {
-        return instance.eventService.Peek();
+        return instance.eventService.Peek().clients.Peek();
     }
 
     public static Cocktails GetCurrentCocktail()
     {
-        return null;
+        if (GetcurrentClient() == null)
+            return null;
+        
+        return GetcurrentClient().cocktailsImage.Peek().GetComponent<Cocktails>();
+    }
+
+    public static RecetteStep GetCurrentStep()
+    {
+        if (GetCurrentCocktail() == null)
+            return null;
+
+        return GetCurrentCocktail().GetCurrentStep();
     }
 }
