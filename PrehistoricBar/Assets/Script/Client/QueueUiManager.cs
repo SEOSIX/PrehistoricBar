@@ -43,7 +43,7 @@ public class QueueUiManager : MonoBehaviour
     private float baseTireuseAlcoolSpeed;
     
 
-    private ServiceData currentService;
+    private ServiceData currentClient;
     private List<GameObject> spawnedCocktails = new List<GameObject>();
     private List<ClientClass> remainingCocktails = new List<ClientClass>();
 
@@ -70,18 +70,19 @@ public class QueueUiManager : MonoBehaviour
         baseTireuseBaveSpeed = tireuseBaveSpeed;
         baseTireuseAlcoolSpeed = tireuseAlcoolSpeed;
     }
-
+    
     public void ShowNextClient()
-    {
-        ControlerPoints.instance.CheckForWin(20);
-        Over.SetActive(false);
-        currentService = queueManager.GetNextService();
+{
+    
+    ControlerPoints.instance.CheckForWin(20);
+    Over.SetActive(false);
+    currentClient = queueManager.GetNextService();
 
-        foreach (Transform child in spawnContainer)
-            Destroy(child.gameObject);
+    foreach (Transform child in spawnContainer)
+        Destroy(child.gameObject);
 
-        foreach (Transform child in recetteContainer)
-            Destroy(child.gameObject);
+    foreach (Transform child in recetteContainer)
+        Destroy(child.gameObject);
 
     spawnedCocktails.Clear();
     remainingCocktails.Clear();
@@ -96,54 +97,62 @@ public class QueueUiManager : MonoBehaviour
     alcoolLocked = false;
     baveLocked = false;
 
-    if (currentService == null)
+    if (currentClient == null)
     {
         Debug.Log("Plus de clients !");
         StopAllCoroutines();
         timerCoroutine = null;
         blinkCoroutine = null;
 
-            Over.SetActive(true);
-            timerSlider.value = 0;
-            timerSlider.fillRect.GetComponent<Image>().color = Color.white;
-            return;
-        }
+        Over.SetActive(true);
+        timerSlider.value = 0;
+        timerSlider.fillRect.GetComponent<Image>().color = Color.white;
+        return;
+    }
 
-        foreach (var cocktail in currentService.clients)
+    foreach (var cocktail in currentClient.clients)
+    {
+        remainingCocktails.Add(cocktail);
+        cocktailIngredientsRemaining[cocktail] = new HashSet<IngredientIndex>();
+        recetteTexts[cocktail] = new List<TextMeshProUGUI>();
+
+        foreach (var prefab in cocktail.cocktailsImage)
         {
-            remainingCocktails.Add(cocktail);
-            cocktailIngredientsRemaining[cocktail] = new HashSet<IngredientIndex>();
-            recetteTexts[cocktail] = new List<TextMeshProUGUI>();
-
-            foreach (var prefab in cocktail.cocktailsImage)
+            if (prefab != null)
             {
-                if (prefab != null)
+                var instance = Instantiate(prefab, spawnContainer);
+                spawnedCocktails.Add(instance);
+
+                var data = prefab.GetComponent<Cocktails>();
+                if (data != null)
                 {
-                    var instance = Instantiate(prefab, spawnContainer);
-                    spawnedCocktails.Add(instance);
+                    foreach (var ingredient in data.cocktailIndices)
+                        cocktailIngredientsRemaining[cocktail].Add(ingredient);
 
-                    var data = prefab.GetComponent<Cocktails>();
-                    if (data != null)
+                    cocktailRecettes[cocktail] = new List<RecetteStep>();
+                    foreach (var step in data.recette)
                     {
-                        foreach (var ingredient in data.cocktailIndices)
-                            cocktailIngredientsRemaining[cocktail].Add(ingredient);
-
-                        cocktailRecettes[cocktail] = new List<RecetteStep>(data.recette);
-
-                        foreach (var step in cocktailRecettes[cocktail])
+                        var newStep = new RecetteStep
                         {
-                            var textObj = Instantiate(recetteTextPrefab, recetteContainer);
-                            var textMesh = textObj.GetComponent<TextMeshProUGUI>();
-                            textMesh.text = step.description;
-                            recetteTexts[cocktail].Add(textMesh);
-                        }
+                            ingredientIndex = step.ingredientIndex,
+                            description = step.description,
+                            isDone = false
+                        };
+                        cocktailRecettes[cocktail].Add(newStep);
+
+                        var textObj = Instantiate(recetteTextPrefab, recetteContainer);
+                        var textMesh = textObj.GetComponent<TextMeshProUGUI>();
+                        textMesh.text = newStep.description;
+                        recetteTexts[cocktail].Add(textMesh);
                     }
                 }
             }
         }
-
-        StartTimer(clientTime);
     }
+
+    StartTimer(clientTime);
+}
+
 
     private void StartTimer(float duration)
     {
@@ -207,7 +216,7 @@ public class QueueUiManager : MonoBehaviour
 
     public void ValidateIngredient(IngredientIndex ingredient)
     {
-        if (currentService == null) return;
+        if (currentClient == null) return;
 
         foreach (var cocktail in remainingCocktails.ToArray())
         {
@@ -252,6 +261,8 @@ public class QueueUiManager : MonoBehaviour
 
         if (remainingCocktails.Count == 0)
             Debug.Log("Tous les cocktails du client sont servis !");
+        
+        ControlerPoints.instance.ResetReward();
     }
 
     private void ShowDoneText(ClientClass cocktail)
@@ -302,7 +313,8 @@ public class QueueUiManager : MonoBehaviour
     public void TryValidateIngredient(IngredientIndex ingredient, InputValue value)
     {
         if (!value.isPressed) return;
-        cup.SetTargetDosage(ingredient);
+
+        Cup.instance.SetTargetDosage(ingredient);
         
         Transform targetPos = ingredient switch
         {
@@ -323,19 +335,18 @@ public class QueueUiManager : MonoBehaviour
         {
             if (cup == null) yield break;
             if (cup.TotalAmount <= 0) yield return null;
-            
+        
             if (cup != null && cup.GetType().GetField("isLocked", 
                     System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(cup) is bool locked && locked)
             {
                 yield break;
             }
-            
+
             cup.Fill(ingredient, speed * Time.deltaTime);
             yield return null;
-        } while (action.inProgress);
-        
+        }
+        while (action.inProgress);
         ValidateIngredient(ingredient);
-        ControlerPoints.instance.ResetReward();
     }
 
     void OnNextClient(InputValue value)
@@ -439,20 +450,20 @@ public void SendCup()
 
 public void RestartCurrentCocktail()
 {
-    if (currentService == null) return;
-    foreach (var cocktail in currentService.clients)
+    if (currentClient == null) return;
+    foreach (var cocktail in currentClient.clients)
     {
         if (cocktailRecettes.ContainsKey(cocktail))
         {
             var steps = cocktailRecettes[cocktail];
             foreach (var step in steps)
-                step.isDone = false; 
+                step.isDone = false;
 
             if (recetteTexts.ContainsKey(cocktail))
             {
                 var texts = recetteTexts[cocktail];
                 for (int i = 0; i < texts.Count; i++)
-                    texts[i].text = steps[i].description;
+                    texts[i].text = steps[i].description; 
             }
         }
 

@@ -3714,6 +3714,10 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6960242518611925180, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
+      propertyPath: m_WholeNumbers
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8397264922588893824, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
