@@ -167,7 +167,7 @@ MonoBehaviour:
   cocktailIndices: 00000000
   cocktailName: Lait de mammouth
   recette:
-  - description: Lait de mamouth
+  - description: Versez 90 ml de lait de mammouth
     ingredientIndex: 0
     amount: 90
     isDone: 0

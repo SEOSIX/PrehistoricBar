@@ -167,15 +167,15 @@ MonoBehaviour:
   cocktailIndices: 00000000070000000a000000
   cocktailName: Lait laid
   recette:
-  - description: Lait de mamouth
+  - description: Versez 80 ml de lait de mammouth
     ingredientIndex: 0
     amount: 80
-    isDone: 0
-  - description: Cacao laid
+    isDone: 1
+  - description: Broyez du Cacao laid
     ingredientIndex: 7
     amount: 1
     isDone: 0
-  - description: Jus de larve
+  - description: Versez du jus de larve
     ingredientIndex: 10
     amount: 1
     isDone: 0

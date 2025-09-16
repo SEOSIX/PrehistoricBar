@@ -167,15 +167,15 @@ MonoBehaviour:
   cocktailIndices: 01000000040000000a000000
   cocktailName: Mouchito
   recette:
-  - description: "Alcool de foug\xE8re"
+  - description: "Versez 60 ml d'alcool de foug\xE8re"
     ingredientIndex: 1
     amount: 60
     isDone: 0
-  - description: Mouche
+  - description: Broyez des mouches
     ingredientIndex: 4
     amount: 1
     isDone: 0
-  - description: Jus de larve
+  - description: Versez du jus de larve
     ingredientIndex: 10
     amount: 1
     isDone: 0

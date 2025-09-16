@@ -167,15 +167,15 @@ MonoBehaviour:
   cocktailIndices: 060000000300000002000000
   cocktailName: "Bave fruit\xE9"
   recette:
-  - description: Bababe
+  - description: Broyez de la bababe
     ingredientIndex: 6
     amount: 1
     isDone: 0
-  - description: Froz
+  - description: Broyez de la froz
     ingredientIndex: 3
     amount: 1
     isDone: 0
-  - description: Bave de boeuf
+  - description: Versez 40 ml de bave de boeuf
     ingredientIndex: 2
     amount: 40
     isDone: 0

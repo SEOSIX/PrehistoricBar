@@ -167,11 +167,11 @@ MonoBehaviour:
   cocktailIndices: 0000000002000000
   cocktailName: "Bave lact\xE9e"
   recette:
-  - description: Lait de mamouth
+  - description: Versez 70 ml de lait de mammouth
     ingredientIndex: 0
     amount: 70
     isDone: 0
-  - description: Bave de boeuf
+  - description: Versez 20 ml de bave de boeuf
     ingredientIndex: 2
     amount: 20
     isDone: 0
