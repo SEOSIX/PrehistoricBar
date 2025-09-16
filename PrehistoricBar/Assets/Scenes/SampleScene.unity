@@ -130,6 +130,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!1 &117832152
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 117832153}
+  m_Layer: 5
+  m_Name: Goes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &117832153
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117832152}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 638647423}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1033, y: -230}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &164399320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -494,6 +529,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304388441}
   m_CullTransparentMesh: 1
+--- !u!1 &337370477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 337370478}
+  m_Layer: 5
+  m_Name: Start
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &337370478
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337370477}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 638647423}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 18, y: -238}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &372473642 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7568960753061545778, guid: a53663a9f8adaea42b1eac2ba78a2f88, type: 3}
@@ -1395,11 +1465,13 @@ RectTransform:
   - {fileID: 736501013}
   - {fileID: 1480154562}
   - {fileID: 1918850330}
-  - {fileID: 587429604}
   - {fileID: 583896870}
   - {fileID: 1196647155}
   - {fileID: 716481845}
   - {fileID: 1349265932}
+  - {fileID: 337370478}
+  - {fileID: 117832153}
+  - {fileID: 587429604}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1748,8 +1820,8 @@ MonoBehaviour:
   - gutz
   - guy
   possiblesCocktails:
-  - {fileID: 6949938112487522110, guid: 46dd4d2cadcf7e04b8f391966f61615e, type: 3}
   - {fileID: 6949938112487522110, guid: a3f4c4a3e44e70549b6b74d9ac120339, type: 3}
+  - {fileID: 6949938112487522110, guid: 8f48f3ef1169c204c9b105b7f3aee120, type: 3}
   minClient: 8
   maxClient: 17
   minCocktails: 1
@@ -2339,6 +2411,7 @@ GameObject:
   - component: {fileID: 1311683623}
   - component: {fileID: 1311683624}
   - component: {fileID: 1311683625}
+  - component: {fileID: 1311683626}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2407,7 +2480,7 @@ MonoBehaviour:
   spawnContainer: {fileID: 7567705488534709600}
   Over: {fileID: 587429603}
   timerSlider: {fileID: 1735919063}
-  clientTime: 50.92
+  clientTime: 50
   cup: {fileID: 1349265933}
   tireuseLaitSpeed: 6.61
   tireuseBaveSpeed: 7.39
@@ -2415,9 +2488,12 @@ MonoBehaviour:
   laitPos: {fileID: 164399321}
   bavePos: {fileID: 375029486}
   alcoolPos: {fileID: 1874701842}
-  moveSpeed: 779.3
+  JusLarvePos: {fileID: 0}
+  moveSpeed: 1614.2
   recetteContainer: {fileID: 583896870}
   recetteTextPrefab: {fileID: 2744933180135251576, guid: 8ee13c3aca6009746bd7bcb291c83365, type: 3}
+  laitLocked: 0
+  alcoolLocked: 0
   offset: {x: 0, y: -227.5}
 --- !u!114 &1311683624
 MonoBehaviour:
@@ -2447,6 +2523,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33c98db6af19408a85659ded873bbe0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Script.Objects.Mortier
+--- !u!114 &1311683626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311683620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef4daaefe17c0548b62eb29f48b179b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
 --- !u!224 &1323557830 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7568960753061545778, guid: 4618d23b443737342b29b81953760d85, type: 3}

@@ -28,19 +28,14 @@ namespace Script.Objects
 
         void OnTransfer(InputValue _value)
         {
+            if (!_value.isPressed) return;
+    
             if (larve.value >= larve.maxValue)
-                TransferToCup();
-            else
             {
-                return;
+                larve.value = larve.minValue;
+                cup.Fill(IngredientIndex.JusLarve, transferAmount);
+                QueueUiManager.instance.ValidateIngredient(IngredientIndex.JusLarve);
             }
-        }
-
-        private void TransferToCup()
-        {
-            if (cup == null) return;
-            larve.value = larve.minValue;
-            cup.Fill(IngredientIndex.JusLarve, transferAmount);
         }
     }
 }

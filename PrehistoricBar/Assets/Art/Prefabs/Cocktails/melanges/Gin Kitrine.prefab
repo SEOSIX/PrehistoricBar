@@ -172,10 +172,10 @@ MonoBehaviour:
     isDone: 0
   - description: Kitron vert
     ingredientIndex: 8
-    isDone: 1
+    isDone: 0
   - description: Jus de larve
     ingredientIndex: 10
-    isDone: 1
+    isDone: 0
   - description: Glacon
     ingredientIndex: 5
     isDone: 1

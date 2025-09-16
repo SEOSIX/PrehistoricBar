@@ -18,7 +18,7 @@ public class QueueUiManager : MonoBehaviour
 
     [Header("Timer")]
     public Slider timerSlider;
-    [SerializeField] private float clientTime = 10f;
+    public float clientTime = 10f;
     private float currentTime;
     private Coroutine timerCoroutine;
     private Coroutine blinkCoroutine;
@@ -34,6 +34,7 @@ public class QueueUiManager : MonoBehaviour
     [SerializeField] private Transform laitPos;
     [SerializeField] private Transform bavePos;
     [SerializeField] private Transform alcoolPos;
+    [SerializeField] private Transform JusLarvePos;
     
     [SerializeField] private float moveSpeed = 5f;
     
@@ -55,8 +56,11 @@ public class QueueUiManager : MonoBehaviour
 
     private Dictionary<ClientClass, List<TextMeshProUGUI>> recetteTexts = new();
     
-    private bool laitLocked = false;
-    private bool alcoolLocked = false;
+    [HideInInspector]
+    public bool laitLocked = false;
+    [HideInInspector]
+    public bool alcoolLocked = false;
+    [HideInInspector]
     private bool baveLocked = false;
     void Awake()
     {
@@ -83,6 +87,9 @@ public class QueueUiManager : MonoBehaviour
     cocktailIngredientsRemaining.Clear();
     cocktailRecettes.Clear();
     recetteTexts.Clear();
+    
+    Cup.instance.ResetCup();
+    Cup.instance.SlideToResetPoint();
     
     laitLocked = false;
     alcoolLocked = false;
@@ -205,7 +212,7 @@ public class QueueUiManager : MonoBehaviour
         }
     }
 
-    private void ValidateIngredient(IngredientIndex ingredient)
+    public void ValidateIngredient(IngredientIndex ingredient)
     {
         if (currentClient == null) return;
 
@@ -301,7 +308,7 @@ public class QueueUiManager : MonoBehaviour
     }
 
 
-    private void TryValidateIngredient(IngredientIndex ingredient, InputValue value)
+    public void TryValidateIngredient(IngredientIndex ingredient, InputValue value)
     {
         if (!value.isPressed) return;
 
@@ -310,6 +317,7 @@ public class QueueUiManager : MonoBehaviour
             IngredientIndex.Laitdemammouth => laitPos,
             IngredientIndex.Bavedeboeuf => bavePos,
             IngredientIndex.Alcooldefougere => alcoolPos,
+            IngredientIndex.JusLarve => JusLarvePos,
             _ => null
         };
 
@@ -427,5 +435,55 @@ private IEnumerator MoveAndFill(IngredientIndex ingredient, Transform target)
         yield return StartCoroutine(FillRoutine(ingredient, speed, action));
 }
 
+public void SendCup()
+{
+    Cup.instance.SlideToSendPoint(() =>
+    {
+        Cup.instance.ResetCup();
+    });
+}
 #endregion
+
+public void RestartCurrentCocktail()
+{
+    if (currentClient == null) return;
+
+    // Réinitialiser tous les steps et les textes
+    foreach (var cocktail in currentClient.cocktails)
+    {
+        if (cocktailRecettes.ContainsKey(cocktail))
+        {
+            var steps = cocktailRecettes[cocktail];
+            foreach (var step in steps)
+                step.isDone = false; // Reset logique
+
+            if (recetteTexts.ContainsKey(cocktail))
+            {
+                var texts = recetteTexts[cocktail];
+                for (int i = 0; i < texts.Count; i++)
+                    texts[i].text = steps[i].description; // Reset visuel
+            }
+        }
+
+        if (cocktailIngredientsRemaining.ContainsKey(cocktail))
+        {
+            cocktailIngredientsRemaining[cocktail].Clear();
+            foreach (var prefab in cocktail.cocktailsImage)
+            {
+                var data = prefab.GetComponent<Script.Objects.Cocktails>();
+                if (data != null)
+                {
+                    foreach (var ingredient in data.cocktailIndices)
+                        cocktailIngredientsRemaining[cocktail].Add(ingredient);
+                }
+            }
+        }
+    }
+    Cup.instance.ResetCup();
+    Cup.instance.SlideToResetPoint();
+    laitLocked = false;
+    alcoolLocked = false;
+    baveLocked = false;
+}
+
 }
