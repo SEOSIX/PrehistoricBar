@@ -1,11 +1,15 @@
+using System;
 using UnityEngine;
 using System.Collections.Generic;
 using Script.Bar;
 using Script.Objects;
+using Random = UnityEngine.Random;
 
 [System.Serializable]
 public class EventQueueManager : MonoBehaviour
 {
+    public static EventQueueManager instance;
+    
     [Header("Configuration")] 
     [SerializeField] private string[] possiblesNames = { "Ouga", "booga", "toonah" };
     [SerializeField] private List<GameObject> possiblesCocktails;
@@ -16,6 +20,11 @@ public class EventQueueManager : MonoBehaviour
     [SerializeField] private int maxCocktails = 2;
     
     private Queue<ClientData> eventClient = new Queue<ClientData>();
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
@@ -89,5 +98,15 @@ public class EventQueueManager : MonoBehaviour
             i++;
         }
         return previewClients;
+    }
+
+    public static ClientData GetcurrentClient()
+    {
+        return instance.eventClient.Peek();
+    }
+
+    public static Cocktails GetCurrentCocktail()
+    {
+        return null;
     }
 }
