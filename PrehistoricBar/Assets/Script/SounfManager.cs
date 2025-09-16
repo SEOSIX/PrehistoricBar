@@ -15,7 +15,7 @@ public class SounfManager : MonoBehaviour
 
     void PlaySoundButtonMenu()
     {
-        sounds[0].samples = soundToPlay.clip.samples;
+        
     }
 
     void SoundClient()
