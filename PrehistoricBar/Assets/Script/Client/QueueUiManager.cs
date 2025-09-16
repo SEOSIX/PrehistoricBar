@@ -96,7 +96,7 @@ public class QueueUiManager : MonoBehaviour
             return;
         }
 
-        foreach (var cocktail in currentService.cocktails)
+        foreach (var cocktail in currentService.clients)
         {
             remainingCocktails.Add(cocktail);
             cocktailIngredientsRemaining[cocktail] = new HashSet<IngredientIndex>();

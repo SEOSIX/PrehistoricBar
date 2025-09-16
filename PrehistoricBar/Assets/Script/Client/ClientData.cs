@@ -6,6 +6,6 @@ using Script.Bar;
 public class ServiceData
 {
     public string name;
-    public List<ClientClass> cocktails = new List<ClientClass>(2);
+    public List<ClientClass> clients = new List<ClientClass>(2);
 }
 

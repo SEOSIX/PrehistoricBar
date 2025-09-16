@@ -37,8 +37,8 @@ public class EventQueueManager : MonoBehaviour
 
         for (int i = 0; i < nbClients; i++)
         {
-            ServiceData client = new ServiceData();
-            client.name = possiblesNames[Random.Range(0, possiblesNames.Length)];
+            ServiceData service = new ServiceData();
+            service.name = possiblesNames[Random.Range(0, possiblesNames.Length)];
 
             int nbCocktails = Random.Range(minCocktails, maxCocktails + 1);
             List<GameObject> availablePrefabs = new List<GameObject>(possiblesCocktails);
@@ -52,23 +52,23 @@ public class EventQueueManager : MonoBehaviour
 
                 availablePrefabs.RemoveAt(randomIndex);
 
-                ClientClass cocktail = new ClientClass();
-                cocktail.cocktailsImage.Add(prefab);
+                ClientClass client = new ClientClass();
+                client.cocktailsImage.Add(prefab);
 
                 var data = prefab.GetComponent<Cocktails>();
                 if (data != null)
                 {
-                    cocktail.index = j;
+                    client.index = j;
                 }
                 else
                 {
-                    cocktail.index = j;
+                    client.index = j;
                 }
 
-                client.cocktails.Add(cocktail);
+                service.clients.Add(client);
             }
 
-            eventService.Enqueue(client);
+            eventService.Enqueue(service);
         }
 
         Debug.Log($"File générée : {nbClients} clients.");
