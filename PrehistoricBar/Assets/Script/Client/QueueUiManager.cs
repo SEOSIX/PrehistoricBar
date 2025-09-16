@@ -294,6 +294,15 @@ public class QueueUiManager : MonoBehaviour
     {
         if (!value.isPressed) return;
 
+        // Placer le trait de dosage
+        if (EventQueueManager.GetCurrentStep() != null)
+        {
+            if (EventQueueManager.GetCurrentStep().ingredientIndex == ingredient)
+            {
+                cup.SetTargetDosage(EventQueueManager.GetCurrentStep().amount);
+            }
+        };
+        
         Transform targetPos = ingredient switch
         {
             IngredientIndex.Laitdemammouth => laitPos,
