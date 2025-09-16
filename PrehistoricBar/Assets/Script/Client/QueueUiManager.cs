@@ -44,9 +44,18 @@ public class QueueUiManager : MonoBehaviour
 
     private ClientData currentClient;
     private List<GameObject> spawnedCocktails = new List<GameObject>();
-    private List<CocktailClass> remainingCocktails = new List<CocktailClass>();
+    private List<ClientClass> remainingCocktails = new List<ClientClass>();
 
-    private Dictionary<CocktailClass, HashSet<IngredientIndex>> cocktailIngredientsRemaining = new();
+    private Dictionary<ClientClass, HashSet<IngredientIndex>> cocktailIngredientsRemaining = new();
+    private Dictionary<ClientClass, List<RecetteStep>> cocktailRecettes = new();
+
+    [Header("UI Recette")]
+    [SerializeField] private Transform recetteContainer;
+    [SerializeField] private GameObject recetteTextPrefab;
+
+    private Dictionary<ClientClass, List<TextMeshProUGUI>> recetteTexts = new();
+    
+    
 
     void Awake()
     {
@@ -158,7 +167,6 @@ public class QueueUiManager : MonoBehaviour
             if (cocktailIngredientsRemaining[cocktail].Contains(ingredient))
             {
                 cocktailIngredientsRemaining[cocktail].Remove(ingredient);
-                Debug.Log($"Ingrédient {ingredient} correct pour {cocktail.name}");
 
                 if (cocktailIngredientsRemaining[cocktail].Count == 0)
                 {
@@ -171,7 +179,7 @@ public class QueueUiManager : MonoBehaviour
         Debug.Log($"Ingrédient {ingredient} incorrect ou déjà utilisé !");
     }
 
-    private void ValidateCocktail(CocktailClass cocktail)
+    private void ValidateCocktail(ClientClass cocktail)
     {
         if (cocktail != null)
             ShowDoneText(cocktail);
@@ -183,7 +191,7 @@ public class QueueUiManager : MonoBehaviour
             Debug.Log("Tous les cocktails du client sont servis !");
     }
 
-    private void ShowDoneText(CocktailClass cocktail)
+    private void ShowDoneText(ClientClass cocktail)
     {
         if (cocktail.cocktailsImage.Count == 0) return;
 
