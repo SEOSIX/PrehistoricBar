@@ -92,7 +92,7 @@ namespace Script.Objects
                 GetComponent<RectTransform>().anchoredPosition = resetPoint.anchoredPosition;
         }
 
-        public void SetTargetDosage(float amount)
+        public void SetTargetDosage(IngredientIndex ingredient)
         {
             if (EventQueueManager.GetCurrentStep() != null)
             {
@@ -100,7 +100,7 @@ namespace Script.Objects
                 {
                     float amount = EventQueueManager.GetCurrentStep().amount;
                     targetDosage = amount + TotalAmount;
-                    Debug.Log(targetDosage);
+                    Debug.Log($"Dosage recommendé{targetDosage}");
                     
                     return;
                 }

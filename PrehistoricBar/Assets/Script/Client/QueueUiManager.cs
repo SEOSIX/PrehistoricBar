@@ -73,6 +73,7 @@ public class QueueUiManager : MonoBehaviour
 
     public void ShowNextClient()
     {
+        ControlerPoints.instance.CheckForWin(20);
         Over.SetActive(false);
         currentService = queueManager.GetNextService();
 
@@ -95,7 +96,7 @@ public class QueueUiManager : MonoBehaviour
     alcoolLocked = false;
     baveLocked = false;
 
-    if (currentClient == null)
+    if (currentService == null)
     {
         Debug.Log("Plus de clients !");
         StopAllCoroutines();
@@ -301,8 +302,6 @@ public class QueueUiManager : MonoBehaviour
     public void TryValidateIngredient(IngredientIndex ingredient, InputValue value)
     {
         if (!value.isPressed) return;
-
-        // Placer le trait de dosage
         cup.SetTargetDosage(ingredient);
         
         Transform targetPos = ingredient switch
@@ -440,22 +439,20 @@ public void SendCup()
 
 public void RestartCurrentCocktail()
 {
-    if (currentClient == null) return;
-
-    // Réinitialiser tous les steps et les textes
-    foreach (var cocktail in currentClient.cocktails)
+    if (currentService == null) return;
+    foreach (var cocktail in currentService.clients)
     {
         if (cocktailRecettes.ContainsKey(cocktail))
         {
             var steps = cocktailRecettes[cocktail];
             foreach (var step in steps)
-                step.isDone = false; // Reset logique
+                step.isDone = false; 
 
             if (recetteTexts.ContainsKey(cocktail))
             {
                 var texts = recetteTexts[cocktail];
                 for (int i = 0; i < texts.Count; i++)
-                    texts[i].text = steps[i].description; // Reset visuel
+                    texts[i].text = steps[i].description;
             }
         }
 

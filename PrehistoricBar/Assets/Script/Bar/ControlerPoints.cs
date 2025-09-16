@@ -34,11 +34,11 @@ namespace Script.Bar
             }
             else
             {
-                CheckForWin(20);
+                return;
             }
         }
 
-        private void CheckForWin(int pointsToAdd)
+        public void CheckForWin(int pointsToAdd)
         {
             if (QueueUiManager.instance.HasFinnished() && !rewardGiven)
             {
