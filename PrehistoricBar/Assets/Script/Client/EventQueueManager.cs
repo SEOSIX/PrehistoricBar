@@ -1,11 +1,15 @@
+using System;
 using UnityEngine;
 using System.Collections.Generic;
 using Script.Bar;
 using Script.Objects;
+using Random = UnityEngine.Random;
 
 [System.Serializable]
 public class EventQueueManager : MonoBehaviour
 {
+    public static EventQueueManager instance;
+    
     [Header("Configuration")] 
     [SerializeField] private string[] possiblesNames = { "Ouga", "booga", "toonah" };
     [SerializeField] private List<GameObject> possiblesCocktails;
@@ -15,7 +19,12 @@ public class EventQueueManager : MonoBehaviour
     [SerializeField] private int minCocktails = 1;
     [SerializeField] private int maxCocktails = 2;
     
-    private Queue<ClientData> eventClient = new Queue<ClientData>();
+    private Queue<ServiceData> eventService = new Queue<ServiceData>();
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
@@ -28,8 +37,8 @@ public class EventQueueManager : MonoBehaviour
 
         for (int i = 0; i < nbClients; i++)
         {
-            ClientData client = new ClientData();
-            client.name = possiblesNames[Random.Range(0, possiblesNames.Length)];
+            ServiceData service = new ServiceData();
+            service.name = possiblesNames[Random.Range(0, possiblesNames.Length)];
 
             int nbCocktails = Random.Range(minCocktails, maxCocktails + 1);
             List<GameObject> availablePrefabs = new List<GameObject>(possiblesCocktails);
@@ -43,43 +52,43 @@ public class EventQueueManager : MonoBehaviour
 
                 availablePrefabs.RemoveAt(randomIndex);
 
-                ClientClass cocktail = new ClientClass();
-                cocktail.cocktailsImage.Add(prefab);
+                ClientClass client = new ClientClass();
+                client.cocktailsImage.Enqueue(prefab);
 
                 var data = prefab.GetComponent<Cocktails>();
                 if (data != null)
                 {
-                    cocktail.index = j;
+                    client.index = j;
                 }
                 else
-                { 
-                    cocktail.index = j;
+                {
+                    client.index = j;
                 }
 
-                client.cocktails.Add(cocktail);
+                service.clients.Enqueue(client);
             }
 
-            eventClient.Enqueue(client);
+            eventService.Enqueue(service);
         }
 
         Debug.Log($"File générée : {nbClients} clients.");
     }
     
-    public ClientData GetNextClient()
+    public ServiceData GetNextService()
     {
-        return eventClient.Count > 0 ? eventClient.Dequeue() : null;
+        return eventService.Count > 0 ? eventService.Dequeue() : null;
     }
 
     public bool HasClient()
     {
-        return eventClient.Count > 0;
+        return eventService.Count > 0;
     }
 
-    public List<ClientData> PeakNextClient(int count)
+    public List<ServiceData> PeakNextClient(int count)
     {
-        List<ClientData> previewClients = new List<ClientData>();
+        List<ServiceData> previewClients = new List<ServiceData>();
         int i = 0;
-        foreach (var clients in eventClient)
+        foreach (var clients in eventService)
         {
             if (i >= count)
             {
@@ -89,5 +98,26 @@ public class EventQueueManager : MonoBehaviour
             i++;
         }
         return previewClients;
+    }
+
+    public static ClientClass GetcurrentClient()
+    {
+        return instance.eventService.Peek().clients.Peek();
+    }
+
+    public static Cocktails GetCurrentCocktail()
+    {
+        if (GetcurrentClient() == null)
+            return null;
+        
+        return GetcurrentClient().cocktailsImage.Peek().GetComponent<Cocktails>();
+    }
+
+    public static RecetteStep GetCurrentStep()
+    {
+        if (GetCurrentCocktail() == null)
+            return null;
+
+        return GetCurrentCocktail().GetCurrentStep();
     }
 }

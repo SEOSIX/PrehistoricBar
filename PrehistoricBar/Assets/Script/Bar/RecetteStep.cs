@@ -7,6 +7,7 @@ namespace Script.Bar
     {
         public string description;
         public IngredientIndex ingredientIndex;
+        public float amount = 1f;
         public bool isDone;
     }
 }

@@ -169,7 +169,9 @@ MonoBehaviour:
   recette:
   - description: Alcool de fougere
     ingredientIndex: 1
+    amount: 60
     isDone: 0
   - description: Kitron vert
     ingredientIndex: 8
+    amount: 1
     isDone: 0

@@ -169,4 +169,5 @@ MonoBehaviour:
   recette:
   - description: Lait de mamouth
     ingredientIndex: 0
+    amount: 90
     isDone: 0

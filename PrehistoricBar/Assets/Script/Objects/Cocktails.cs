@@ -26,5 +26,18 @@ namespace Script.Objects
         public List<IngredientIndex> cocktailIndices = new List<IngredientIndex>();     
         public string cocktailName;
         public List<RecetteStep> recette = new List<RecetteStep>();
+
+        public RecetteStep GetCurrentStep()
+        {
+            for (int i = 0; i < recette.Count; i++)
+            {
+                if (!recette[i].isDone)
+                {
+                    return recette[i];
+                }
+            }
+            
+            return null;
+        }
     }
 }
