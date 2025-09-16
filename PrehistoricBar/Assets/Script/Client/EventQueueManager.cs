@@ -19,7 +19,7 @@ public class EventQueueManager : MonoBehaviour
     [SerializeField] private int minCocktails = 1;
     [SerializeField] private int maxCocktails = 2;
     
-    private Queue<ClientData> eventClient = new Queue<ClientData>();
+    private Queue<ServiceData> eventService = new Queue<ServiceData>();
 
     private void Awake()
     {
@@ -37,7 +37,7 @@ public class EventQueueManager : MonoBehaviour
 
         for (int i = 0; i < nbClients; i++)
         {
-            ClientData client = new ClientData();
+            ServiceData client = new ServiceData();
             client.name = possiblesNames[Random.Range(0, possiblesNames.Length)];
 
             int nbCocktails = Random.Range(minCocktails, maxCocktails + 1);
@@ -68,27 +68,27 @@ public class EventQueueManager : MonoBehaviour
                 client.cocktails.Add(cocktail);
             }
 
-            eventClient.Enqueue(client);
+            eventService.Enqueue(client);
         }
 
         Debug.Log($"File générée : {nbClients} clients.");
     }
     
-    public ClientData GetNextClient()
+    public ServiceData GetNextService()
     {
-        return eventClient.Count > 0 ? eventClient.Dequeue() : null;
+        return eventService.Count > 0 ? eventService.Dequeue() : null;
     }
 
     public bool HasClient()
     {
-        return eventClient.Count > 0;
+        return eventService.Count > 0;
     }
 
-    public List<ClientData> PeakNextClient(int count)
+    public List<ServiceData> PeakNextClient(int count)
     {
-        List<ClientData> previewClients = new List<ClientData>();
+        List<ServiceData> previewClients = new List<ServiceData>();
         int i = 0;
-        foreach (var clients in eventClient)
+        foreach (var clients in eventService)
         {
             if (i >= count)
             {
@@ -100,9 +100,9 @@ public class EventQueueManager : MonoBehaviour
         return previewClients;
     }
 
-    public static ClientData GetcurrentClient()
+    public static ServiceData GetcurrentClient()
     {
-        return instance.eventClient.Peek();
+        return instance.eventService.Peek();
     }
 
     public static Cocktails GetCurrentCocktail()

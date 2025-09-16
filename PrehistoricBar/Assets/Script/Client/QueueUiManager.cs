@@ -42,7 +42,7 @@ public class QueueUiManager : MonoBehaviour
     private float baseTireuseAlcoolSpeed;
     
 
-    private ClientData currentClient;
+    private ServiceData currentService;
     private List<GameObject> spawnedCocktails = new List<GameObject>();
     private List<ClientClass> remainingCocktails = new List<ClientClass>();
 
@@ -69,7 +69,7 @@ public class QueueUiManager : MonoBehaviour
     public void ShowNextClient()
     {
         Over.SetActive(false);
-        currentClient = queueManager.GetNextClient();
+        currentService = queueManager.GetNextService();
 
         foreach (Transform child in spawnContainer)
             Destroy(child.gameObject);
@@ -83,7 +83,7 @@ public class QueueUiManager : MonoBehaviour
         cocktailRecettes.Clear();
         recetteTexts.Clear();
 
-        if (currentClient == null)
+        if (currentService == null)
         {
             Debug.Log("Plus de clients !");
             StopAllCoroutines();
@@ -96,7 +96,7 @@ public class QueueUiManager : MonoBehaviour
             return;
         }
 
-        foreach (var cocktail in currentClient.cocktails)
+        foreach (var cocktail in currentService.cocktails)
         {
             remainingCocktails.Add(cocktail);
             cocktailIngredientsRemaining[cocktail] = new HashSet<IngredientIndex>();
@@ -194,7 +194,7 @@ public class QueueUiManager : MonoBehaviour
 
     private void ValidateIngredient(IngredientIndex ingredient)
     {
-        if (currentClient == null) return;
+        if (currentService == null) return;
 
         foreach (var cocktail in remainingCocktails.ToArray())
         {
