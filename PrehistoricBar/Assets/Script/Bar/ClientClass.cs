@@ -3,9 +3,8 @@ using UnityEngine;
 
 namespace Script.Bar
 {
-    public class CocktailClass
+    public class ClientClass
     {
-        public string name;
         public int index;
         public List<GameObject> cocktailsImage = new List<GameObject>(2);
     }

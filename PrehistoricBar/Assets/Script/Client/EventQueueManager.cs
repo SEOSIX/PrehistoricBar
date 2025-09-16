@@ -43,18 +43,16 @@ public class EventQueueManager : MonoBehaviour
 
                 availablePrefabs.RemoveAt(randomIndex);
 
-                CocktailClass cocktail = new CocktailClass();
+                ClientClass cocktail = new ClientClass();
                 cocktail.cocktailsImage.Add(prefab);
 
                 var data = prefab.GetComponent<Cocktails>();
                 if (data != null)
                 {
-                    cocktail.name = string.IsNullOrEmpty(data.cocktailName) ? $"Cocktail{j}" : data.cocktailName;
                     cocktail.index = j;
                 }
                 else
                 {
-                    cocktail.name = $"Cocktail{j}";
                     cocktail.index = j;
                 }
 
