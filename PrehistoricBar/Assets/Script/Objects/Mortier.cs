@@ -36,7 +36,7 @@ namespace Script.Objects
 
             if (grindPressCount >= requiredPresses)
             {
-                QueueUiManager.instance.ValidateStep(currentCocktail, currentStep);
+                QueueUiManager.instance.ValidateStep(currentCocktail, currentStep); 
                 currentStep = null;
                 currentCocktail = null;
                 grindPressCount = 0;
