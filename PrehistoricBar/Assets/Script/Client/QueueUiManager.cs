@@ -14,7 +14,7 @@ public class QueueUiManager : MonoBehaviour
 
     [SerializeField] private EventQueueManager queueManager;
     [SerializeField] private Transform spawnContainer;
-    [SerializeField] private GameObject Over;
+    public GameObject Over;
 
     [Header("Timer")]
     public Slider timerSlider;
@@ -135,7 +135,7 @@ public class QueueUiManager : MonoBehaviour
             timerCoroutine = null;
             blinkCoroutine = null;
             Over.SetActive(true);
-            timerSlider.value = 0;
+            timerSlider.value = clientTime;
             timerSlider.fillRect.GetComponent<Image>().color = Color.white;
             return;
         }
@@ -350,6 +350,7 @@ public class QueueUiManager : MonoBehaviour
         }
         while (action.inProgress);
         ValidateIngredient(ingredient);
+        ValidateIngredient(ingredient);
     }
 
     void OnNextClient(InputValue value)
@@ -368,6 +369,23 @@ public class QueueUiManager : MonoBehaviour
                 }
             }
         }
+        if (queueManager.HasMoreWaves())
+        {
+            ShowNextClient();
+        }
+        else
+        {
+            ResetGame();
+        }
+    }
+    
+    private void ResetGame()
+    {
+        ControlerPoints.instance.ResetReward();
+        // ControlerPoints.instance.ResetLife();
+        // ControlerPoints.instance.ResetPoints();
+
+        Debug.Log("Game Reset");
         ShowNextClient();
     }
     

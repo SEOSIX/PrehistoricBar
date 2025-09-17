@@ -19,7 +19,16 @@ public class EventQueueManager : MonoBehaviour
     [SerializeField] private int minCocktails = 1;
     [SerializeField] private int maxCocktails = 2;
     
+    [Header("Vagues de clients")]
+    [SerializeField] private int numberOfWaves = 3;
+    private int currentWave = 0;
+    
     private Queue<ServiceData> eventService = new Queue<ServiceData>();
+    
+    public bool HasMoreWaves()
+    {
+        return currentWave < numberOfWaves;
+    }
 
     private void Awake()
     {
@@ -28,11 +37,17 @@ public class EventQueueManager : MonoBehaviour
 
     void Start()
     {
-        GenerateRandomClient();
+        GenerateWave();
     }
 
-    void GenerateRandomClient()
+    public void GenerateWave()
     {
+        if (currentWave >= numberOfWaves)
+        {
+            Debug.Log("Toutes les vagues sont terminées !");
+            return;
+        }
+
         int nbClients = Random.Range(minClient, maxClient + 1);
 
         for (int i = 0; i < nbClients; i++)
@@ -45,37 +60,30 @@ public class EventQueueManager : MonoBehaviour
 
             for (int j = 0; j < nbCocktails; j++)
             {
-                if (availablePrefabs.Count == 0) break; 
+                if (availablePrefabs.Count == 0) break;
 
                 int randomIndex = Random.Range(0, availablePrefabs.Count);
                 GameObject prefab = availablePrefabs[randomIndex];
-
                 availablePrefabs.RemoveAt(randomIndex);
 
                 ClientClass client = new ClientClass();
                 client.cocktailsImage.Enqueue(prefab);
-
-                var data = prefab.GetComponent<Cocktails>();
-                if (data != null)
-                {
-                    client.index = j;
-                }
-                else
-                {
-                    client.index = j;
-                }
-
+                client.index = j;
                 service.clients.Enqueue(client);
             }
 
             eventService.Enqueue(service);
         }
 
-        Debug.Log($"File générée : {nbClients} clients.");
+        currentWave++;
+        Debug.Log($"Vague {currentWave}/{numberOfWaves} générée avec {nbClients} clients.");
     }
-    
     public ServiceData GetNextService()
     {
+        if (eventService.Count == 0 && HasMoreWaves())
+        {
+            GenerateWave();
+        }
         return eventService.Count > 0 ? eventService.Dequeue() : null;
     }
 
@@ -102,23 +110,31 @@ public class EventQueueManager : MonoBehaviour
 
     public static ClientClass GetcurrentClient()
     {
-        return instance.eventService.Peek().clients.Peek();
+        if (instance == null || instance.eventService.Count == 0)
+            return null;
+
+        var currentService = instance.eventService.Peek();
+        if (currentService.clients.Count == 0)
+            return null;
+
+        return currentService.clients.Peek();
     }
 
     public static Cocktails GetCurrentCocktail()
     {
-        if (GetcurrentClient() == null)
+        var client = GetcurrentClient();
+        if (client == null || client.cocktailsImage.Count == 0)
             return null;
-        
-        return GetcurrentClient().cocktailsImage.Peek().GetComponent<Cocktails>();
-    }
 
+        return client.cocktailsImage.Peek().GetComponent<Cocktails>();
+    }
     public static RecetteStep GetCurrentStep()
     {
-        if (GetCurrentCocktail() == null)
+        var cocktail = GetCurrentCocktail();
+        if (cocktail == null)
             return null;
 
-        return GetCurrentCocktail().GetCurrentStep();
+        return cocktail.GetCurrentStep();
     }
 
 public static List<ClientClass> GetNextClients(int count)
