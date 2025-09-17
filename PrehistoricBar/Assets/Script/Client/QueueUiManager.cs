@@ -55,6 +55,14 @@ public class QueueUiManager : MonoBehaviour
     [Header("UI Recette")]
     [SerializeField] private Transform recetteContainer;
     [SerializeField] private GameObject recetteTextPrefab;
+    
+    [Header("Preview des prochains clients")]
+    [SerializeField] private Transform nextClientSlot1;
+    [SerializeField] private Transform nextClientSlot2;
+
+    private GameObject nextClient1UI;
+    private GameObject nextClient2UI;
+    
 
     private Dictionary<ClientClass, List<TextMeshProUGUI>> recetteTexts = new();
     
@@ -68,6 +76,34 @@ public class QueueUiManager : MonoBehaviour
         baseTireuseLaitSpeed = tireuseLaitSpeed;
         baseTireuseBaveSpeed = tireuseBaveSpeed;
         baseTireuseAlcoolSpeed = tireuseAlcoolSpeed;
+    }
+    
+    private void UpdateNextClientsPreview()
+    {
+        if (nextClient1UI != null) Destroy(nextClient1UI);
+        if (nextClient2UI != null) Destroy(nextClient2UI);
+        var nextServices = EventQueueManager.instance.PeakNextClient(2);
+
+        if (nextServices.Count > 0)
+        {
+            var service1 = nextServices[0];
+            if (service1.clients.Count > 0)
+            {
+                var firstCocktail = service1.clients.Peek().cocktailsImage.Peek();
+                nextClient1UI = Instantiate(firstCocktail, nextClientSlot1);
+                nextClient1UI.transform.localScale = Vector3.one * 0.5f;
+            }
+        }
+        if (nextServices.Count > 1)
+        {
+            var service2 = nextServices[1];
+            if (service2.clients.Count > 0)
+            {
+                var firstCocktail = service2.clients.Peek().cocktailsImage.Peek();
+                nextClient2UI = Instantiate(firstCocktail, nextClientSlot2);
+                nextClient2UI.transform.localScale = Vector3.one * 0.5f;
+            }
+        }
     }
     
     public void ShowNextClient()
@@ -144,10 +180,10 @@ public class QueueUiManager : MonoBehaviour
                     }
                 }
             }
-
             NextStep(cocktail);
         }
         StartTimer(clientTime);
+        UpdateNextClientsPreview();
     }
 
     private void StartTimer(float duration)
