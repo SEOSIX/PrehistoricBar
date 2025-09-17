@@ -472,6 +472,8 @@ public class QueueUiManager : MonoBehaviour
         laitLocked = false;
         alcoolLocked = false;
         baveLocked = false;
+        
+        ControlerPoints.ResetScore();
     }
 
     public void NextStep(ClientClass cocktail)
