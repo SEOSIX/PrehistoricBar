@@ -105,12 +105,18 @@ namespace Script.Bar
         public static void GetScore(float time)
         {
             scoreMultNv = EventQueueManager.GetCurrentCocktail().recette.Count;
+            Debug.Log($"Score | scoreMultNv : {scoreMultNv}");
             scoreMultPrepTime = 0; //je connais pas le temps
+            Debug.Log($"Score | scoreMultPrepTime : {scoreMultPrepTime}");
+            Debug.Log($"Score | scoreMultDosage : {scoreMultDosage}");
             bool conditioncombo = false;
             if (conditioncombo) scoreMultCombo += 1;
             else scoreMultCombo = 1;
+            Debug.Log($"Score | scoreMultCombo : {scoreMultCombo}");
             float scoretotal = 0;
-            scoretotal += scoreMultNv * (1 + scoreMultPrepTime + scoreMultDosage) * 1 /* Service */ * scoreMultCombo; 
+            scoretotal += scoreMultNv * (1 + scoreMultPrepTime + scoreMultDosage) * 1 /* Service */ * scoreMultCombo;
+            Debug.Log($"Score | scoretotal : {scoretotal}");
+            
             instance.CheckForWin(Mathf.RoundToInt(scoretotal));
             
             instance.StartPointChange((int)scoretotal);
