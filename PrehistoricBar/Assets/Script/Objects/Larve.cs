@@ -21,6 +21,7 @@ namespace Script.Objects
         {
             if (_value.isPressed)
             {
+                SounfManager.singleton.PlaySound(9);
                 larve.value += fillStep;
                 larve.value = Mathf.Clamp(larve.value, larve.minValue, larve.maxValue);
             }
@@ -33,6 +34,7 @@ namespace Script.Objects
             if (larve.value >= larve.maxValue)
             {
                 larve.value = larve.minValue;
+                SounfManager.singleton.PlaySound(10);
                 cup.Fill(IngredientIndex.JusLarve, transferAmount);
                 QueueUiManager.instance.ValidateIngredient(IngredientIndex.JusLarve);
             }

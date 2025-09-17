@@ -3,48 +3,23 @@ using UnityEngine;
 
 public class SounfManager : MonoBehaviour
 {
-    public static SounfManager instance { get; private set; }
+    public static SounfManager singleton { get; private set; }
     public AudioClip[] sounds;
     
     public AudioSource soundToPlay;
 
     private void Awake()
     {
-        instance = this;
+        singleton = this;
     }
 
-    void PlaySoundButtonMenu()
+    public void PlaySound(int index)
     {
-        
-    }
-
-    void SoundClient()
-    {
-        
-    }
-
-    void soundclientCome()
-    {
-        
-    }
-
-    void clochette()
-    {
-        
-    }
-
-    void bave()
-    {
-        
-    }
-
-    void liquide()
-    {
-        
-    }
-
-    void Mortier()
-    {
-        
+        if (index < 0 || index >= sounds.Length)
+        {
+            return;
+        }
+        soundToPlay.clip = sounds[index];
+        soundToPlay.Play();
     }
 }
