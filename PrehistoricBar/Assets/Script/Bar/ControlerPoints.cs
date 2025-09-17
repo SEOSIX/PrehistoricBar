@@ -8,6 +8,12 @@ namespace Script.Bar
     public class ControlerPoints : MonoBehaviour
     {
         public static ControlerPoints instance { get; private set; }
+        
+        private static float scoreMultNv;
+        private static float scoreMultPrepTime;
+        private static float scoreMultDosage;
+        private static float scoreMultCombo;
+        private static float scoreMultService;
 
         [SerializeField] private TextMeshProUGUI pointsText;
         public int points = 0;
@@ -34,11 +40,11 @@ namespace Script.Bar
             }
             else
             {
-                CheckForWin(20);
+                return;
             }
         }
 
-        private void CheckForWin(int pointsToAdd)
+        public void CheckForWin(int pointsToAdd)
         {
             if (QueueUiManager.instance.HasFinnished() && !rewardGiven)
             {
@@ -82,6 +88,31 @@ namespace Script.Bar
             {
                 Debug.Log("Game Over");
             }
+        }
+
+        private void ResetScore()
+        {
+            scoreMultNv = 1;
+            scoreMultPrepTime = 0;
+            scoreMultDosage = 0;
+        }
+
+        public static void AddtoDosageMult(float scoremult)
+        {
+            scoreMultDosage += scoremult;
+        }
+
+        public void GetScore(float time)
+        {
+            scoreMultNv = EventQueueManager.GetCurrentCocktail().recette.Count;
+            scoreMultPrepTime = 0; //je connais pas le temps
+            bool conditioncombo = false;
+            if (conditioncombo) scoreMultCombo += 1;
+            else scoreMultCombo = 1;
+            float scoretotal = 0;
+            scoretotal += scoreMultNv * (scoreMultPrepTime + scoreMultDosage) * 1 /* Service */ * scoreMultCombo; 
+            CheckForWin(Mathf.RoundToInt(scoretotal));
+            
         }
     }
 }

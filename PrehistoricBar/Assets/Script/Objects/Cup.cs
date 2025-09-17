@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +8,8 @@ namespace Script.Objects
 {
     public class Cup : MonoBehaviour
     {
+        public static Cup instance { get; private set; }
+        
         [Header("Score Mult")]
         [SerializeField] private float scoreMult1;
         [SerializeField] private float scoreMult2;
@@ -13,7 +17,7 @@ namespace Script.Objects
         [SerializeField] private float scoreMult4;
 
         [Header("UI")]
-        [SerializeField] private Slider cupSlider; 
+        public Slider cupSlider; 
         [SerializeField] private Image fillImage;
 
         [Header("Colors")]
@@ -24,6 +28,13 @@ namespace Script.Objects
 
         [HideInInspector] public float targetDosage;
         private bool isLocked = false;
+
+        [Header("Sliding Points")]
+        [SerializeField] private RectTransform sendPoint;
+        [SerializeField] private RectTransform resetPoint;
+        [SerializeField] private float moveSpeed = 800f;
+        
+        private Coroutine currentSlideCoroutine;
 
         public Dictionary<IngredientIndex, float> content = new Dictionary<IngredientIndex, float>()
         {
@@ -43,6 +54,14 @@ namespace Script.Objects
                 return total;
             }
         }
+
+        private void Awake()
+        {
+            instance = this;
+        }
+
+        #region Filling
+
         public void Fill(IngredientIndex ingredientType, float amount)
         {
             if (isLocked) return;
@@ -51,19 +70,54 @@ namespace Script.Objects
 
             UpdateUI();
         }
+
         public void EmptyCup()
         {
-            foreach (var key in content.Keys)
+            foreach (var key in content.Keys.ToList())
                 content[key] = 0f;
 
             isLocked = false;
             UpdateUI();
         }
-        
-        public void SetTargetDosage(float amount)
+
+        public void ResetCup()
         {
-            targetDosage = amount + TotalAmount;
+            foreach (var key in content.Keys.ToList())
+                content[key] = 0f;
+
+            isLocked = false;
+            cupSlider.value = 0f;
+            fillImage.color = Color.clear;
+            if (resetPoint != null)
+                GetComponent<RectTransform>().anchoredPosition = resetPoint.anchoredPosition;
         }
+
+        public void SetTargetDosage(IngredientIndex ingredient)
+        {
+            if (EventQueueManager.GetCurrentStep() != null)
+            {
+                if (EventQueueManager.GetCurrentStep().ingredientIndex == ingredient)
+                {
+                    float amount = EventQueueManager.GetCurrentStep().amount;
+                    targetDosage = amount + TotalAmount;
+                    Debug.Log($"Dosage recommendé{targetDosage}");
+                    
+                    return;
+                }
+                else
+                {
+                    Debug.LogWarning("Tireuse : Mauvais liquide sélectionné");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Tireuse : Aucune étape de recette");
+            }
+            
+            Debug.Log("Tireuse : Dosage invalide");
+            targetDosage = 0f;
+        }
+
         public float EvaluateScoreMult()
         {
             float targetDif = Mathf.Abs(TotalAmount - targetDosage);
@@ -75,6 +129,11 @@ namespace Script.Objects
 
             return 0f;
         }
+
+        #endregion
+
+        #region UI Update
+
         private void UpdateUI()
         {
             cupSlider.value = TotalAmount;
@@ -83,6 +142,7 @@ namespace Script.Objects
             if (cupSlider.value >= cupSlider.maxValue)
                 isLocked = true;
         }
+
         private Color MixColors()
         {
             float total = TotalAmount;
@@ -97,5 +157,54 @@ namespace Script.Objects
 
             return result;
         }
+
+        #endregion
+
+        #region Sliding (Cup Animation)
+
+        public void SlideToSendPoint(Action onComplete = null)
+        {
+            if (sendPoint == null) return;
+            SlideTo(sendPoint, onComplete);
+        }
+
+        public void SlideToResetPoint(Action onComplete = null)
+        {
+            if (resetPoint == null) return;
+            SlideTo(resetPoint, onComplete);
+        }
+
+        private void SlideTo(RectTransform target, Action onComplete = null)
+        {
+            if (currentSlideCoroutine != null)
+                StopCoroutine(currentSlideCoroutine);
+
+            currentSlideCoroutine = StartCoroutine(SlideRoutine(target, onComplete));
+        }
+
+        private System.Collections.IEnumerator SlideRoutine(RectTransform target, Action onComplete)
+        {
+            RectTransform cupRect = GetComponent<RectTransform>();
+            Vector2 startPos = cupRect.anchoredPosition;
+            Vector2 endPos = target.anchoredPosition;
+
+            float distance = Vector2.Distance(startPos, endPos);
+            float duration = distance / moveSpeed;
+            float elapsed = 0f;
+
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / duration);
+                cupRect.anchoredPosition = Vector2.Lerp(startPos, endPos, t);
+                yield return null;
+            }
+
+            cupRect.anchoredPosition = endPos;
+            onComplete?.Invoke();
+            currentSlideCoroutine = null;
+        }
+
+        #endregion
     }
 }

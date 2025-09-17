@@ -6,6 +6,6 @@ namespace Script.Bar
     public class ClientClass
     {
         public int index;
-        public List<GameObject> cocktailsImage = new List<GameObject>(2);
+        public Queue<GameObject> cocktailsImage = new Queue<GameObject>(2);
     }
 }
