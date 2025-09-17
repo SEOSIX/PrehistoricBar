@@ -77,7 +77,12 @@ public class QueueUiManager : MonoBehaviour
         baseTireuseBaveSpeed = tireuseBaveSpeed;
         baseTireuseAlcoolSpeed = tireuseAlcoolSpeed;
     }
-    
+
+    private void Start()
+    {
+        ShowNextClient();
+    }
+
     private void UpdateNextClientsPreview()
     {
         if (nextClient1UI != null) Destroy(nextClient1UI);
@@ -350,7 +355,6 @@ public class QueueUiManager : MonoBehaviour
         }
         while (action.inProgress);
         
-        // Mult du score
         ControlerPoints.AddtoDosageMult(cup.EvaluateScoreMult());
         
         ValidateIngredient(ingredient);
@@ -358,7 +362,7 @@ public class QueueUiManager : MonoBehaviour
 
     void OnNextClient(InputValue value)
     {
-        if (value.isPressed) ShowNextClient();
+        if (value.isPressed) SendCup();
     }
 
     public bool HasFinnished()
@@ -422,7 +426,45 @@ public class QueueUiManager : MonoBehaviour
 
     public void SendCup()
     {
-        Cup.instance.SlideToSendPoint(() => { Cup.instance.ResetCup(); });
+        if (currentClient == null || remainingCocktails.Count == 0)
+            return;
+
+        var cocktail = remainingCocktails[0];
+        bool isValid = true;
+
+        if (cocktailRecettes.ContainsKey(cocktail))
+        {
+            var steps = cocktailRecettes[cocktail];
+            foreach (var step in steps)
+            {
+                if (!step.isDone)
+                {
+                    isValid = false;
+                    break;
+                }
+            }
+        }
+
+        if (cup.TotalAmount <= 0)
+        {
+            Debug.LogWarning("La cup est vide !");
+            return;
+        }
+
+        if (!isValid)
+        {
+            Debug.Log(" Ce n'est pas le cocktail demandé !");
+            Cup.instance.ResetCup();
+            return;
+        }
+
+        // Cocktail valide : on le marque comme servi
+        Debug.Log(" Cocktail correct, bien envoyé !");
+        ValidateCocktail(cocktail);
+
+        // Reset cup et passer au client suivant
+        Cup.instance.ResetCup();
+        ShowNextClient();
     }
 
     public void RestartCurrentCocktail()
