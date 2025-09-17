@@ -77,12 +77,7 @@ public class QueueUiManager : MonoBehaviour
         baseTireuseBaveSpeed = tireuseBaveSpeed;
         baseTireuseAlcoolSpeed = tireuseAlcoolSpeed;
     }
-
-    private void Start()
-    {
-        ShowNextClient();
-    }
-
+    
     private void UpdateNextClientsPreview()
     {
         if (nextClient1UI != null) Destroy(nextClient1UI);
@@ -113,7 +108,7 @@ public class QueueUiManager : MonoBehaviour
     
     public void ShowNextClient()
     {
-        ControlerPoints.GetScore(currentTime);
+        ControlerPoints.instance.CheckForWin(20);
         Over.SetActive(false);
         currentClient = queueManager.GetNextService();
 
@@ -354,17 +349,53 @@ public class QueueUiManager : MonoBehaviour
             yield return null;
         }
         while (action.inProgress);
-        
-        ControlerPoints.AddtoDosageMult(cup.EvaluateScoreMult());
-        
         ValidateIngredient(ingredient);
     }
 
     void OnNextClient(InputValue value)
     {
-        if (value.isPressed) SendCup();
-    }
+        if (!value.isPressed) return;
 
+        if (currentClient != null)
+        {
+            foreach (var cocktail in remainingCocktails)
+            {
+                if (HasIncorrectIngredients(cocktail))
+                {
+                    Debug.LogWarning("Vous avez mis des ingrédients incorrects pour ce cocktail !");
+                    ShowNextClient();
+                    return;
+                }
+            }
+        }
+        ShowNextClient();
+    }
+    
+    private bool HasIncorrectIngredients(ClientClass cocktail)
+    {
+        if (!cocktailIngredientsRemaining.ContainsKey(cocktail)) return false;
+
+        var allIngredients = new HashSet<IngredientIndex>();
+        if (cocktailRecettes.ContainsKey(cocktail))
+        {
+            foreach (var step in cocktailRecettes[cocktail])
+            {
+                allIngredients.Add(step.ingredientIndex);
+            }
+        }
+        
+        foreach (var ingredient in Enum.GetValues(typeof(IngredientIndex)))
+        {
+            var ing = (IngredientIndex)ingredient;
+            if (!allIngredients.Contains(ing) && !cocktailIngredientsRemaining[cocktail].Contains(ing))
+            {
+                return true; 
+            }
+        }
+
+        return false;
+    }
+    
     public bool HasFinnished()
     {
         return remainingCocktails.Count == 0;
@@ -426,45 +457,7 @@ public class QueueUiManager : MonoBehaviour
 
     public void SendCup()
     {
-        if (currentClient == null || remainingCocktails.Count == 0)
-            return;
-
-        var cocktail = remainingCocktails[0];
-        bool isValid = true;
-
-        if (cocktailRecettes.ContainsKey(cocktail))
-        {
-            var steps = cocktailRecettes[cocktail];
-            foreach (var step in steps)
-            {
-                if (!step.isDone)
-                {
-                    isValid = false;
-                    break;
-                }
-            }
-        }
-
-        if (cup.TotalAmount <= 0)
-        {
-            Debug.LogWarning("La cup est vide !");
-            return;
-        }
-
-        if (!isValid)
-        {
-            Debug.Log(" Ce n'est pas le cocktail demandé !");
-            Cup.instance.ResetCup();
-            return;
-        }
-
-        // Cocktail valide : on le marque comme servi
-        Debug.Log(" Cocktail correct, bien envoyé !");
-        ValidateCocktail(cocktail);
-
-        // Reset cup et passer au client suivant
-        Cup.instance.ResetCup();
-        ShowNextClient();
+        Cup.instance.SlideToSendPoint(() => { Cup.instance.ResetCup(); });
     }
 
     public void RestartCurrentCocktail()
@@ -533,8 +526,6 @@ public class QueueUiManager : MonoBehaviour
         laitLocked = false;
         alcoolLocked = false;
         baveLocked = false;
-        
-        ControlerPoints.ResetScore();
     }
 
     public void NextStep(ClientClass cocktail)

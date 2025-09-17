@@ -13,13 +13,32 @@ public class SounfManager : MonoBehaviour
         singleton = this;
     }
 
-    public void PlaySound(int index)
+    public void PlaySound(int index, bool loop = false)
+    {
+        if (index < 0 || index >= sounds.Length)
+        {
+            return;
+        }
+
+        if (loop)
+        {
+            soundToPlay.loop = true;
+        }
+        else
+        {
+            soundToPlay.loop = false;
+        }
+        soundToPlay.clip = sounds[index];
+        soundToPlay.Play();
+    }
+    
+    public void StopSound(int index)
     {
         if (index < 0 || index >= sounds.Length)
         {
             return;
         }
         soundToPlay.clip = sounds[index];
-        soundToPlay.Play();
+        soundToPlay.Stop();
     }
 }
