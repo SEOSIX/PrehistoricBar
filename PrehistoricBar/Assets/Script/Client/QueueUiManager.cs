@@ -35,6 +35,8 @@ public class QueueUiManager : MonoBehaviour
     [SerializeField] private Transform bavePos;
     [SerializeField] private Transform alcoolPos;
     [SerializeField] private Transform JusLarvePos;
+    [SerializeField] private Transform mortierPos;
+    [SerializeField] private Transform PoubellePos;
     
     [SerializeField] private float moveSpeed = 5f;
     
@@ -129,7 +131,8 @@ public class QueueUiManager : MonoBehaviour
                             {
                                 ingredientIndex = step.ingredientIndex,
                                 description = step.description,
-                                isDone = false
+                                isDone = false,
+                                amount = step.amount
                             };
                             cocktailRecettes[cocktail].Add(newStep);
 

@@ -2519,6 +2519,8 @@ MonoBehaviour:
   bavePos: {fileID: 375029486}
   alcoolPos: {fileID: 1874701842}
   JusLarvePos: {fileID: 0}
+  mortierPos: {fileID: 0}
+  PoubellePos: {fileID: 0}
   moveSpeed: 1614.2
   recetteContainer: {fileID: 583896870}
   recetteTextPrefab: {fileID: 2744933180135251576, guid: 8ee13c3aca6009746bd7bcb291c83365, type: 3}
@@ -3579,11 +3581,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1092041411155658727, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 397.9418
+      value: 287.3509
       objectReference: {fileID: 0}
     - target: {fileID: 1092041411155658727, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 280.3275
+      value: 222.287
       objectReference: {fileID: 0}
     - target: {fileID: 1092041411155658727, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3615,11 +3617,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1092041411155658727, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 39.884583
+      value: -152.16957
       objectReference: {fileID: 0}
     - target: {fileID: 1092041411155658727, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -153.23273
+      value: -163.51636
       objectReference: {fileID: 0}
     - target: {fileID: 1092041411155658727, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3640,6 +3642,22 @@ PrefabInstance:
     - target: {fileID: 1426820946152831453, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426820946152831453, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -53.1332
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426820946152831453, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -50.9303
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426820946152831453, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.07279968
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426820946152831453, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.8643951
       objectReference: {fileID: 0}
     - target: {fileID: 2268303501199292792, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: m_Color.a
@@ -3679,7 +3697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4579673981387688773, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: m_FillAmount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5339929489530209134, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: cupSlider
