@@ -110,9 +110,10 @@ namespace Script.Bar
             if (conditioncombo) scoreMultCombo += 1;
             else scoreMultCombo = 1;
             float scoretotal = 0;
-            scoretotal += scoreMultNv * (scoreMultPrepTime + scoreMultDosage) * 1 /* Service */ * scoreMultCombo; 
+            scoretotal += scoreMultNv * (1 + scoreMultPrepTime + scoreMultDosage) * 1 /* Service */ * scoreMultCombo; 
             instance.CheckForWin(Mathf.RoundToInt(scoretotal));
             
+            instance.StartPointChange((int)scoretotal);
         }
     }
 }
