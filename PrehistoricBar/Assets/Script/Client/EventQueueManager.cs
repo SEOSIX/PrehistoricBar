@@ -120,4 +120,35 @@ public class EventQueueManager : MonoBehaviour
 
         return GetCurrentCocktail().GetCurrentStep();
     }
+
+public static List<ClientClass> GetNextClients(int count)
+{
+    List<ClientClass> nextClients = new List<ClientClass>();
+
+    if (instance.eventService.Count == 0)
+        return nextClients;
+    ServiceData currentService = instance.eventService.Peek();
+
+    if (currentService.clients.Count == 0)
+        return nextClients;
+
+    int i = 0;
+    foreach (var client in currentService.clients)
+    {
+        if (i == 0)
+        {
+            i++;
+            continue;
+        }
+
+        nextClients.Add(client);
+
+        if (nextClients.Count >= count)
+            break;
+
+        i++;
+    }
+
+    return nextClients;
+}
 }

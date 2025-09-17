@@ -10,7 +10,7 @@ namespace Script.Objects
         [SerializeField] private TextMeshProUGUI currentIngredientText;
         private RecetteStep currentStep;
         private ClientClass currentCocktail;
-        
+
         private int grindPressCount = 0;
         private int requiredPresses = 0;
 
@@ -32,16 +32,20 @@ namespace Script.Objects
 
             grindPressCount++;
             if (currentIngredientText != null)
-                currentIngredientText.text = $"Broyer: {currentStep.ingredientIndex} ({grindPressCount}/{requiredPresses})";
+                currentIngredientText.text =
+                    $"Broyer: {currentStep.ingredientIndex} ({grindPressCount}/{requiredPresses})";
 
             if (grindPressCount >= requiredPresses)
             {
                 QueueUiManager.instance.ValidateStep(currentCocktail, currentStep);
+
+                var cocktailRef = currentCocktail;
                 currentStep = null;
                 currentCocktail = null;
                 grindPressCount = 0;
                 requiredPresses = 0;
                 if (currentIngredientText != null) currentIngredientText.text = "";
+                QueueUiManager.instance.NextStep(cocktailRef);
             }
         }
     }

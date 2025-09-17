@@ -331,11 +331,16 @@ MonoBehaviour:
   scoreMult2: 0
   scoreMult3: -0.2
   scoreMult4: -0.5
-  sliderLait: {fileID: 4414146324155522531}
-  sliderBave: {fileID: 5732361905756550320}
-  sliderAlcool: {fileID: 4772829117173404177}
-  sliderJus: {fileID: 6960242518611925180}
+  cupSlider: {fileID: 0}
+  fillImage: {fileID: 0}
+  laitColor: {r: 0, g: 0, b: 0, a: 0}
+  baveColor: {r: 0, g: 0, b: 0, a: 0}
+  alcoolColor: {r: 0, g: 0, b: 0, a: 0}
+  jusColor: {r: 0, g: 0, b: 0, a: 0}
   targetDosage: 0
+  sendPoint: {fileID: 0}
+  resetPoint: {fileID: 0}
+  moveSpeed: 800
 --- !u!1 &3435962399576624052
 GameObject:
   m_ObjectHideFlags: 0

@@ -35,6 +35,8 @@ public class QueueUiManager : MonoBehaviour
     [SerializeField] private Transform bavePos;
     [SerializeField] private Transform alcoolPos;
     [SerializeField] private Transform JusLarvePos;
+    [SerializeField] private Transform mortierPos;
+    [SerializeField] private Transform PoubellePos;
     
     [SerializeField] private float moveSpeed = 5f;
     
@@ -53,6 +55,14 @@ public class QueueUiManager : MonoBehaviour
     [Header("UI Recette")]
     [SerializeField] private Transform recetteContainer;
     [SerializeField] private GameObject recetteTextPrefab;
+    
+    [Header("Preview des prochains clients")]
+    [SerializeField] private Transform nextClientSlot1;
+    [SerializeField] private Transform nextClientSlot2;
+
+    private GameObject nextClient1UI;
+    private GameObject nextClient2UI;
+    
 
     private Dictionary<ClientClass, List<TextMeshProUGUI>> recetteTexts = new();
     
@@ -66,6 +76,34 @@ public class QueueUiManager : MonoBehaviour
         baseTireuseLaitSpeed = tireuseLaitSpeed;
         baseTireuseBaveSpeed = tireuseBaveSpeed;
         baseTireuseAlcoolSpeed = tireuseAlcoolSpeed;
+    }
+    
+    private void UpdateNextClientsPreview()
+    {
+        if (nextClient1UI != null) Destroy(nextClient1UI);
+        if (nextClient2UI != null) Destroy(nextClient2UI);
+        var nextServices = EventQueueManager.instance.PeakNextClient(2);
+
+        if (nextServices.Count > 0)
+        {
+            var service1 = nextServices[0];
+            if (service1.clients.Count > 0)
+            {
+                var firstCocktail = service1.clients.Peek().cocktailsImage.Peek();
+                nextClient1UI = Instantiate(firstCocktail, nextClientSlot1);
+                nextClient1UI.transform.localScale = Vector3.one * 0.5f;
+            }
+        }
+        if (nextServices.Count > 1)
+        {
+            var service2 = nextServices[1];
+            if (service2.clients.Count > 0)
+            {
+                var firstCocktail = service2.clients.Peek().cocktailsImage.Peek();
+                nextClient2UI = Instantiate(firstCocktail, nextClientSlot2);
+                nextClient2UI.transform.localScale = Vector3.one * 0.5f;
+            }
+        }
     }
     
     public void ShowNextClient()
@@ -129,7 +167,8 @@ public class QueueUiManager : MonoBehaviour
                             {
                                 ingredientIndex = step.ingredientIndex,
                                 description = step.description,
-                                isDone = false
+                                isDone = false,
+                                amount = step.amount
                             };
                             cocktailRecettes[cocktail].Add(newStep);
 
@@ -141,10 +180,10 @@ public class QueueUiManager : MonoBehaviour
                     }
                 }
             }
-
             NextStep(cocktail);
         }
         StartTimer(clientTime);
+        UpdateNextClientsPreview();
     }
 
     private void StartTimer(float duration)
@@ -261,7 +300,6 @@ public class QueueUiManager : MonoBehaviour
     {
         if (laitLocked) return;  
         laitPressed = value.isPressed;
-        UpdateSpeeds();
         TryValidateIngredient(IngredientIndex.Laitdemammouth, value);
         if (value.isPressed) laitLocked = true; 
     }
@@ -270,7 +308,6 @@ public class QueueUiManager : MonoBehaviour
     {
         if (alcoolLocked) return;
         alcoolPressed = value.isPressed;
-        UpdateSpeeds();
         TryValidateIngredient(IngredientIndex.Alcooldefougere, value);
         if (value.isPressed) alcoolLocked = true;
     }
@@ -279,7 +316,6 @@ public class QueueUiManager : MonoBehaviour
     {
         if (baveLocked) return;
         bavePressed = value.isPressed;
-        UpdateSpeeds();
         TryValidateIngredient(IngredientIndex.Bavedeboeuf, value);
         if (value.isPressed) baveLocked = true;
     }
@@ -335,32 +371,11 @@ public class QueueUiManager : MonoBehaviour
         ValidateIngredient(ingredient);
         ControlerPoints.instance.ResetReward();
     }
-
-    private void SetAllSpeeds(float speed)
-    {
-        tireuseLaitSpeed = speed;
-        tireuseBaveSpeed = speed;
-        tireuseAlcoolSpeed = speed;
-    }
-
-    private void ResetSpeeds()
-    {
-        tireuseLaitSpeed = baseTireuseLaitSpeed;
-        tireuseBaveSpeed = baseTireuseBaveSpeed;
-        tireuseAlcoolSpeed = baseTireuseAlcoolSpeed;
-    }
+    
     
     private bool laitPressed;
     private bool alcoolPressed;
     private bool bavePressed;
-    
-    private void UpdateSpeeds()
-    {
-        if (laitPressed) SetAllSpeeds(baseTireuseLaitSpeed);
-        else if (alcoolPressed) SetAllSpeeds(baseTireuseAlcoolSpeed);
-        else if (bavePressed) SetAllSpeeds(baseTireuseBaveSpeed);
-        else ResetSpeeds(); 
-    }
 
     [SerializeField] private Vector2 offset = new Vector2(0, -350f);
     private Coroutine currentMoveCoroutine;

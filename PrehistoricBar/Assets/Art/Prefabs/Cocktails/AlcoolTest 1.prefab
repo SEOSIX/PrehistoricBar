@@ -169,10 +169,13 @@ MonoBehaviour:
   recette:
   - description: Alcool de fougere
     ingredientIndex: 1
+    amount: 1
     isDone: 0
-  - description: Bave de beouf
-    ingredientIndex: 2
+  - description: fROZ
+    ingredientIndex: 3
+    amount: 5
     isDone: 0
-  - description: Jus Larve
-    ingredientIndex: 10
+  - description: cACA
+    ingredientIndex: 7
+    amount: 6
     isDone: 0

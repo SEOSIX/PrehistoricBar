@@ -19,6 +19,8 @@ namespace Script.Objects
         [Header("UI")]
         public Slider cupSlider; 
         [SerializeField] private Image fillImage;
+        [HideInInspector]
+        public bool IsAchieved = false;
 
         [Header("Colors")]
         [SerializeField] private Color laitColor;
