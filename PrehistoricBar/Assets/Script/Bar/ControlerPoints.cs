@@ -90,11 +90,12 @@ namespace Script.Bar
             }
         }
 
-        public static void ResetScore()
+        public static void ResetScore(bool resetcombo = false)
         {
             scoreMultNv = 1;
             scoreMultPrepTime = 0;
             scoreMultDosage = 0;
+            if (resetcombo) scoreMultCombo = 1;
         }
 
         public static void AddtoDosageMult(float scoremult)
@@ -102,16 +103,17 @@ namespace Script.Bar
             scoreMultDosage += scoremult;
         }
 
-        public static void GetScore(float time)
+        public static void GetScore(float timeleft, float initialtime)
         {
             scoreMultNv = EventQueueManager.GetCurrentCocktail().recette.Count;
             Debug.Log($"Score | scoreMultNv : {scoreMultNv}");
-            scoreMultPrepTime = 0; //je connais pas le temps
+            scoreMultPrepTime = 0;
+            if (timeleft > initialtime / 3) scoreMultPrepTime = 0.2f;
+            if (timeleft > initialtime / 2) scoreMultPrepTime = 0.5f;
+            if (timeleft > initialtime / 1.5f) scoreMultPrepTime = 1;
             Debug.Log($"Score | scoreMultPrepTime : {scoreMultPrepTime}");
             Debug.Log($"Score | scoreMultDosage : {scoreMultDosage}");
-            bool conditioncombo = false;
-            if (conditioncombo) scoreMultCombo += 1;
-            else scoreMultCombo = 1;
+            scoreMultCombo += 1;
             Debug.Log($"Score | scoreMultCombo : {scoreMultCombo}");
             float scoretotal = 0;
             scoretotal += scoreMultNv * (1 + scoreMultPrepTime + scoreMultDosage) * 1 /* Service */ * scoreMultCombo;

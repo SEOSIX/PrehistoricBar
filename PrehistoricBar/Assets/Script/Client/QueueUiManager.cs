@@ -70,7 +70,7 @@ public class QueueUiManager : MonoBehaviour
     
     public void ShowNextClient()
     {
-        ControlerPoints.GetScore(currentTime);
+        ControlerPoints.GetScore(currentTime,clientTime);
         Over.SetActive(false);
         currentClient = queueManager.GetNextService();
 
