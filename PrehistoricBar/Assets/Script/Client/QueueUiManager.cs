@@ -264,7 +264,6 @@ public class QueueUiManager : MonoBehaviour
     {
         if (laitLocked) return;  
         laitPressed = value.isPressed;
-        UpdateSpeeds();
         TryValidateIngredient(IngredientIndex.Laitdemammouth, value);
         if (value.isPressed) laitLocked = true; 
     }
@@ -273,7 +272,6 @@ public class QueueUiManager : MonoBehaviour
     {
         if (alcoolLocked) return;
         alcoolPressed = value.isPressed;
-        UpdateSpeeds();
         TryValidateIngredient(IngredientIndex.Alcooldefougere, value);
         if (value.isPressed) alcoolLocked = true;
     }
@@ -282,7 +280,6 @@ public class QueueUiManager : MonoBehaviour
     {
         if (baveLocked) return;
         bavePressed = value.isPressed;
-        UpdateSpeeds();
         TryValidateIngredient(IngredientIndex.Bavedeboeuf, value);
         if (value.isPressed) baveLocked = true;
     }
@@ -334,32 +331,11 @@ public class QueueUiManager : MonoBehaviour
         ValidateIngredient(ingredient);
         ControlerPoints.instance.ResetReward();
     }
-
-    private void SetAllSpeeds(float speed)
-    {
-        tireuseLaitSpeed = speed;
-        tireuseBaveSpeed = speed;
-        tireuseAlcoolSpeed = speed;
-    }
-
-    private void ResetSpeeds()
-    {
-        tireuseLaitSpeed = baseTireuseLaitSpeed;
-        tireuseBaveSpeed = baseTireuseBaveSpeed;
-        tireuseAlcoolSpeed = baseTireuseAlcoolSpeed;
-    }
+    
     
     private bool laitPressed;
     private bool alcoolPressed;
     private bool bavePressed;
-    
-    private void UpdateSpeeds()
-    {
-        if (laitPressed) SetAllSpeeds(baseTireuseLaitSpeed);
-        else if (alcoolPressed) SetAllSpeeds(baseTireuseAlcoolSpeed);
-        else if (bavePressed) SetAllSpeeds(baseTireuseBaveSpeed);
-        else ResetSpeeds(); 
-    }
 
     [SerializeField] private Vector2 offset = new Vector2(0, -350f);
     private Coroutine currentMoveCoroutine;
