@@ -70,7 +70,6 @@ public class QueueUiManager : MonoBehaviour
     
     public void ShowNextClient()
     {
-        //ControlerPoints.instance.CheckForWin(20);
         ControlerPoints.GetScore(currentTime);
         Over.SetActive(false);
         currentClient = queueManager.GetNextService();
@@ -314,6 +313,10 @@ public class QueueUiManager : MonoBehaviour
             yield return null;
         }
         while (action.inProgress);
+        
+        // Mult du score
+        ControlerPoints.AddtoDosageMult(cup.EvaluateScoreMult());
+        
         ValidateIngredient(ingredient);
     }
 
