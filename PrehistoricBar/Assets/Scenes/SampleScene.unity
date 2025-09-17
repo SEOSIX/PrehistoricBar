@@ -1822,10 +1822,19 @@ MonoBehaviour:
   - guy
   possiblesCocktails:
   - {fileID: 6949938112487522110, guid: a3f4c4a3e44e70549b6b74d9ac120339, type: 3}
-  - {fileID: 6949938112487522110, guid: 8f48f3ef1169c204c9b105b7f3aee120, type: 3}
+  - {fileID: 6949938112487522110, guid: c4f3dffcc6488364891064a7f3748cbd, type: 3}
   - {fileID: 6949938112487522110, guid: 46dd4d2cadcf7e04b8f391966f61615e, type: 3}
-  minClient: 8
-  maxClient: 17
+  - {fileID: 6949938112487522110, guid: 74fa3a240c2a9124fbb185e31e5e78c8, type: 3}
+  - {fileID: 6949938112487522110, guid: 08f32fa18b899f5409ad7dfc73ced178, type: 3}
+  - {fileID: 6949938112487522110, guid: ce957ae1942eec94eb2074ef40be0892, type: 3}
+  - {fileID: 6949938112487522110, guid: b021c7087be504c4b9f8c8acd9f569fe, type: 3}
+  - {fileID: 6949938112487522110, guid: 8cb5f56d03355e649a9f1c199ebd22da, type: 3}
+  - {fileID: 6949938112487522110, guid: 64767cde70777ad4c83ecf45bee40544, type: 3}
+  - {fileID: 6949938112487522110, guid: 36acd9bfd7498a247802317853b0b097, type: 3}
+  - {fileID: 6949938112487522110, guid: 291bda61438d55741914934a9496dbe8, type: 3}
+  - {fileID: 6949938112487522110, guid: bcd07237893b9284f806f49834c475c8, type: 3}
+  minClient: 6
+  maxClient: 6
   minCocktails: 1
   maxCocktails: 1
 --- !u!4 &784911051
@@ -2510,11 +2519,11 @@ MonoBehaviour:
   spawnContainer: {fileID: 7567705488534709600}
   Over: {fileID: 587429603}
   timerSlider: {fileID: 1735919063}
-  clientTime: 50
+  clientTime: 40
   cup: {fileID: 1349265933}
-  tireuseLaitSpeed: 6.61
-  tireuseBaveSpeed: 7.39
-  tireuseAlcoolSpeed: 9.45
+  tireuseLaitSpeed: 25
+  tireuseBaveSpeed: 15
+  tireuseAlcoolSpeed: 25
   laitPos: {fileID: 164399321}
   bavePos: {fileID: 375029486}
   alcoolPos: {fileID: 1874701842}
