@@ -90,7 +90,7 @@ namespace Script.Bar
             }
         }
 
-        private void ResetScore()
+        public static void ResetScore()
         {
             scoreMultNv = 1;
             scoreMultPrepTime = 0;
@@ -102,7 +102,7 @@ namespace Script.Bar
             scoreMultDosage += scoremult;
         }
 
-        public void GetScore(float time)
+        public static void GetScore(float time)
         {
             scoreMultNv = EventQueueManager.GetCurrentCocktail().recette.Count;
             scoreMultPrepTime = 0; //je connais pas le temps
@@ -111,7 +111,7 @@ namespace Script.Bar
             else scoreMultCombo = 1;
             float scoretotal = 0;
             scoretotal += scoreMultNv * (scoreMultPrepTime + scoreMultDosage) * 1 /* Service */ * scoreMultCombo; 
-            CheckForWin(Mathf.RoundToInt(scoretotal));
+            instance.CheckForWin(Mathf.RoundToInt(scoretotal));
             
         }
     }
