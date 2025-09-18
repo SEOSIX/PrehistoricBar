@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b01d9fe565e0c07428e20a31f9353308
+guid: bcf0421c487b4be48abab435f207d069
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1369075191247500620
-    second: gobelet_0
+      213: 6545936442528960825
+    second: arriere_verre_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gobelet_0
+      name: arriere_verre_0
       rect:
         serializedVersion: 2
-        x: 297
-        y: 185
-        width: 509
-        height: 703
+        x: 0
+        y: 0
+        width: 608
+        height: 778
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c457b1df1aeeff210800000000000000
-      internalID: 1369075191247500620
+      spriteID: 931193b3386d7da50800000000000000
+      internalID: 6545936442528960825
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      gobelet_0: 1369075191247500620
+      arriere_verre_0: 6545936442528960825
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

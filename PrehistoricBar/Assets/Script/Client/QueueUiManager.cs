@@ -26,6 +26,11 @@ public class QueueUiManager : MonoBehaviour
     private Coroutine timerCoroutine;
     private Coroutine blinkCoroutine;
     
+    [Header("Transition entre services")]
+    [SerializeField] private GameObject transitionPanel;
+    [SerializeField] private float transitionDuration = 2f;
+    
+    
     [Header("Tireuse")]
     public Cup cup;
     [Space(5f)]
@@ -306,26 +311,72 @@ public class QueueUiManager : MonoBehaviour
 
     void OnColors(InputValue value)
     {
-        if (laitLocked) return;  
-        laitPressed = value.isPressed;
-        TryValidateIngredient(IngredientIndex.Laitdemammouth, value);
-        if (value.isPressed) laitLocked = true; 
+        if (!value.isPressed) return;
+        if (!IsCupAtPosition(laitPos)) return;  
+        if (!laitLocked)
+        {
+            laitLocked = true;
+            SounfManager.Singleton.PlaySound(5, true);
+            Liquide.singleton.AcitaveObject(2, true);
+            Cup.instance.SetTargetDosage(IngredientIndex.Laitdemammouth);
+            
+            StartCoroutine(FillRoutine(IngredientIndex.Laitdemammouth, tireuseLaitSpeed, 
+                InputSystem.actions["Colors"]));
+        }
+    }
+
+    void OnColorsR(InputValue value)
+    {
+        Liquide.singleton.AcitaveObject(2, false);
+        SounfManager.Singleton.StopSound(5);
+        ValidateIngredient(IngredientIndex.Laitdemammouth);
     }
 
     void OnColors1(InputValue value)
     {
-        if (alcoolLocked) return;
-        alcoolPressed = value.isPressed;
-        TryValidateIngredient(IngredientIndex.Alcooldefougere, value);
-        if (value.isPressed) alcoolLocked = true;
+        if (!value.isPressed) return;
+        if (!IsCupAtPosition(alcoolPos)) return;  
+        if (!alcoolLocked)
+        {
+            alcoolLocked = true;
+            SounfManager.Singleton.PlaySound(5, true);
+            Liquide.singleton.AcitaveObject(0, true);
+            Cup.instance.SetTargetDosage(IngredientIndex.Alcooldefougere);
+            
+            StartCoroutine(FillRoutine(IngredientIndex.Alcooldefougere, tireuseAlcoolSpeed, 
+                InputSystem.actions["Colors1"]));
+        }
+    }
+
+    void OnColors1R(InputValue value)
+    {
+        Liquide.singleton.AcitaveObject(0, false);
+        SounfManager.Singleton.StopSound(5);
+        ValidateIngredient(IngredientIndex.Alcooldefougere);
     }
 
     void OnColors2(InputValue value)
     {
-        if (baveLocked) return;
-        bavePressed = value.isPressed;
-        TryValidateIngredient(IngredientIndex.Bavedeboeuf, value);
-        if (value.isPressed) baveLocked = true;
+        if (!value.isPressed) return;
+        if (!IsCupAtPosition(bavePos)) return;  
+        
+        if (!baveLocked)
+        {
+            baveLocked = true;
+            SounfManager.Singleton.PlaySound(5, true);
+            Liquide.singleton.AcitaveObject(1, true);
+            Cup.instance.SetTargetDosage(IngredientIndex.Bavedeboeuf);
+            
+            StartCoroutine(FillRoutine(IngredientIndex.Bavedeboeuf, tireuseBaveSpeed, 
+                InputSystem.actions["Colors2"]));
+        }
+    }
+
+    void OnColors2R(InputValue value)
+    {
+        Liquide.singleton.AcitaveObject(1, false);
+        SounfManager.Singleton.StopSound(5);
+        ValidateIngredient(IngredientIndex.Bavedeboeuf);
     }
 
     public void TryValidateIngredient(IngredientIndex ingredient, InputValue value)
@@ -343,23 +394,43 @@ public class QueueUiManager : MonoBehaviour
         if (targetPos != null) StartMove(ingredient, targetPos);
     }
 
+
     IEnumerator FillRoutine(IngredientIndex ingredient, float speed, InputAction action)
     {
-        do
+        float amountBefore = cup.content[ingredient];
+
+        while (action.inProgress)
         {
             if (cup == null) yield break;
             if (cup.TotalAmount <= 0) yield return null;
-            if (cup != null && cup.GetType().GetField("isLocked", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(cup) is bool locked && locked)
+            if (cup != null && cup.GetType()
+                    .GetField("isLocked", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
+                    .GetValue(cup) is bool locked && locked)
             {
                 yield break;
             }
             cup.Fill(ingredient, speed * Time.deltaTime);
             yield return null;
         }
-        while (action.inProgress);
-        ValidateIngredient(ingredient);
-        ValidateIngredient(ingredient);
+        float amountAfter = cup.content[ingredient];
+        if (amountAfter > amountBefore)
+        {
+            ValidateIngredient(ingredient);
+        }
+        else
+        {
+            Debug.LogWarning($"Aucun liquide versé pour {ingredient}, donc pas de validation !");
+        }
     }
+    
+    private bool IsCupAtPosition(Transform target)
+    {
+        RectTransform cupRect = cup.GetComponent<RectTransform>();
+        RectTransform targetRect = target.GetComponent<RectTransform>();
+        Vector2 targetPos = targetRect.anchoredPosition + offset;
+        return Vector2.Distance(cupRect.anchoredPosition, targetPos) < 0.1f;
+    }
+
 
     void OnNextClient(InputValue value)
     {
@@ -379,15 +450,14 @@ public class QueueUiManager : MonoBehaviour
                     ShowNextClient();
                     return;
                 }
+                else
+                {
+                    ShowNextClient();
+                }
             }
         }
         if (queueManager.HasMoreWaves())
         {
-            if (clientAnimManager != null)
-            {
-                clientAnimManager.ServeCocktail(true);
-            }
-            
             ShowNextClient();
         }
         else
@@ -463,7 +533,8 @@ public class QueueUiManager : MonoBehaviour
         Vector2 targetPos = targetRect.anchoredPosition + offset;
         while (Vector2.Distance(cupRect.anchoredPosition, targetPos) > 0.1f)
         {
-            cupRect.anchoredPosition = Vector2.MoveTowards(cupRect.anchoredPosition, targetPos, moveSpeed * Time.deltaTime);
+            cupRect.anchoredPosition = Vector2.MoveTowards(
+                cupRect.anchoredPosition, targetPos, moveSpeed * Time.deltaTime);
             yield return null;
         }
         cupRect.anchoredPosition = targetPos;
@@ -561,6 +632,14 @@ public class QueueUiManager : MonoBehaviour
         laitLocked = false;
         alcoolLocked = false;
         baveLocked = false;
+    }
+    
+    private IEnumerator ShowTransitionThenNextClient()
+    {
+        transitionPanel.SetActive(true);
+        yield return new WaitForSeconds(transitionDuration);
+        transitionPanel.SetActive(false);
+        ShowNextClient();
     }
 
     public void NextStep(ClientClass cocktail)
