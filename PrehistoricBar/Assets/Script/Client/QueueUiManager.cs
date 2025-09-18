@@ -295,18 +295,32 @@ public class QueueUiManager : MonoBehaviour
         text.alignment = TextAlignmentOptions.BottomLeft;
         text.color = Color.cyan;
     }
+    // Déplacement du verre 
+    void OnMove0(InputValue value)
+    {
+        if (!laitLocked && value.isPressed) StartMove(IngredientIndex.Laitdemammouth, laitPos);
+    }
 
+    void OnMove1(InputValue value)
+    {
+        if (!alcoolLocked && value.isPressed) StartMove(IngredientIndex.Alcooldefougere, alcoolPos);
+    }
+
+    void OnMove2(InputValue value)
+    {
+        if (!baveLocked&& value.isPressed) StartMove(IngredientIndex.Bavedeboeuf, bavePos);
+    }
+    
     void OnColors(InputValue value)
     {
-        if (laitLocked) return;  
-        laitPressed = value.isPressed;
-        if (laitPressed)
+        if (!value.isPressed) return;
+        if (!laitLocked)
         {
+            laitLocked = true;
             SounfManager.Singleton.PlaySound(5, true);
             Liquide.singleton.AcitaveObject(2, true);
+            TryValidateIngredient(IngredientIndex.Laitdemammouth, value);
         }
-        TryValidateIngredient(IngredientIndex.Laitdemammouth, value);
-        if (value.isPressed) laitLocked = true; 
     }
 
     void OnColorsR(InputValue value)
@@ -314,20 +328,19 @@ public class QueueUiManager : MonoBehaviour
         Liquide.singleton.AcitaveObject(2, false);
         SounfManager.Singleton.StopSound(5);
     }
+
     void OnColors1(InputValue value)
     {
-        if (alcoolLocked) return;
-        alcoolPressed = value.isPressed;
-        if (alcoolPressed)
+        if (!value.isPressed) return;
+        if (!alcoolLocked)
         {
+            alcoolLocked = true;
             SounfManager.Singleton.PlaySound(5, true);
             Liquide.singleton.AcitaveObject(0, true);
+            TryValidateIngredient(IngredientIndex.Alcooldefougere, value);
         }
-        
-        TryValidateIngredient(IngredientIndex.Alcooldefougere, value);
-        if (value.isPressed) alcoolLocked = true; 
-       
     }
+
     void OnColors1R(InputValue value)
     {
         Liquide.singleton.AcitaveObject(0, false);
@@ -336,22 +349,21 @@ public class QueueUiManager : MonoBehaviour
 
     void OnColors2(InputValue value)
     {
-        if (baveLocked) return;
-        bavePressed = value.isPressed;
-        if (bavePressed)
+        if (!value.isPressed) return;
+        if (!baveLocked)
         {
+            baveLocked = true;
             SounfManager.Singleton.PlaySound(5, true);
             Liquide.singleton.AcitaveObject(1, true);
+            TryValidateIngredient(IngredientIndex.Bavedeboeuf, value);
         }
-        TryValidateIngredient(IngredientIndex.Bavedeboeuf, value);
-        if (value.isPressed) baveLocked = true;
     }
+
     void OnColors2R(InputValue value)
     {
         Liquide.singleton.AcitaveObject(1, false);
         SounfManager.Singleton.StopSound(5);
     }
-
 
     public void TryValidateIngredient(IngredientIndex ingredient, InputValue value)
     {
