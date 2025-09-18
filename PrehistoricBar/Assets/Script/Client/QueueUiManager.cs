@@ -112,7 +112,7 @@ public class QueueUiManager : MonoBehaviour
     
     public void ShowNextClient(bool valid = true)
     {
-        if (valid) ControlerPoints.instance.GetScore(currentTime,clientTime);
+        if (valid) ControlerPoints.GetScore(currentTime,clientTime);
         Over.SetActive(false);
         currentClient = queueManager.GetNextService();
 
@@ -178,7 +178,7 @@ public class QueueUiManager : MonoBehaviour
 
                             var textObj = Instantiate(recetteTextPrefab, recetteContainer);
                             var textMesh = textObj.GetComponent<TextMeshProUGUI>();
-                            textMesh.text = newStep.description;
+                            //textMesh.text = newStep.description;
                             recetteTexts[cocktail].Add(textMesh);
                         }
                     }
@@ -610,7 +610,7 @@ public class QueueUiManager : MonoBehaviour
                     cocktailRecettes[cocktail].Add(newStep);
                     var textObj = Instantiate(recetteTextPrefab, recetteContainer);
                     var textMesh = textObj.GetComponent<TextMeshProUGUI>();
-                    textMesh.text = newStep.description;
+                    //textMesh.text = newStep.description;
                     recetteTexts[cocktail].Add(textMesh);
                 }
             }
