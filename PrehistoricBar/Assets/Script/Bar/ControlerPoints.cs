@@ -86,7 +86,7 @@ namespace Script.Bar
             }
             else
             {
-                Debug.Log("Game Over");
+                QueueUiManager.instance.Over.SetActive(true);
             }
         }
 
