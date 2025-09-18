@@ -4643,7 +4643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1662368889055215851, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: m_Type
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1662368889055215851, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: m_FillAmount
@@ -4696,22 +4696,22 @@ PrefabInstance:
     - target: {fileID: 5339929489530209134, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: cupSlider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1870146104}
     - target: {fileID: 5339929489530209134, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: fillImage
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1870146103}
     - target: {fileID: 5339929489530209134, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: jusColor.b
-      value: 1
+      value: 0.21542364
       objectReference: {fileID: 0}
     - target: {fileID: 5339929489530209134, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: jusColor.g
-      value: 0.1586676
+      value: 0.34410343
       objectReference: {fileID: 0}
     - target: {fileID: 5339929489530209134, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: jusColor.r
-      value: 0.11792451
+      value: 0.4433962
       objectReference: {fileID: 0}
     - target: {fileID: 5339929489530209134, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: baveColor.b
@@ -4723,7 +4723,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5339929489530209134, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: baveColor.r
-      value: 0
+      value: 0.38431373
       objectReference: {fileID: 0}
     - target: {fileID: 5339929489530209134, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: laitColor.b
@@ -4739,19 +4739,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5339929489530209134, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: alcoolColor.b
-      value: 0
+      value: 0.17795478
       objectReference: {fileID: 0}
     - target: {fileID: 5339929489530209134, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: alcoolColor.g
-      value: 0
+      value: 0.4056604
       objectReference: {fileID: 0}
     - target: {fileID: 5339929489530209134, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: alcoolColor.r
-      value: 1
+      value: 0.24911018
       objectReference: {fileID: 0}
     - target: {fileID: 5613341582393757650, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5613341582393757650, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
+      propertyPath: m_MaxValue
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5613341582393757650, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: m_Direction
@@ -4797,6 +4801,28 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
+--- !u!114 &1870146103 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1662368889055215851, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
+  m_PrefabInstance: {fileID: 1870146102}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &1870146104 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5613341582393757650, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
+  m_PrefabInstance: {fileID: 1870146102}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!1001 &1874701841
 PrefabInstance:
   m_ObjectHideFlags: 0
