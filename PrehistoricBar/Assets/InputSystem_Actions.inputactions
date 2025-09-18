@@ -131,6 +131,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "MoveMortier",
+                    "type": "Button",
+                    "id": "27248414-01cc-4233-817b-2535bbac6f38",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MoveLarve",
+                    "type": "Button",
+                    "id": "4ba18ccd-35ef-44a0-aa1d-06369dacd3c3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -307,6 +325,28 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Move2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a96a5eb6-890b-4450-b720-8696179cc3a8",
+                    "path": "<Keyboard>/x",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "MoveMortier",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8ac5c231-211e-4a5b-9d37-02076e0eb7b8",
+                    "path": "<Keyboard>/c",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveLarve",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
