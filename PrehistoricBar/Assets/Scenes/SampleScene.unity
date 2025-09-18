@@ -3548,7 +3548,7 @@ MonoBehaviour:
   PoubellePos: {fileID: 0}
   moveSpeed: 4000
   recetteContainer: {fileID: 583896870}
-  recetteImagePrefab: {fileID: 0}
+  recetteImagePrefab: {fileID: 1891050406694736087, guid: 6c076bbb54a424541b79b30e0803e073, type: 3}
   nextClientSlot1: {fileID: 1367992053}
   nextClientSlot2: {fileID: 1126708303}
   laitLocked: 0
