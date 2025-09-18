@@ -382,9 +382,7 @@ public class QueueUiManager : MonoBehaviour
     private void ResetGame()
     {
         ControlerPoints.instance.ResetReward();
-        // ControlerPoints.instance.ResetLife();
-        // ControlerPoints.instance.ResetPoints();
-
+        ControlerPoints.instance.ResetPointsAndLife();
         Debug.Log("Game Reset");
         ShowNextClient();
     }

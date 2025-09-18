@@ -121,5 +121,13 @@ namespace Script.Bar
             
             instance.StartPointChange((int)scoretotal);
         }
+
+public void ResetPointsAndLife()
+        {
+            points = 0;
+            life = 2;
+            rewardGiven = false;
+            pointsText.text = points.ToString("D9");
+        }
     }
 }
