@@ -12,6 +12,7 @@ public class EventQueueManager : MonoBehaviour
     
     [Header("Configuration")] 
     [SerializeField] private string[] possiblesNames = { "Ouga", "booga", "toonah" };
+    [SerializeField] private GameObject[] possiblesPrefabs;
     [SerializeField] private List<GameObject> possiblesCocktails;
     [SerializeField] private int minClient = 5;
     [SerializeField] private int maxClient = 10;
@@ -54,6 +55,7 @@ public class EventQueueManager : MonoBehaviour
         {
             ServiceData service = new ServiceData();
             service.name = possiblesNames[Random.Range(0, possiblesNames.Length)];
+            service.prefab = possiblesPrefabs[Random.Range(0, possiblesPrefabs.Length)];
 
             int nbCocktails = Random.Range(minCocktails, maxCocktails + 1);
             List<GameObject> availablePrefabs = new List<GameObject>(possiblesCocktails);

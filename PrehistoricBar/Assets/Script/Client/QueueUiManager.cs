@@ -15,6 +15,9 @@ public class QueueUiManager : MonoBehaviour
     [SerializeField] private EventQueueManager queueManager;
     [SerializeField] private Transform spawnContainer;
     public GameObject Over;
+    
+    // Current client
+    private ClientAnimManager clientAnimManager;
 
     [Header("Timer")]
     public Slider timerSlider;
@@ -108,7 +111,8 @@ public class QueueUiManager : MonoBehaviour
     
     public void ShowNextClient()
     {
-        ControlerPoints.instance.CheckForWin(20);
+        if (clientAnimManager != null) clientAnimManager.LeaveBar();
+        
         Over.SetActive(false);
         currentClient = queueManager.GetNextService();
 
@@ -140,6 +144,10 @@ public class QueueUiManager : MonoBehaviour
             return;
         }
 
+        // Spawner client
+        GameObject newClient = Instantiate(currentClient.prefab, new Vector3(-12f, 0f, 0f), transform.rotation);
+        clientAnimManager = newClient.GetComponent<ClientAnimManager>();
+        
         foreach (var cocktail in currentClient.clients)
         {
             remainingCocktails.Add(cocktail);
@@ -364,6 +372,10 @@ public class QueueUiManager : MonoBehaviour
                 if (HasIncorrectIngredients(cocktail))
                 {
                     Debug.LogWarning("Vous avez mis des ingrédients incorrects pour ce cocktail !");
+                    if (clientAnimManager != null)
+                    {
+                        clientAnimManager.ServeCocktail(false);
+                    }
                     ShowNextClient();
                     return;
                 }
@@ -371,6 +383,11 @@ public class QueueUiManager : MonoBehaviour
         }
         if (queueManager.HasMoreWaves())
         {
+            if (clientAnimManager != null)
+            {
+                clientAnimManager.ServeCocktail(true);
+            }
+            
             ShowNextClient();
         }
         else

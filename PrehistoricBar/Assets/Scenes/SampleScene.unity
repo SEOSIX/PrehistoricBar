@@ -2260,6 +2260,8 @@ MonoBehaviour:
   - toonah
   - gutz
   - guy
+  possiblesPrefabs:
+  - {fileID: 1969696730971884632, guid: bbf7ba895f393d5419619a78a946af5b, type: 3}
   possiblesCocktails:
   - {fileID: 6949938112487522110, guid: a3f4c4a3e44e70549b6b74d9ac120339, type: 3}
   - {fileID: 6949938112487522110, guid: c4f3dffcc6488364891064a7f3748cbd, type: 3}

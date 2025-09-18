@@ -59,6 +59,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: a6d4e7e89a4cb9c46a7671d6fb82bb94, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6247375484896333307}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: a6d4e7e89a4cb9c46a7671d6fb82bb94, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9163239167206912545}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: a6d4e7e89a4cb9c46a7671d6fb82bb94, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 578041502466376389}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: a6d4e7e89a4cb9c46a7671d6fb82bb94, type: 3}
 --- !u!1 &1969696730971884632 stripped
 GameObject:
@@ -87,3 +93,36 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!111 &9163239167206912545
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969696730971884632}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: c2624b0713c553640a67112f186560e0, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: cb82a333620267e4c9333fdba0785b93, type: 2}
+  - {fileID: 7400000, guid: cb82a333620267e4c9333fdba0785b93, type: 2}
+  - {fileID: 7400000, guid: c2624b0713c553640a67112f186560e0, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
+--- !u!114 &578041502466376389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969696730971884632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a283a6660b447488a5cd864f327610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClientAnimManager
+  animation: {fileID: 9163239167206912545}
+  animator: {fileID: 6247375484896333307}
