@@ -1,0 +1,1235 @@
+fileFormatVersion: 2
+guid: 68ebd5e330672cb4793b48f54d8fa77e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2045328218286519179
+    second: base premier plan bar_0
+  - first:
+      213: 5244355453665194141
+    second: base premier plan bar_1
+  - first:
+      213: 8871902669037842568
+    second: base premier plan bar_2
+  - first:
+      213: 4919012026807584835
+    second: base premier plan bar_3
+  - first:
+      213: 7572567628241555884
+    second: base premier plan bar_4
+  - first:
+      213: 4181439746296394722
+    second: base premier plan bar_5
+  - first:
+      213: -5333920314030785138
+    second: base premier plan bar_6
+  - first:
+      213: 6727249314294859438
+    second: base premier plan bar_7
+  - first:
+      213: -2932811341955810871
+    second: base premier plan bar_8
+  - first:
+      213: 3069949464229285622
+    second: base premier plan bar_9
+  - first:
+      213: -6385401175345503074
+    second: base premier plan bar_10
+  - first:
+      213: 1835829887107223931
+    second: base premier plan bar_11
+  - first:
+      213: 2698247181181450569
+    second: base premier plan bar_12
+  - first:
+      213: -7480842193618353855
+    second: base premier plan bar_13
+  - first:
+      213: -86931168731552223
+    second: base premier plan bar_14
+  - first:
+      213: -7290805954985919450
+    second: base premier plan bar_15
+  - first:
+      213: -8885598424877844392
+    second: base premier plan bar_16
+  - first:
+      213: 462493102486082088
+    second: base premier plan bar_17
+  - first:
+      213: 1795401268800720296
+    second: base premier plan bar_18
+  - first:
+      213: 3949879984732929752
+    second: base premier plan bar_19
+  - first:
+      213: 8367135943287419936
+    second: base premier plan bar_20
+  - first:
+      213: 1906051774684675931
+    second: base premier plan bar_21
+  - first:
+      213: -8652429681401794236
+    second: base premier plan bar_22
+  - first:
+      213: 1699666847237917329
+    second: base premier plan bar_23
+  - first:
+      213: -9200606317493434668
+    second: base premier plan bar_24
+  - first:
+      213: -280281453842426792
+    second: base premier plan bar_25
+  - first:
+      213: 2793483769271648995
+    second: base premier plan bar_26
+  - first:
+      213: -1978084624777853358
+    second: base premier plan bar_27
+  - first:
+      213: 8194693273123195846
+    second: base premier plan bar_28
+  - first:
+      213: 8222970678228978036
+    second: base premier plan bar_29
+  - first:
+      213: -2106039294227613927
+    second: base premier plan bar_30
+  - first:
+      213: 4720789492149189157
+    second: base premier plan bar_31
+  - first:
+      213: 9032053968608697921
+    second: base premier plan bar_32
+  - first:
+      213: -3592358235205964299
+    second: base premier plan bar_33
+  - first:
+      213: 1004987227873543899
+    second: base premier plan bar_34
+  - first:
+      213: -9133607207964988694
+    second: base premier plan bar_35
+  - first:
+      213: -7062699561912165790
+    second: base premier plan bar_36
+  - first:
+      213: 3068056114125562006
+    second: base premier plan bar_37
+  - first:
+      213: 1201756119577739104
+    second: base premier plan bar_38
+  - first:
+      213: -6049900531488767931
+    second: base premier plan bar_39
+  - first:
+      213: 1596740045817064962
+    second: base premier plan bar_40
+  - first:
+      213: -8596681197700287034
+    second: base premier plan bar_41
+  - first:
+      213: -6360376781727694300
+    second: base premier plan bar_42
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: base premier plan bar_0
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 0
+        width: 16086
+        height: 5401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57c03f372d88d93e0800000000000000
+      internalID: -2045328218286519179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_1
+      rect:
+        serializedVersion: 2
+        x: 16110
+        y: 3277
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d90b893df71b7c840800000000000000
+      internalID: 5244355453665194141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_2
+      rect:
+        serializedVersion: 2
+        x: 16128
+        y: 3217
+        width: 15
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88037ddd8745f1b70800000000000000
+      internalID: 8871902669037842568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_3
+      rect:
+        serializedVersion: 2
+        x: 16057
+        y: 3198
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3488db75067d34440800000000000000
+      internalID: 4919012026807584835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_4
+      rect:
+        serializedVersion: 2
+        x: 16052
+        y: 3170
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca1d5fef22a271960800000000000000
+      internalID: 7572567628241555884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_5
+      rect:
+        serializedVersion: 2
+        x: 16077
+        y: 3151
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e332b78b45770a30800000000000000
+      internalID: 4181439746296394722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_6
+      rect:
+        serializedVersion: 2
+        x: 16098
+        y: 3056
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8d74f51cbb1af5b0800000000000000
+      internalID: -5333920314030785138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_7
+      rect:
+        serializedVersion: 2
+        x: 16080
+        y: 318
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea6090edb9dfb5d50800000000000000
+      internalID: 6727249314294859438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_8
+      rect:
+        serializedVersion: 2
+        x: 6849
+        y: 29
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c9bc798f9f8c47d0800000000000000
+      internalID: -2932811341955810871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_9
+      rect:
+        serializedVersion: 2
+        x: 6855
+        y: 31
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fe89cdb5c6aa9a20800000000000000
+      internalID: 3069949464229285622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_10
+      rect:
+        serializedVersion: 2
+        x: 6868
+        y: 25
+        width: 34
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e946b2b567f7267a0800000000000000
+      internalID: -6385401175345503074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_11
+      rect:
+        serializedVersion: 2
+        x: 6925
+        y: 29
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7152114e8d2a7910800000000000000
+      internalID: 1835829887107223931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_12
+      rect:
+        serializedVersion: 2
+        x: 7140
+        y: 27
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 949f48ee389127520800000000000000
+      internalID: 2698247181181450569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_13
+      rect:
+        serializedVersion: 2
+        x: 7294
+        y: 33
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 141cf9cf8a5be2890800000000000000
+      internalID: -7480842193618353855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_14
+      rect:
+        serializedVersion: 2
+        x: 11573
+        y: 34
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 126a8d700982bcef0800000000000000
+      internalID: -86931168731552223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_15
+      rect:
+        serializedVersion: 2
+        x: 11659
+        y: 34
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62cf2cebc9ad1da90800000000000000
+      internalID: -7290805954985919450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_16
+      rect:
+        serializedVersion: 2
+        x: 11683
+        y: 29
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 858b26c7f4300b480800000000000000
+      internalID: -8885598424877844392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_17
+      rect:
+        serializedVersion: 2
+        x: 11695
+        y: 34
+        width: 10
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82250ccb60b1b6600800000000000000
+      internalID: 462493102486082088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_18
+      rect:
+        serializedVersion: 2
+        x: 11747
+        y: 20
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ad072801fb8ae810800000000000000
+      internalID: 1795401268800720296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_19
+      rect:
+        serializedVersion: 2
+        x: 11748
+        y: 33
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8de7e633beac0d630800000000000000
+      internalID: 3949879984732929752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_20
+      rect:
+        serializedVersion: 2
+        x: 11845
+        y: 32
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 024bc073fc90e1470800000000000000
+      internalID: 8367135943287419936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_21
+      rect:
+        serializedVersion: 2
+        x: 11921
+        y: 18
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5f35998df7a37a10800000000000000
+      internalID: 1906051774684675931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_22
+      rect:
+        serializedVersion: 2
+        x: 12095
+        y: 32
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 441fffb1c056ce780800000000000000
+      internalID: -8652429681401794236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_23
+      rect:
+        serializedVersion: 2
+        x: 12144
+        y: 34
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19acf1a0efd669710800000000000000
+      internalID: 1699666847237917329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_24
+      rect:
+        serializedVersion: 2
+        x: 6890
+        y: 15
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d6c6971d41e05080800000000000000
+      internalID: -9200606317493434668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_25
+      rect:
+        serializedVersion: 2
+        x: 6904
+        y: 15
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8549792b08d3c1cf0800000000000000
+      internalID: -280281453842426792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_26
+      rect:
+        serializedVersion: 2
+        x: 6973
+        y: 24
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e2814900b274c620800000000000000
+      internalID: 2793483769271648995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_27
+      rect:
+        serializedVersion: 2
+        x: 6983
+        y: 20
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 256447c938e6c84e0800000000000000
+      internalID: -1978084624777853358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_28
+      rect:
+        serializedVersion: 2
+        x: 7022
+        y: 15
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cb8ac35d1669b170800000000000000
+      internalID: 8194693273123195846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_29
+      rect:
+        serializedVersion: 2
+        x: 7067
+        y: 8
+        width: 65
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4798a42c34cdd1270800000000000000
+      internalID: 8222970678228978036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_30
+      rect:
+        serializedVersion: 2
+        x: 11608
+        y: 0
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9177c809b68d5c2e0800000000000000
+      internalID: -2106039294227613927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_31
+      rect:
+        serializedVersion: 2
+        x: 11680
+        y: 22
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52af2f2080d938140800000000000000
+      internalID: 4720789492149189157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_32
+      rect:
+        serializedVersion: 2
+        x: 11819
+        y: 0
+        width: 23
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14e14170b3d485d70800000000000000
+      internalID: 9032053968608697921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_33
+      rect:
+        serializedVersion: 2
+        x: 11993
+        y: 23
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fd699cd731652ec0800000000000000
+      internalID: -3592358235205964299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_34
+      rect:
+        serializedVersion: 2
+        x: 12145
+        y: 23
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd605312f8e62fd00800000000000000
+      internalID: 1004987227873543899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_35
+      rect:
+        serializedVersion: 2
+        x: 7056
+        y: 14
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeaac43e2a8ee3180800000000000000
+      internalID: -9133607207964988694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_36
+      rect:
+        serializedVersion: 2
+        x: 11566
+        y: 15
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26a1be01b204cfd90800000000000000
+      internalID: -7062699561912165790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_37
+      rect:
+        serializedVersion: 2
+        x: 11728
+        y: 6
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6906b61d7cce39a20800000000000000
+      internalID: 3068056114125562006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_38
+      rect:
+        serializedVersion: 2
+        x: 11806
+        y: 8
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06f3516d2de7da010800000000000000
+      internalID: 1201756119577739104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_39
+      rect:
+        serializedVersion: 2
+        x: 11956
+        y: 5
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5404a26358f6a0ca0800000000000000
+      internalID: -6049900531488767931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_40
+      rect:
+        serializedVersion: 2
+        x: 6925
+        y: 0
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20e219d9c92c82610800000000000000
+      internalID: 1596740045817064962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_41
+      rect:
+        serializedVersion: 2
+        x: 6935
+        y: 3
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c57bc37ff372b880800000000000000
+      internalID: -8596681197700287034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base premier plan bar_42
+      rect:
+        serializedVersion: 2
+        x: 11598
+        y: 0
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4228a7704076bb7a0800000000000000
+      internalID: -6360376781727694300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      base premier plan bar_0: -2045328218286519179
+      base premier plan bar_1: 5244355453665194141
+      base premier plan bar_10: -6385401175345503074
+      base premier plan bar_11: 1835829887107223931
+      base premier plan bar_12: 2698247181181450569
+      base premier plan bar_13: -7480842193618353855
+      base premier plan bar_14: -86931168731552223
+      base premier plan bar_15: -7290805954985919450
+      base premier plan bar_16: -8885598424877844392
+      base premier plan bar_17: 462493102486082088
+      base premier plan bar_18: 1795401268800720296
+      base premier plan bar_19: 3949879984732929752
+      base premier plan bar_2: 8871902669037842568
+      base premier plan bar_20: 8367135943287419936
+      base premier plan bar_21: 1906051774684675931
+      base premier plan bar_22: -8652429681401794236
+      base premier plan bar_23: 1699666847237917329
+      base premier plan bar_24: -9200606317493434668
+      base premier plan bar_25: -280281453842426792
+      base premier plan bar_26: 2793483769271648995
+      base premier plan bar_27: -1978084624777853358
+      base premier plan bar_28: 8194693273123195846
+      base premier plan bar_29: 8222970678228978036
+      base premier plan bar_3: 4919012026807584835
+      base premier plan bar_30: -2106039294227613927
+      base premier plan bar_31: 4720789492149189157
+      base premier plan bar_32: 9032053968608697921
+      base premier plan bar_33: -3592358235205964299
+      base premier plan bar_34: 1004987227873543899
+      base premier plan bar_35: -9133607207964988694
+      base premier plan bar_36: -7062699561912165790
+      base premier plan bar_37: 3068056114125562006
+      base premier plan bar_38: 1201756119577739104
+      base premier plan bar_39: -6049900531488767931
+      base premier plan bar_4: 7572567628241555884
+      base premier plan bar_40: 1596740045817064962
+      base premier plan bar_41: -8596681197700287034
+      base premier plan bar_42: -6360376781727694300
+      base premier plan bar_5: 4181439746296394722
+      base premier plan bar_6: -5333920314030785138
+      base premier plan bar_7: 6727249314294859438
+      base premier plan bar_8: -2932811341955810871
+      base premier plan bar_9: 3069949464229285622
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

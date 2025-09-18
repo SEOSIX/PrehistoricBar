@@ -1,0 +1,1391 @@
+fileFormatVersion: 2
+guid: 9310796c36d364a478023eb6a49f7f52
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4412081739090008844
+    second: premier plan bar retouch_0
+  - first:
+      213: 6899531864675183026
+    second: premier plan bar retouch_1
+  - first:
+      213: 4876233136998340569
+    second: premier plan bar retouch_2
+  - first:
+      213: 367946126376980623
+    second: premier plan bar retouch_3
+  - first:
+      213: 1462632849833973653
+    second: premier plan bar retouch_4
+  - first:
+      213: -5300367225091169360
+    second: premier plan bar retouch_5
+  - first:
+      213: 5425376496652746933
+    second: premier plan bar retouch_6
+  - first:
+      213: 1498539035333112230
+    second: premier plan bar retouch_7
+  - first:
+      213: -8614474575901597389
+    second: premier plan bar retouch_8
+  - first:
+      213: -7090969457105672706
+    second: premier plan bar retouch_9
+  - first:
+      213: -1221483863524658678
+    second: premier plan bar retouch_10
+  - first:
+      213: -8536403958642763022
+    second: premier plan bar retouch_11
+  - first:
+      213: -3089513423049913586
+    second: premier plan bar retouch_12
+  - first:
+      213: 5904026518652628178
+    second: premier plan bar retouch_13
+  - first:
+      213: -4843519912409879565
+    second: premier plan bar retouch_14
+  - first:
+      213: 4535160304974225149
+    second: premier plan bar retouch_15
+  - first:
+      213: 1483234467846842094
+    second: premier plan bar retouch_16
+  - first:
+      213: 834271832357977727
+    second: premier plan bar retouch_17
+  - first:
+      213: 7247820468229079526
+    second: premier plan bar retouch_18
+  - first:
+      213: 690911946571965848
+    second: premier plan bar retouch_19
+  - first:
+      213: 255131247408142007
+    second: premier plan bar retouch_20
+  - first:
+      213: 2471292109457931142
+    second: premier plan bar retouch_21
+  - first:
+      213: -1090394156644100809
+    second: premier plan bar retouch_22
+  - first:
+      213: 1365934900881785117
+    second: premier plan bar retouch_23
+  - first:
+      213: -435829813973096250
+    second: premier plan bar retouch_24
+  - first:
+      213: -6758153938702287937
+    second: premier plan bar retouch_25
+  - first:
+      213: -5176668659871250159
+    second: premier plan bar retouch_26
+  - first:
+      213: 8794124479324848878
+    second: premier plan bar retouch_27
+  - first:
+      213: -3042546477037132675
+    second: premier plan bar retouch_28
+  - first:
+      213: 1280907292990262610
+    second: premier plan bar retouch_29
+  - first:
+      213: 362850891700178170
+    second: premier plan bar retouch_30
+  - first:
+      213: -8501887498667902685
+    second: premier plan bar retouch_31
+  - first:
+      213: -2673081291778996675
+    second: premier plan bar retouch_32
+  - first:
+      213: -577409419339998644
+    second: premier plan bar retouch_33
+  - first:
+      213: 8633991830300564918
+    second: premier plan bar retouch_34
+  - first:
+      213: -2253018099729722722
+    second: premier plan bar retouch_35
+  - first:
+      213: -7886402024674161096
+    second: premier plan bar retouch_36
+  - first:
+      213: 7531208281634698788
+    second: premier plan bar retouch_37
+  - first:
+      213: -7924425216614481257
+    second: premier plan bar retouch_38
+  - first:
+      213: -5623308153348775313
+    second: premier plan bar retouch_39
+  - first:
+      213: 7901799812391080358
+    second: premier plan bar retouch_40
+  - first:
+      213: 7277749309899579789
+    second: premier plan bar retouch_41
+  - first:
+      213: -779666367067152441
+    second: premier plan bar retouch_42
+  - first:
+      213: 4442660865189850863
+    second: premier plan bar retouch_43
+  - first:
+      213: -3751152687469889292
+    second: premier plan bar retouch_44
+  - first:
+      213: 6940353011709171023
+    second: premier plan bar retouch_45
+  - first:
+      213: -4958355507846466074
+    second: premier plan bar retouch_46
+  - first:
+      213: 599664185729916245
+    second: premier plan bar retouch_47
+  - first:
+      213: 4704996414424460092
+    second: premier plan bar retouch_48
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: premier plan bar retouch_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 0
+        width: 14946
+        height: 5017
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0b927a27fcda3d30800000000000000
+      internalID: 4412081739090008844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_1
+      rect:
+        serializedVersion: 2
+        x: 14968
+        y: 3043
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b9e376fcaf00cf50800000000000000
+      internalID: 6899531864675183026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_2
+      rect:
+        serializedVersion: 2
+        x: 14984
+        y: 2987
+        width: 14
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d756c4e33cdba340800000000000000
+      internalID: 4876233136998340569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_3
+      rect:
+        serializedVersion: 2
+        x: 14918
+        y: 2970
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f805e2f6d053b1500800000000000000
+      internalID: 367946126376980623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_4
+      rect:
+        serializedVersion: 2
+        x: 14942
+        y: 2967
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 597db2bd3d05c4410800000000000000
+      internalID: 1462632849833973653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_5
+      rect:
+        serializedVersion: 2
+        x: 14904
+        y: 2937
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b3615167105176b0800000000000000
+      internalID: -5300367225091169360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_6
+      rect:
+        serializedVersion: 2
+        x: 14914
+        y: 2944
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b08db7cd2fca4b40800000000000000
+      internalID: 5425376496652746933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_7
+      rect:
+        serializedVersion: 2
+        x: 14941
+        y: 2942
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a136132051ebc410800000000000000
+      internalID: 1498539035333112230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_8
+      rect:
+        serializedVersion: 2
+        x: 14937
+        y: 2926
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33160c0c30d337880800000000000000
+      internalID: -8614474575901597389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_9
+      rect:
+        serializedVersion: 2
+        x: 14972
+        y: 2896
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef5621c29d0d79d90800000000000000
+      internalID: -7090969457105672706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_10
+      rect:
+        serializedVersion: 2
+        x: 14957
+        y: 2838
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a02bdb7d5ea6c0fe0800000000000000
+      internalID: -1221483863524658678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_11
+      rect:
+        serializedVersion: 2
+        x: 14908
+        y: 1134
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fa1cd1d3d9988980800000000000000
+      internalID: -8536403958642763022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_12
+      rect:
+        serializedVersion: 2
+        x: 14940
+        y: 294
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0b0f4229e7df15d0800000000000000
+      internalID: -3089513423049913586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_13
+      rect:
+        serializedVersion: 2
+        x: 6364
+        y: 25
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dca6cc76d05fe150800000000000000
+      internalID: 5904026518652628178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_14
+      rect:
+        serializedVersion: 2
+        x: 6369
+        y: 27
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fb274e3d4c58ccb0800000000000000
+      internalID: -4843519912409879565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_15
+      rect:
+        serializedVersion: 2
+        x: 6381
+        y: 22
+        width: 33
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfed071e44020fe30800000000000000
+      internalID: 4535160304974225149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_16
+      rect:
+        serializedVersion: 2
+        x: 6434
+        y: 25
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee660a6d3e1859410800000000000000
+      internalID: 1483234467846842094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_17
+      rect:
+        serializedVersion: 2
+        x: 6634
+        y: 23
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7ebfc5bfcde39b00800000000000000
+      internalID: 834271832357977727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_18
+      rect:
+        serializedVersion: 2
+        x: 6699
+        y: 31
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e18994b05e659460800000000000000
+      internalID: 7247820468229079526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_19
+      rect:
+        serializedVersion: 2
+        x: 6777
+        y: 29
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 895ee7a31cc969900800000000000000
+      internalID: 690911946571965848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_20
+      rect:
+        serializedVersion: 2
+        x: 10752
+        y: 25
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b65ddc84886a8300800000000000000
+      internalID: 255131247408142007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_21
+      rect:
+        serializedVersion: 2
+        x: 10785
+        y: 0
+        width: 13
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68b3770841bcb4220800000000000000
+      internalID: 2471292109457931142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_22
+      rect:
+        serializedVersion: 2
+        x: 10832
+        y: 30
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 735111caa442ed0f0800000000000000
+      internalID: -1090394156644100809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_23
+      rect:
+        serializedVersion: 2
+        x: 10851
+        y: 19
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d110e592e86c4f210800000000000000
+      internalID: 1365934900881785117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_24
+      rect:
+        serializedVersion: 2
+        x: 10866
+        y: 30
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c8eb93e71f93f9f0800000000000000
+      internalID: -435829813973096250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_25
+      rect:
+        serializedVersion: 2
+        x: 10914
+        y: 17
+        width: 12
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbb3e3a8cc63632a0800000000000000
+      internalID: -6758153938702287937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_26
+      rect:
+        serializedVersion: 2
+        x: 10977
+        y: 29
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1190a70f747c828b0800000000000000
+      internalID: -5176668659871250159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_27
+      rect:
+        serializedVersion: 2
+        x: 11005
+        y: 25
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee289b4ee910b0a70800000000000000
+      internalID: 8794124479324848878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_28
+      rect:
+        serializedVersion: 2
+        x: 11076
+        y: 15
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d74e5976914b6c5d0800000000000000
+      internalID: -3042546477037132675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_29
+      rect:
+        serializedVersion: 2
+        x: 11237
+        y: 28
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25d44ec7562b6c110800000000000000
+      internalID: 1280907292990262610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_30
+      rect:
+        serializedVersion: 2
+        x: 11283
+        y: 21
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afc093aa6fa190500800000000000000
+      internalID: 362850891700178170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_31
+      rect:
+        serializedVersion: 2
+        x: 6402
+        y: 12
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 329b0996d5a330a80800000000000000
+      internalID: -8501887498667902685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_32
+      rect:
+        serializedVersion: 2
+        x: 6415
+        y: 12
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3645cb4abe47ead0800000000000000
+      internalID: -2673081291778996675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_33
+      rect:
+        serializedVersion: 2
+        x: 6479
+        y: 21
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4a564e3131acf7f0800000000000000
+      internalID: -577409419339998644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_34
+      rect:
+        serializedVersion: 2
+        x: 6488
+        y: 17
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bd90b623d912d770800000000000000
+      internalID: 8633991830300564918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_35
+      rect:
+        serializedVersion: 2
+        x: 6524
+        y: 12
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e92951da9fbabb0e0800000000000000
+      internalID: -2253018099729722722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_36
+      rect:
+        serializedVersion: 2
+        x: 6566
+        y: 6
+        width: 62
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83e006b742fdd8290800000000000000
+      internalID: -7886402024674161096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_37
+      rect:
+        serializedVersion: 2
+        x: 6586
+        y: 21
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 426f054b70a348860800000000000000
+      internalID: 7531208281634698788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_38
+      rect:
+        serializedVersion: 2
+        x: 10746
+        y: 12
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 792cb8a3049c60290800000000000000
+      internalID: -7924425216614481257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_39
+      rect:
+        serializedVersion: 2
+        x: 10809
+        y: 17
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f62a611370ff5f1b0800000000000000
+      internalID: -5623308153348775313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_40
+      rect:
+        serializedVersion: 2
+        x: 10894
+        y: 4
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a191d75015d8ad60800000000000000
+      internalID: 7901799812391080358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_41
+      rect:
+        serializedVersion: 2
+        x: 10981
+        y: 0
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d81a8ec2072cff460800000000000000
+      internalID: 7277749309899579789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_42
+      rect:
+        serializedVersion: 2
+        x: 11143
+        y: 20
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cf94abe1911e25f0800000000000000
+      internalID: -779666367067152441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_43
+      rect:
+        serializedVersion: 2
+        x: 6552
+        y: 11
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feeab27c48087ad30800000000000000
+      internalID: 4442660865189850863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_44
+      rect:
+        serializedVersion: 2
+        x: 10776
+        y: 0
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f8fa15518a31fbc0800000000000000
+      internalID: -3751152687469889292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_45
+      rect:
+        serializedVersion: 2
+        x: 10969
+        y: 6
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f45dcb6ea46115060800000000000000
+      internalID: 6940353011709171023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_46
+      rect:
+        serializedVersion: 2
+        x: 11108
+        y: 3
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e5b5b4afe1603bb0800000000000000
+      internalID: -4958355507846466074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_47
+      rect:
+        serializedVersion: 2
+        x: 6434
+        y: 0
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55d94f6566f625800800000000000000
+      internalID: 599664185729916245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: premier plan bar retouch_48
+      rect:
+        serializedVersion: 2
+        x: 6443
+        y: 1
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3ba14f8f418b4140800000000000000
+      internalID: 4704996414424460092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      premier plan bar retouch_0: 4412081739090008844
+      premier plan bar retouch_1: 6899531864675183026
+      premier plan bar retouch_10: -1221483863524658678
+      premier plan bar retouch_11: -8536403958642763022
+      premier plan bar retouch_12: -3089513423049913586
+      premier plan bar retouch_13: 5904026518652628178
+      premier plan bar retouch_14: -4843519912409879565
+      premier plan bar retouch_15: 4535160304974225149
+      premier plan bar retouch_16: 1483234467846842094
+      premier plan bar retouch_17: 834271832357977727
+      premier plan bar retouch_18: 7247820468229079526
+      premier plan bar retouch_19: 690911946571965848
+      premier plan bar retouch_2: 4876233136998340569
+      premier plan bar retouch_20: 255131247408142007
+      premier plan bar retouch_21: 2471292109457931142
+      premier plan bar retouch_22: -1090394156644100809
+      premier plan bar retouch_23: 1365934900881785117
+      premier plan bar retouch_24: -435829813973096250
+      premier plan bar retouch_25: -6758153938702287937
+      premier plan bar retouch_26: -5176668659871250159
+      premier plan bar retouch_27: 8794124479324848878
+      premier plan bar retouch_28: -3042546477037132675
+      premier plan bar retouch_29: 1280907292990262610
+      premier plan bar retouch_3: 367946126376980623
+      premier plan bar retouch_30: 362850891700178170
+      premier plan bar retouch_31: -8501887498667902685
+      premier plan bar retouch_32: -2673081291778996675
+      premier plan bar retouch_33: -577409419339998644
+      premier plan bar retouch_34: 8633991830300564918
+      premier plan bar retouch_35: -2253018099729722722
+      premier plan bar retouch_36: -7886402024674161096
+      premier plan bar retouch_37: 7531208281634698788
+      premier plan bar retouch_38: -7924425216614481257
+      premier plan bar retouch_39: -5623308153348775313
+      premier plan bar retouch_4: 1462632849833973653
+      premier plan bar retouch_40: 7901799812391080358
+      premier plan bar retouch_41: 7277749309899579789
+      premier plan bar retouch_42: -779666367067152441
+      premier plan bar retouch_43: 4442660865189850863
+      premier plan bar retouch_44: -3751152687469889292
+      premier plan bar retouch_45: 6940353011709171023
+      premier plan bar retouch_46: -4958355507846466074
+      premier plan bar retouch_47: 599664185729916245
+      premier plan bar retouch_48: 4704996414424460092
+      premier plan bar retouch_5: -5300367225091169360
+      premier plan bar retouch_6: 5425376496652746933
+      premier plan bar retouch_7: 1498539035333112230
+      premier plan bar retouch_8: -8614474575901597389
+      premier plan bar retouch_9: -7090969457105672706
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

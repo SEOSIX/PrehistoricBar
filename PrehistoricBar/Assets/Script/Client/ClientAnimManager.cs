@@ -1,16 +1,34 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ClientAnimManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Animation animation;
+    public Animator animator;
+
+    private void Start()
     {
-        
+        animator.SetTrigger("trgEnter");
+    }
+    
+    public void StopAtBar()
+    {
+        animation.Stop();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void LeaveBar()
     {
-        
+        animator.SetTrigger("trgExit");
+    }
+
+    public void OutOfTheBar()
+    {
+        Destroy(gameObject);
+    }
+
+    public void ServeCocktail(bool validate)
+    {
+        if (validate) animator.SetTrigger("trgValidate");
+        else animator.SetTrigger("trgRefuse");
     }
 }
