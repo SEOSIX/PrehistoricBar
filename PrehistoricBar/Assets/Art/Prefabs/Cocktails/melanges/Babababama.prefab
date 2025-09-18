@@ -167,11 +167,11 @@ MonoBehaviour:
   cocktailIndices: 0100000006000000
   cocktailName: Babababama
   recette:
-  - description: "Versez 70 ml d'alcool de foug\xE8re"
+  - description: "1 : Versez 70 ml d'alcool de foug\xE8re"
     ingredientIndex: 1
     amount: 70
     isDone: 0
-  - description: Broyez de la bababe
+  - description: '2 : Broyez de la bababe'
     ingredientIndex: 6
-    amount: 1
+    amount: 6
     isDone: 0

@@ -167,7 +167,7 @@ MonoBehaviour:
   cocktailIndices: 01000000
   cocktailName: "Alcool de foug\xE8re"
   recette:
-  - description: "Versez 60 ml d'alcool de foug\xE8re"
+  - description: "1 : Versez 60 ml d'alcool de foug\xE8re"
     ingredientIndex: 1
     amount: 60
-    isDone: 1
+    isDone: 0

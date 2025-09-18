@@ -167,19 +167,19 @@ MonoBehaviour:
   cocktailIndices: 00000000030000000a00000005000000
   cocktailName: Froz au lait
   recette:
-  - description: Versez 70 ml de lait de mammouth
+  - description: '1 : Versez 70 ml de lait de mammouth'
     ingredientIndex: 0
     amount: 70
-    isDone: 1
-  - description: Broyez de la froz
+    isDone: 0
+  - description: '2 : Broyez de la froz'
     ingredientIndex: 3
     amount: 5
-    isDone: 1
-  - description: Versez du jus de larve
+    isDone: 0
+  - description: '3 : Versez du jus de larve'
     ingredientIndex: 10
     amount: 1
-    isDone: 1
-  - description: "Broyez des gla\xE7ons"
+    isDone: 0
+  - description: "4 : Broyez des gla\xE7ons"
     ingredientIndex: 5
-    amount: 1
-    isDone: 1
+    amount: 10
+    isDone: 0
