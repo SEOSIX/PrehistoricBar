@@ -52,69 +52,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Bababe",
-                    "type": "Button",
-                    "id": "2009e967-92c3-44a2-a5fe-d5e26078e04f",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "Press",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "CacaoLaid",
-                    "type": "Button",
-                    "id": "c55b701f-bb68-4093-adc2-e8662d041443",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "Press",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Froz",
-                    "type": "Button",
-                    "id": "b0b7db16-3299-49ad-bcdc-b3694eaa3eee",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "Press",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Ice",
-                    "type": "Button",
-                    "id": "32790669-4a4b-48cb-93f2-e96f3232d62a",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "Press",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "KitronVert",
-                    "type": "Button",
-                    "id": "0dc3ddd1-b19a-4cd1-81f7-a51bd6236360",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "Press",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Fly",
-                    "type": "Button",
-                    "id": "fdb52987-4217-4a47-b0b9-ba624cbcae6b",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "Press",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Qassos",
-                    "type": "Button",
-                    "id": "5561d431-0a46-4ea5-81e7-55aad5aa97da",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "Press",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Grind",
                     "type": "Button",
                     "id": "03cfd3b0-f132-4421-9ab3-2a0f12d37c96",
@@ -140,6 +77,33 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "ColorsR",
+                    "type": "Button",
+                    "id": "c79c5047-7be5-4cee-8b7a-21bcff7e1095",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Colors1R",
+                    "type": "Button",
+                    "id": "c70ff5a0-fdf0-4daa-8cb2-db3eb80acf70",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Colors2R",
+                    "type": "Button",
+                    "id": "4929b418-2676-4411-bc42-dc8d34e502f7",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -211,83 +175,6 @@
                 },
                 {
                     "name": "",
-                    "id": "c8107679-26ef-4ee5-b6e2-e5592b3c148a",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Bababe",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "761e2f1a-04c1-4113-91e5-dd75c4dfaaa8",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CacaoLaid",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "f031b41f-e511-4dec-ad7d-bce552ad113f",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Froz",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cb07f577-4271-4eba-9b74-50b13b1ede64",
-                    "path": "<Keyboard>/f",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Ice",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "966642c9-4e6d-4c31-8e08-9d9e66cfb893",
-                    "path": "<Keyboard>/g",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "KitronVert",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "409adee3-38b3-4771-ac39-6e090cf18570",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Fly",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b51b283e-c19b-41c0-97ba-37e03b39da24",
-                    "path": "<Keyboard>/j",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Qassos",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "a5d675b5-9dbd-4c1e-b8b0-9aa561c8e902",
                     "path": "<Keyboard>/z",
                     "interactions": "",
@@ -327,6 +214,39 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Garbage",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "881f8159-2daf-434b-bb83-af63b5cd5939",
+                    "path": "<Keyboard>/q",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ColorsR",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d582e48c-6376-4ee6-9550-e197c6fe7e0d",
+                    "path": "<Keyboard>/w",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Colors1R",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "403f999f-68d1-4a46-acb7-7b978ee7c17c",
+                    "path": "<Keyboard>/e",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Colors2R",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

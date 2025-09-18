@@ -139,14 +139,14 @@ public class QueueUiManager : MonoBehaviour
             timerSlider.fillRect.GetComponent<Image>().color = Color.white;
             return;
         }
-
         foreach (var cocktail in currentClient.clients)
         {
             remainingCocktails.Add(cocktail);
             cocktailIngredientsRemaining[cocktail] = new HashSet<IngredientIndex>();
             recetteTexts[cocktail] = new List<TextMeshProUGUI>();
             cocktailStepIndices[cocktail] = 0;
-
+            
+            
             foreach (var prefab in cocktail.cocktailsImage)
             {
                 if (prefab != null)
@@ -300,25 +300,58 @@ public class QueueUiManager : MonoBehaviour
     {
         if (laitLocked) return;  
         laitPressed = value.isPressed;
+        if (laitPressed)
+        {
+            SounfManager.Singleton.PlaySound(5, true);
+            Liquide.singleton.AcitaveObject(2, true);
+        }
         TryValidateIngredient(IngredientIndex.Laitdemammouth, value);
         if (value.isPressed) laitLocked = true; 
     }
 
+    void OnColorsR(InputValue value)
+    {
+        Liquide.singleton.AcitaveObject(2, false);
+        SounfManager.Singleton.StopSound(5);
+    }
     void OnColors1(InputValue value)
     {
         if (alcoolLocked) return;
         alcoolPressed = value.isPressed;
+        if (alcoolPressed)
+        {
+            SounfManager.Singleton.PlaySound(5, true);
+            Liquide.singleton.AcitaveObject(0, true);
+        }
+        
         TryValidateIngredient(IngredientIndex.Alcooldefougere, value);
-        if (value.isPressed) alcoolLocked = true;
+        if (value.isPressed) alcoolLocked = true; 
+       
+    }
+    void OnColors1R(InputValue value)
+    {
+        Liquide.singleton.AcitaveObject(0, false);
+        SounfManager.Singleton.StopSound(5);
     }
 
     void OnColors2(InputValue value)
     {
         if (baveLocked) return;
         bavePressed = value.isPressed;
+        if (bavePressed)
+        {
+            SounfManager.Singleton.PlaySound(5, true);
+            Liquide.singleton.AcitaveObject(1, true);
+        }
         TryValidateIngredient(IngredientIndex.Bavedeboeuf, value);
         if (value.isPressed) baveLocked = true;
     }
+    void OnColors2R(InputValue value)
+    {
+        Liquide.singleton.AcitaveObject(1, false);
+        SounfManager.Singleton.StopSound(5);
+    }
+
 
     public void TryValidateIngredient(IngredientIndex ingredient, InputValue value)
     {
@@ -334,6 +367,7 @@ public class QueueUiManager : MonoBehaviour
         };
         if (targetPos != null) StartMove(ingredient, targetPos);
     }
+
 
     IEnumerator FillRoutine(IngredientIndex ingredient, float speed, InputAction action)
     {
@@ -389,23 +423,40 @@ public class QueueUiManager : MonoBehaviour
     
     private bool HasIncorrectIngredients(ClientClass cocktail)
     {
-        if (!cocktailIngredientsRemaining.ContainsKey(cocktail)) return false;
-
-        var allIngredients = new HashSet<IngredientIndex>();
-        if (cocktailRecettes.ContainsKey(cocktail))
+        if (!cocktailRecettes.ContainsKey(cocktail)) return false;
+        Dictionary<IngredientIndex, int> expectedCounts = new();
+        foreach (var step in cocktailRecettes[cocktail])
         {
-            foreach (var step in cocktailRecettes[cocktail])
+            if (!expectedCounts.ContainsKey(step.ingredientIndex))
+                expectedCounts[step.ingredientIndex] = 0;
+            expectedCounts[step.ingredientIndex]++;
+        }
+        Dictionary<IngredientIndex, int> actualCounts = new();
+        foreach (var step in cocktailRecettes[cocktail])
+        {
+            if (step.isDone)
             {
-                allIngredients.Add(step.ingredientIndex);
+                if (!actualCounts.ContainsKey(step.ingredientIndex))
+                    actualCounts[step.ingredientIndex] = 0;
+                actualCounts[step.ingredientIndex]++;
             }
         }
-        
-        foreach (var ingredient in Enum.GetValues(typeof(IngredientIndex)))
+        foreach (var kvp in actualCounts)
         {
-            var ing = (IngredientIndex)ingredient;
-            if (!allIngredients.Contains(ing) && !cocktailIngredientsRemaining[cocktail].Contains(ing))
+            int expected = expectedCounts.ContainsKey(kvp.Key) ? expectedCounts[kvp.Key] : 0;
+            if (kvp.Value > expected)
             {
-                return true; 
+                Debug.LogWarning($"Ingrédient {kvp.Key} utilisé {kvp.Value}x au lieu de {expected}x !");
+                return true;
+            }
+        }
+
+        foreach (var kvp in expectedCounts)
+        {
+            int actual = actualCounts.ContainsKey(kvp.Key) ? actualCounts[kvp.Key] : 0;
+            if (actual < kvp.Value)
+            {
+                Debug.Log($"⚠Ingrédient {kvp.Key} manquant : {actual}/{kvp.Value}");
             }
         }
 
