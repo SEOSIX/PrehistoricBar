@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 11ab19d9fe32fad418b14bd3498df7e7
+guid: 8609baf2ad6aed2459324e7821e4b90e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4614431570402487357
-    second: "barre de r\xE9ussite_0"
-  - first:
-      213: 3935873921483624029
-    second: "barre de r\xE9ussite_1"
-  - first:
-      213: -5278598196255610938
-    second: "barre de r\xE9ussite_2"
+      213: 6606476692835536599
+    second: ingredients mammouth_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,13 +46,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 401, z: 0, w: 406}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -106,67 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "barre de r\xE9ussite_0"
+      name: ingredients mammouth_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 900
-        width: 12
-        height: 6
+        x: 54
+        y: 66
+        width: 812
+        height: 927
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3c2032a011c90040800000000000000
-      internalID: 4614431570402487357
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "barre de r\xE9ussite_1"
-      rect:
-        serializedVersion: 2
-        x: 693
-        y: 900
-        width: 118
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d5e41ca7a780f9630800000000000000
-      internalID: 3935873921483624029
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "barre de r\xE9ussite_2"
-      rect:
-        serializedVersion: 2
-        x: 257
-        y: 0
-        width: 530
-        height: 848
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6c7aa2068e6aeb6b0800000000000000
-      internalID: -5278598196255610938
+      spriteID: 7de0c5dac8beeab50800000000000000
+      internalID: 6606476692835536599
       vertices: []
       indices: 
       edges: []
@@ -175,8 +125,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -185,9 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "barre de r\xE9ussite_0": 4614431570402487357
-      "barre de r\xE9ussite_1": 3935873921483624029
-      "barre de r\xE9ussite_2": -5278598196255610938
+      ingredients mammouth_0: 6606476692835536599
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
