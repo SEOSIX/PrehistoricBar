@@ -22,7 +22,8 @@ public class EventQueueManager : MonoBehaviour
     
     [Header("Vagues de clients")]
     [SerializeField] private int numberOfWaves = 3;
-    private int currentWave = 0;
+    [HideInInspector]
+    public int currentWave = 0;
     
     private Queue<ServiceData> eventService = new Queue<ServiceData>();
     

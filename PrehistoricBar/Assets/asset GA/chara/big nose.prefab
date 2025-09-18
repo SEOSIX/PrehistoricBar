@@ -13,12 +13,24 @@ PrefabInstance:
       value: big nose
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: a6d4e7e89a4cb9c46a7671d6fb82bb94, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.40282905
+      objectReference: {fileID: 0}
+    - target: {fileID: -7552582706839291426, guid: a6d4e7e89a4cb9c46a7671d6fb82bb94, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.40282905
+      objectReference: {fileID: 0}
+    - target: {fileID: -7552582706839291426, guid: a6d4e7e89a4cb9c46a7671d6fb82bb94, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.40282905
+      objectReference: {fileID: 0}
+    - target: {fileID: -7552582706839291426, guid: a6d4e7e89a4cb9c46a7671d6fb82bb94, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: a6d4e7e89a4cb9c46a7671d6fb82bb94, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.33
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: a6d4e7e89a4cb9c46a7671d6fb82bb94, type: 3}
       propertyPath: m_LocalPosition.z

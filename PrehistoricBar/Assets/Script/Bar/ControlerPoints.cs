@@ -107,7 +107,7 @@ namespace Script.Bar
         {
             scoreMultNv = EventQueueManager.GetCurrentCocktail().recette.Count;
             Debug.Log($"Score | scoreMultNv : {scoreMultNv}");
-            scoreMultPrepTime = 0;
+            scoreMultPrepTime = 1.7f;
             if (timeleft > initialtime / 3) scoreMultPrepTime = 0.2f;
             if (timeleft > initialtime / 2) scoreMultPrepTime = 0.5f;
             if (timeleft > initialtime / 1.5f) scoreMultPrepTime = 1;
@@ -116,7 +116,7 @@ namespace Script.Bar
             scoreMultCombo += 1;
             Debug.Log($"Score | scoreMultCombo : {scoreMultCombo}");
             float scoretotal = 0;
-            scoretotal += scoreMultNv * (1 + scoreMultPrepTime + scoreMultDosage) * 1 /* Service */ * scoreMultCombo;
+            scoretotal += scoreMultNv * (1 + scoreMultPrepTime + scoreMultDosage) * 1 / EventQueueManager.instance.currentWave * scoreMultCombo;
             Debug.Log($"Score | scoretotal : {scoretotal}");
             
             instance.CheckForWin(Mathf.RoundToInt(scoretotal));

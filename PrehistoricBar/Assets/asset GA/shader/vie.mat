@@ -45,7 +45,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _dissolveAsset: 0.068
+    - _dissolveAsset: 0
     - _dissolvescale: 30
     - _outline: 0.1
     m_Colors:
