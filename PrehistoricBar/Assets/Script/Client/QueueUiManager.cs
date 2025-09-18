@@ -110,9 +110,9 @@ public class QueueUiManager : MonoBehaviour
         }
     }
     
-    public void ShowNextClient()
+    public void ShowNextClient(bool valid = true)
     {
-        ControlerPoints.instance.CheckForWin(20);
+        if (valid) ControlerPoints.instance.GetScore(currentTime,clientTime);
         Over.SetActive(false);
         currentClient = queueManager.GetNextService();
 
@@ -419,11 +419,12 @@ public class QueueUiManager : MonoBehaviour
                 if (HasIncorrectIngredients(cocktail))
                 {
                     Debug.LogWarning("Vous avez mis des ingrédients incorrects pour ce cocktail !");
-                    ShowNextClient();
+                    ShowNextClient(false);
                     return;
                 }
             }
         }
+        
         if (queueManager.HasMoreWaves())
         {
             ShowNextClient();

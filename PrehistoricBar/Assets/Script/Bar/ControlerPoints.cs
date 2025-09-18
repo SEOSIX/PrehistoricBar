@@ -103,9 +103,20 @@ namespace Script.Bar
             scoreMultDosage += scoremult;
         }
 
-        public static void GetScore(float timeleft, float initialtime)
+        public void GetScore(float timeleft, float initialtime)
         {
-            scoreMultNv = EventQueueManager.GetCurrentCocktail().recette.Count;
+            var cocktail = EventQueueManager.GetCurrentCocktail();
+            if (cocktail == null)
+            {
+                Debug.LogError("GetScore appelé mais aucun cocktail actif !");
+                return;
+            }
+            if (cocktail.recette == null)
+            {
+                Debug.LogError("Cocktail trouvé mais la recette est null !");
+                return;
+            }
+            scoreMultNv = cocktail.recette.Count * 50;
             Debug.Log($"Score | scoreMultNv : {scoreMultNv}");
             scoreMultPrepTime = 0;
             if (timeleft > initialtime / 3) scoreMultPrepTime = 0.2f;
@@ -116,7 +127,7 @@ namespace Script.Bar
             scoreMultCombo += 1;
             Debug.Log($"Score | scoreMultCombo : {scoreMultCombo}");
             float scoretotal = 0;
-            scoretotal += scoreMultNv * (1 + scoreMultPrepTime + scoreMultDosage) * 1 /* Service */ * scoreMultCombo;
+            scoretotal += scoreMultNv * (1 + scoreMultPrepTime + scoreMultDosage) * EventQueueManager.currentWave * scoreMultCombo;
             Debug.Log($"Score | scoretotal : {scoretotal}");
             
             instance.CheckForWin(Mathf.RoundToInt(scoretotal));
