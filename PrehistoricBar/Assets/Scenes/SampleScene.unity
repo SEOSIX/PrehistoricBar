@@ -5167,14 +5167,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5339929489530209134, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
-      propertyPath: cupSlider
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5339929489530209134, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
-      propertyPath: fillImage
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5339929489530209134, guid: 2a1f6c98e326bcb4991076745a77f593, type: 3}
       propertyPath: jusColor.b
       value: 1
       objectReference: {fileID: 0}

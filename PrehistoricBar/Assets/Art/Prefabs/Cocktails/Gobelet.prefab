@@ -129,8 +129,8 @@ MonoBehaviour:
   scoreMult2: 0
   scoreMult3: -0.2
   scoreMult4: -0.5
-  cupSlider: {fileID: 0}
-  fillImage: {fileID: 0}
+  cupSlider: {fileID: 5613341582393757650}
+  fillImage: {fileID: 1662368889055215851}
   IsAchieved: 0
   laitColor: {r: 0, g: 0, b: 0, a: 0}
   baveColor: {r: 0, g: 0, b: 0, a: 0}
