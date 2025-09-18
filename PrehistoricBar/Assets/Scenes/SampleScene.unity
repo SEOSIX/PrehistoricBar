@@ -145,7 +145,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 84701836}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 88fc40fdd7a2bf34eb7ff22d4ff8b328, type: 2}
   m_CullingMode: 0
@@ -2705,6 +2705,7 @@ MonoBehaviour:
   minCocktails: 1
   maxCocktails: 1
   numberOfWaves: 3
+  currentWave: 0
 --- !u!4 &784911051
 Transform:
   m_ObjectHideFlags: 0
@@ -3008,7 +3009,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 874967664}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 0c6c88f4018d8374c8a24dd7d41b3ccf, type: 2}
   m_CullingMode: 0
@@ -3985,7 +3986,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1127757219}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: a3918c2058e657345abf53cb40cedcb6, type: 2}
   m_CullingMode: 0
@@ -6150,7 +6151,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659929647}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: b5d4b52380fac6545abc3f6912b0df64, type: 2}
   m_CullingMode: 0
@@ -6257,6 +6258,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 4e5a43c756770424f9e2b1d6ae7aa532, type: 2}
+    - target: {fileID: 1723204009507234335, guid: 30d1b84b07d89d94486b4e92a4eb679b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1723204009507234335, guid: 30d1b84b07d89d94486b4e92a4eb679b, type: 3}
       propertyPath: m_Controller
       value: 
@@ -7250,7 +7255,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894596647}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: fc7bd95987795b54ea60b910c4ab1749, type: 2}
   m_CullingMode: 0
