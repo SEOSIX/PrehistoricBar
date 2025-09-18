@@ -1,9 +1,15 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ClientAnimManager : MonoBehaviour
 {
     public Animation animation;
     public Animator animator;
+
+    private void Start()
+    {
+        animator.SetTrigger("trgEnter");
+    }
     
     public void StopAtBar()
     {
@@ -12,7 +18,7 @@ public class ClientAnimManager : MonoBehaviour
 
     public void LeaveBar()
     {
-        animation.Play();
+        animator.SetTrigger("trgExit");
     }
 
     public void OutOfTheBar()

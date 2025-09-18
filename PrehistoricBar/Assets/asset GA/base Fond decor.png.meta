@@ -1,0 +1,715 @@
+fileFormatVersion: 2
+guid: 0a7ead0db8035a04381651c2cc7b9584
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4328027470341796647
+    second: base Fond decor_0
+  - first:
+      213: -1373838401706407664
+    second: base Fond decor_1
+  - first:
+      213: -5787933087244549040
+    second: base Fond decor_2
+  - first:
+      213: -2945056137241178206
+    second: base Fond decor_3
+  - first:
+      213: -6923305158338248223
+    second: base Fond decor_4
+  - first:
+      213: -3917569719288650557
+    second: base Fond decor_5
+  - first:
+      213: 6891394036878009955
+    second: base Fond decor_6
+  - first:
+      213: 4647928160240930756
+    second: base Fond decor_7
+  - first:
+      213: -4428949452661997821
+    second: base Fond decor_8
+  - first:
+      213: 1873243305804517657
+    second: base Fond decor_9
+  - first:
+      213: -5043975283314328157
+    second: base Fond decor_10
+  - first:
+      213: -4663440185657303389
+    second: base Fond decor_11
+  - first:
+      213: -1658563552755782959
+    second: base Fond decor_12
+  - first:
+      213: 3578353706159864794
+    second: base Fond decor_13
+  - first:
+      213: -1141756300267977707
+    second: base Fond decor_14
+  - first:
+      213: 554392232692124927
+    second: base Fond decor_15
+  - first:
+      213: 6090149861505126814
+    second: base Fond decor_16
+  - first:
+      213: 8958499129034835179
+    second: base Fond decor_17
+  - first:
+      213: -8239923071411962619
+    second: base Fond decor_18
+  - first:
+      213: 1641014224151473496
+    second: base Fond decor_19
+  - first:
+      213: -1801958197379184234
+    second: base Fond decor_20
+  - first:
+      213: -5687910259449636236
+    second: base Fond decor_21
+  - first:
+      213: 4282482423513879938
+    second: base Fond decor_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: base Fond decor_0
+      rect:
+        serializedVersion: 2
+        x: 2519
+        y: 6178
+        width: 102
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 723fadbad0e301c30800000000000000
+      internalID: 4328027470341796647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base Fond decor_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 118
+        width: 15414
+        height: 6033
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 019cf77a0452fece0800000000000000
+      internalID: -1373838401706407664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base Fond decor_2
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 2093
+        width: 23
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0540f0fd5812dafa0800000000000000
+      internalID: -5787933087244549040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base Fond decor_3
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 2063
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2afc728fb0f0127d0800000000000000
+      internalID: -2945056137241178206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base Fond decor_4
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 757
+        width: 67
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e18e95c3aa7bef90800000000000000
+      internalID: -6923305158338248223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base Fond decor_5
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 751
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c429f2b81ff1a9c0800000000000000
+      internalID: -3917569719288650557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base Fond decor_6
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 733
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 366eb574d5623af50800000000000000
+      internalID: 6891394036878009955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base Fond decor_7
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 713
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cf02b43902c08040800000000000000
+      internalID: 4647928160240930756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base Fond decor_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 690
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30fbbe930f53982c0800000000000000
+      internalID: -4428949452661997821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base Fond decor_9
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 685
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9115b5c9cd81ff910800000000000000
+      internalID: 1873243305804517657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base Fond decor_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 667
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3adf2363433300ab0800000000000000
+      internalID: -5043975283314328157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base Fond decor_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 653
+        width: 49
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ae5d9eebd1284fb0800000000000000
+      internalID: -4663440185657303389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base Fond decor_12
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 669
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dae4987c399bf8e0800000000000000
+      internalID: -1658563552755782959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base Fond decor_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 639
+        width: 6
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adb7c50acbdd8a130800000000000000
+      internalID: 3578353706159864794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base Fond decor_14
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 631
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5148676b1baa720f0800000000000000
+      internalID: -1141756300267977707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base Fond decor_15
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 568
+        width: 44
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffc89df5cc891b700800000000000000
+      internalID: 554392232692124927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base Fond decor_16
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 645
+        width: 34
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9158e3380f848450800000000000000
+      internalID: 6090149861505126814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base Fond decor_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 565
+        width: 35
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be484c26e7bf25c70800000000000000
+      internalID: 8958499129034835179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base Fond decor_18
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 626
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50db1ff9f99e5ad80800000000000000
+      internalID: -8239923071411962619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base Fond decor_19
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 571
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85d69ed0ebd06c610800000000000000
+      internalID: 1641014224151473496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base Fond decor_20
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 548
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6994c1111982ef6e0800000000000000
+      internalID: -1801958197379184234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base Fond decor_21
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 505
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47a543f31cb7011b0800000000000000
+      internalID: -5687910259449636236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base Fond decor_22
+      rect:
+        serializedVersion: 2
+        x: 7994
+        y: 126
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 285166a131f6e6b30800000000000000
+      internalID: 4282482423513879938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      base Fond decor_0: 4328027470341796647
+      base Fond decor_1: -1373838401706407664
+      base Fond decor_10: -5043975283314328157
+      base Fond decor_11: -4663440185657303389
+      base Fond decor_12: -1658563552755782959
+      base Fond decor_13: 3578353706159864794
+      base Fond decor_14: -1141756300267977707
+      base Fond decor_15: 554392232692124927
+      base Fond decor_16: 6090149861505126814
+      base Fond decor_17: 8958499129034835179
+      base Fond decor_18: -8239923071411962619
+      base Fond decor_19: 1641014224151473496
+      base Fond decor_2: -5787933087244549040
+      base Fond decor_20: -1801958197379184234
+      base Fond decor_21: -5687910259449636236
+      base Fond decor_22: 4282482423513879938
+      base Fond decor_3: -2945056137241178206
+      base Fond decor_4: -6923305158338248223
+      base Fond decor_5: -3917569719288650557
+      base Fond decor_6: 6891394036878009955
+      base Fond decor_7: 4647928160240930756
+      base Fond decor_8: -4428949452661997821
+      base Fond decor_9: 1873243305804517657
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
