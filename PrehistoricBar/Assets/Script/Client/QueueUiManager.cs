@@ -30,6 +30,10 @@ public class QueueUiManager : MonoBehaviour
     [SerializeField] private float tireuseBaveSpeed;
     [SerializeField] private float tireuseAlcoolSpeed;
     
+    private bool laitMoved = false;
+    private bool alcoolMoved = false;
+    private bool baveMoved = false;
+    
     [Header("Positions des ingrédients")]
     [SerializeField] private Transform laitPos;
     [SerializeField] private Transform bavePos;
@@ -314,6 +318,7 @@ public class QueueUiManager : MonoBehaviour
     void OnColors(InputValue value)
     {
         if (!value.isPressed) return;
+        if (!laitMoved) return;
         if (!laitLocked)
         {
             laitLocked = true;
@@ -332,6 +337,7 @@ public class QueueUiManager : MonoBehaviour
     void OnColors1(InputValue value)
     {
         if (!value.isPressed) return;
+        if (!alcoolMoved) return;
         if (!alcoolLocked)
         {
             alcoolLocked = true;
@@ -350,6 +356,8 @@ public class QueueUiManager : MonoBehaviour
     void OnColors2(InputValue value)
     {
         if (!value.isPressed) return;
+        if (!baveMoved) return;
+        
         if (!baveLocked)
         {
             baveLocked = true;
@@ -402,6 +410,7 @@ public class QueueUiManager : MonoBehaviour
     void OnNextClient(InputValue value)
     {
         if (!value.isPressed) return;
+        
 
         if (currentClient != null)
         {
@@ -500,7 +509,7 @@ public class QueueUiManager : MonoBehaviour
         currentMoveCoroutine = StartCoroutine(MoveAndFill(ingredient, target));
     }
 
-    private IEnumerator MoveCupTo(Transform target)
+    private IEnumerator MoveCupTo(Transform target, IngredientIndex ingredient)
     {
         RectTransform cupRect = cup.GetComponent<RectTransform>();
         RectTransform targetRect = target.GetComponent<RectTransform>();
@@ -512,11 +521,18 @@ public class QueueUiManager : MonoBehaviour
         }
         cupRect.anchoredPosition = targetPos;
         currentMoveCoroutine = null;
+        
+        switch (ingredient)
+        {
+            case IngredientIndex.Laitdemammouth: laitMoved = true; break;
+            case IngredientIndex.Alcooldefougere: alcoolMoved = true; break;
+            case IngredientIndex.Bavedeboeuf: baveMoved = true; break;
+        }
     }
 
     private IEnumerator MoveAndFill(IngredientIndex ingredient, Transform target)
     {
-        yield return StartCoroutine(MoveCupTo(target));
+        yield return StartCoroutine(MoveCupTo(target, ingredient));
         float speed = ingredient switch
         {
             IngredientIndex.Laitdemammouth => tireuseLaitSpeed,
