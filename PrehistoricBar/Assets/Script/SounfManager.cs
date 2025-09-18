@@ -3,14 +3,20 @@ using UnityEngine;
 
 public class SounfManager : MonoBehaviour
 {
-    public static SounfManager singleton { get; private set; }
+    public static SounfManager Singleton { get; private set; }
     public AudioClip[] sounds;
     
     public AudioSource soundToPlay;
 
     private void Awake()
     {
-        singleton = this;
+        if (Singleton != null && Singleton != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Singleton = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     public void PlaySound(int index, bool loop = false)
