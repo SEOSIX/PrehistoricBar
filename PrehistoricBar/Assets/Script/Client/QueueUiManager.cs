@@ -145,7 +145,7 @@ public class QueueUiManager : MonoBehaviour
         }
 
         // Spawner client
-        GameObject newClient = Instantiate(currentClient.prefab, new Vector3(-12f, 0f, 0f), transform.rotation);
+        GameObject newClient = Instantiate(currentClient.prefab, new Vector3(-12f, -5f, 0f), transform.rotation);
         clientAnimManager = newClient.GetComponent<ClientAnimManager>();
         
         foreach (var cocktail in currentClient.clients)
