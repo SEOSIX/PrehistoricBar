@@ -118,7 +118,7 @@ namespace Script.Bar
             }
             scoreMultNv = cocktail.recette.Count * 50;
             Debug.Log($"Score | scoreMultNv : {scoreMultNv}");
-            scoreMultPrepTime = 0;
+            scoreMultPrepTime = 1.7f;
             if (timeleft > initialtime / 3) scoreMultPrepTime = 0.2f;
             if (timeleft > initialtime / 2) scoreMultPrepTime = 0.5f;
             if (timeleft > initialtime / 1.5f) scoreMultPrepTime = 1;
