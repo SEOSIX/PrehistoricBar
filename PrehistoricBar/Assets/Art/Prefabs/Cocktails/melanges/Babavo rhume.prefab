@@ -167,15 +167,15 @@ MonoBehaviour:
   cocktailIndices: 010000000200000006000000
   cocktailName: Babavo rhume
   recette:
-  - description: "Versez 60 ml d'alcool de foug\xE8re"
+  - description: "1 : Versez 60 ml d'alcool de foug\xE8re"
     ingredientIndex: 1
     amount: 60
     isDone: 0
-  - description: Versez 30 ml de bave de boeuf
+  - description: '2 : Versez 30 ml de bave de boeuf'
     ingredientIndex: 2
     amount: 30
     isDone: 0
-  - description: Broyez de la bababe
+  - description: '3 : Broyez de la bababe'
     ingredientIndex: 6
-    amount: 1
+    amount: 6
     isDone: 0
