@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 48fbe1af2add691469268f4d3c46efae
+guid: 26842004660d0fd4b9d2eac8e30b54b6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8248463453606869065
-    second: "Bave fruit\xE9_0"
+      213: -4023329035388678548
+    second: Commandes_0
   - first:
-      213: -7519077299574458377
-    second: "Bave fruit\xE9_1"
+      213: -6026533920358246553
+    second: Commandes_1
+  - first:
+      213: 3910393421878853980
+    second: Commandes_2
+  - first:
+      213: 2826389208817843382
+    second: Commandes_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Bave fruit\xE9_0"
+      name: Commandes_0
       rect:
         serializedVersion: 2
-        x: 828
-        y: 1017
-        width: 25
-        height: 8
+        x: 0
+        y: 49
+        width: 3125
+        height: 1917
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7b788f0f032978d80800000000000000
-      internalID: -8248463453606869065
+      spriteID: c6e842f0f834a28c0800000000000000
+      internalID: -4023329035388678548
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Bave fruit\xE9_1"
+      name: Commandes_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 713
-        height: 835
+        x: 3074
+        y: 1801
+        width: 14
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +146,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7f73928a80fd6a790800000000000000
-      internalID: -7519077299574458377
+      spriteID: 767543254537d5ca0800000000000000
+      internalID: -6026533920358246553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Commandes_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1133
+        width: 5
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c510d1b5912844630800000000000000
+      internalID: 3910393421878853980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Commandes_3
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 43
+        width: 37
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bcb594b20a593720800000000000000
+      internalID: 2826389208817843382
       vertices: []
       indices: 
       edges: []
@@ -150,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "Bave fruit\xE9_0": -8248463453606869065
-      "Bave fruit\xE9_1": -7519077299574458377
+      Commandes_0: -4023329035388678548
+      Commandes_1: -6026533920358246553
+      Commandes_2: 3910393421878853980
+      Commandes_3: 2826389208817843382
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
