@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 68cec3aedd980b942befe4dcdd40da37
+guid: c6dd9b8de5937e24caada89a2f2c3c08
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -489288472147288824
-    second: Layer 10_0
+      213: 4876372724869449744
+    second: graduation a jour_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Layer 10_0
+      name: graduation a jour_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 219
-        height: 440
+        width: 379
+        height: 788
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 80d97f81ab2b539f0800000000000000
-      internalID: -489288472147288824
+      spriteID: 0184f3a382b5ca340800000000000000
+      internalID: 4876372724869449744
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Layer 10_0: -489288472147288824
+      graduation a jour_0: 4876372724869449744
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
