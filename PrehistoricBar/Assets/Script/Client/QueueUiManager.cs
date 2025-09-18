@@ -185,7 +185,7 @@ public class QueueUiManager : MonoBehaviour
 
                             var textObj = Instantiate(recetteImagePrefab, recetteContainer);
                             var textMesh = textObj.GetComponent<Image>();
-                            textMesh.sprite = newStep.description.gameObject.GetComponent<SpriteRenderer>().sprite;
+                            textMesh.sprite = newStep.description.gameObject.GetComponent<Image>().sprite;
                             recetteTexts[cocktail].Add(textMesh);
                         }
                     }

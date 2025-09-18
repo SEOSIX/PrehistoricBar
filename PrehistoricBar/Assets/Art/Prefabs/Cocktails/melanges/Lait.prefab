@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1835647256195002814}
   - component: {fileID: -4962834539135106580}
   m_Layer: 5
-  m_Name: Alcool de fougere
+  m_Name: Lait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,10 +88,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ee0e52ca784e0a89d6f86087ba1c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Script.Objects.Cocktails
-  cocktailIndices: 01000000
+  cocktailIndices: 00000000
   cocktailName: "Alcool de foug\xE8re"
   recette:
-  - description: {fileID: 939255163538674830, guid: bf37c559ad283b64ba25073803f4a667, type: 3}
+  - description: {fileID: 0}
     ingredientIndex: 1
     amount: 60
     isDone: 0
