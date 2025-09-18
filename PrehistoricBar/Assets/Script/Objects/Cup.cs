@@ -16,10 +16,12 @@ namespace Script.Objects
         [SerializeField] private float scoreMult2;
         [SerializeField] private float scoreMult3;
         [SerializeField] private float scoreMult4;
-
         [Header("UI")]
         public Slider cupSlider; 
         [SerializeField] private Image fillImage;
+        [SerializeField] private Image cupImage;
+        [SerializeField] private Sprite cupSprite;
+        [SerializeField] private Sprite fillSprite;
         [HideInInspector]
         public bool IsAchieved = false;
 
@@ -61,6 +63,8 @@ namespace Script.Objects
         private void Awake()
         {
             instance = this;
+            cupImage.sprite = cupSprite;
+            fillImage.sprite = fillSprite;
         }
 
         #region Filling
