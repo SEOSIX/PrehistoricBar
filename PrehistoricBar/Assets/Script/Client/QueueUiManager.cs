@@ -16,7 +16,6 @@ public class QueueUiManager : MonoBehaviour
     [SerializeField] private Transform spawnContainer;
     public GameObject Over;
     
-    // Current client
     private ClientAnimManager clientAnimManager;
 
     [Header("Timer")]
@@ -62,7 +61,7 @@ public class QueueUiManager : MonoBehaviour
 
     [Header("UI Recette")]
     [SerializeField] private Transform recetteContainer;
-    [SerializeField] private GameObject recetteTextPrefab;
+    [SerializeField] private GameObject recetteImagePrefab;
     
     [Header("Preview des prochains clients")]
     [SerializeField] private Transform nextClientSlot1;
@@ -72,7 +71,7 @@ public class QueueUiManager : MonoBehaviour
     private GameObject nextClient2UI;
     
 
-    private Dictionary<ClientClass, List<TextMeshProUGUI>> recetteTexts = new();
+    private Dictionary<ClientClass, List<Image>> recetteTexts = new();
     
     [HideInInspector] public bool laitLocked = false;
     [HideInInspector] public bool alcoolLocked = false;
@@ -148,8 +147,7 @@ public class QueueUiManager : MonoBehaviour
             timerSlider.fillRect.GetComponent<Image>().color = Color.white;
             return;
         }
-
-        // Spawner client
+        
         GameObject newClient = Instantiate(currentClient.prefab, new Vector3(-12f, -5f, 0f), transform.rotation);
         clientAnimManager = newClient.GetComponent<ClientAnimManager>();
         
@@ -157,7 +155,7 @@ public class QueueUiManager : MonoBehaviour
         {
             remainingCocktails.Add(cocktail);
             cocktailIngredientsRemaining[cocktail] = new HashSet<IngredientIndex>();
-            recetteTexts[cocktail] = new List<TextMeshProUGUI>();
+            recetteTexts[cocktail] = new List<Image>();
             cocktailStepIndices[cocktail] = 0;
 
             foreach (var prefab in cocktail.cocktailsImage)
@@ -185,9 +183,9 @@ public class QueueUiManager : MonoBehaviour
                             };
                             cocktailRecettes[cocktail].Add(newStep);
 
-                            var textObj = Instantiate(recetteTextPrefab, recetteContainer);
-                            var textMesh = textObj.GetComponent<TextMeshProUGUI>();
-                            textMesh.text = newStep.description;
+                            var textObj = Instantiate(recetteImagePrefab, recetteContainer);
+                            var textMesh = textObj.GetComponent<Image>();
+                            textMesh.sprite = newStep.description.sprite;
                             recetteTexts[cocktail].Add(textMesh);
                         }
                     }
@@ -272,10 +270,15 @@ public class QueueUiManager : MonoBehaviour
         var steps = cocktailRecettes[cocktail];
         int idx = steps.IndexOf(step);
         if (idx == -1) return;
-        if (!recetteTexts.ContainsKey(cocktail)) return;
+
+        if (!recetteTexts.ContainsKey(cocktail)) return; 
         steps[idx].isDone = true;
+
         if (recetteTexts[cocktail].Count > idx)
-            recetteTexts[cocktail][idx].text = $"<color=green>{steps[idx].description}</color>";
+        {
+            recetteTexts[cocktail][idx].color = Color.gray;
+        }
+
         cocktailStepIndices[cocktail]++;
         if (cocktailStepIndices[cocktail] >= steps.Count)
             ValidateCocktail(cocktail);
@@ -598,7 +601,7 @@ public class QueueUiManager : MonoBehaviour
                 }
             }
             cocktailRecettes[cocktail] = new List<RecetteStep>();
-            recetteTexts[cocktail] = new List<TextMeshProUGUI>();
+            recetteTexts[cocktail] = new List<Image>();
             cocktailStepIndices[cocktail] = 0;
             Script.Objects.Cocktails sourceData = null;
             foreach (var prefab in cocktail.cocktailsImage)
@@ -618,9 +621,9 @@ public class QueueUiManager : MonoBehaviour
                         isDone = false
                     };
                     cocktailRecettes[cocktail].Add(newStep);
-                    var textObj = Instantiate(recetteTextPrefab, recetteContainer);
-                    var textMesh = textObj.GetComponent<TextMeshProUGUI>();
-                    textMesh.text = newStep.description;
+                    var textObj = Instantiate(recetteImagePrefab, recetteContainer);
+                    var textMesh = textObj.GetComponent<Image>();
+                    textMesh.sprite = newStep.description.sprite;
                     recetteTexts[cocktail].Add(textMesh);
                 }
             }
