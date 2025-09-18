@@ -185,7 +185,7 @@ public class QueueUiManager : MonoBehaviour
 
                             var textObj = Instantiate(recetteImagePrefab, recetteContainer);
                             var textMesh = textObj.GetComponent<Image>();
-                            textMesh.sprite = newStep.description.sprite;
+                            textMesh.sprite = newStep.description.gameObject.GetComponent<SpriteRenderer>().sprite;
                             recetteTexts[cocktail].Add(textMesh);
                         }
                     }
@@ -623,7 +623,7 @@ public class QueueUiManager : MonoBehaviour
                     cocktailRecettes[cocktail].Add(newStep);
                     var textObj = Instantiate(recetteImagePrefab, recetteContainer);
                     var textMesh = textObj.GetComponent<Image>();
-                    textMesh.sprite = newStep.description.sprite;
+                    textMesh.sprite = newStep.description.gameObject.GetComponent<SpriteRenderer>().sprite;
                     recetteTexts[cocktail].Add(textMesh);
                 }
             }

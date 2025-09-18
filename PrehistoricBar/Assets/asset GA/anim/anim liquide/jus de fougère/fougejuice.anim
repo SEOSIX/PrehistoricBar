@@ -8,7 +8,7 @@ AnimationClip:
   m_PrefabAsset: {fileID: 0}
   m_Name: fougejuice
   serializedVersion: 7
-  m_Legacy: 0
+  m_Legacy: 1
   m_Compressed: 0
   m_UseHighQualityCurve: 1
   m_RotationCurves: []
@@ -38,28 +38,13 @@ AnimationClip:
     script: {fileID: 0}
     flags: 2
   m_SampleRate: 12
-  m_WrapMode: 0
+  m_WrapMode: 2
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings:
-    - serializedVersion: 2
-      path: 0
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    pptrCurveMapping:
-    - {fileID: 5542532299476923972, guid: c19a50dfd9ed0594ca14d08865a18261, type: 3}
-    - {fileID: -9189120116964859830, guid: c19a50dfd9ed0594ca14d08865a18261, type: 3}
-    - {fileID: 7929938648943390843, guid: c19a50dfd9ed0594ca14d08865a18261, type: 3}
-    - {fileID: 9056461374911055031, guid: c19a50dfd9ed0594ca14d08865a18261, type: 3}
-    - {fileID: 5274493054176224646, guid: c19a50dfd9ed0594ca14d08865a18261, type: 3}
-    - {fileID: 4061692260253041093, guid: c19a50dfd9ed0594ca14d08865a18261, type: 3}
+    genericBindings: []
+    pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

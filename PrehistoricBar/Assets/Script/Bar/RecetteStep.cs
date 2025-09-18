@@ -1,4 +1,5 @@
 using Script.Objects;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Script.Bar
@@ -6,7 +7,7 @@ namespace Script.Bar
     [System.Serializable]
     public class RecetteStep
     {
-        public Image description;
+        public GameObject description;
         public IngredientIndex ingredientIndex;
         public float amount = 1f;
         public bool isDone;

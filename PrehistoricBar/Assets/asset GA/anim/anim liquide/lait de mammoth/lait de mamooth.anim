@@ -8,7 +8,7 @@ AnimationClip:
   m_PrefabAsset: {fileID: 0}
   m_Name: lait de mamooth
   serializedVersion: 7
-  m_Legacy: 0
+  m_Legacy: 1
   m_Compressed: 0
   m_UseHighQualityCurve: 1
   m_RotationCurves: []
@@ -38,28 +38,13 @@ AnimationClip:
     script: {fileID: 0}
     flags: 2
   m_SampleRate: 12
-  m_WrapMode: 0
+  m_WrapMode: 2
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings:
-    - serializedVersion: 2
-      path: 0
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    pptrCurveMapping:
-    - {fileID: 413676185109038343, guid: 398572840b60a5c48b6a6d62e1488afd, type: 3}
-    - {fileID: 374370121278239043, guid: 398572840b60a5c48b6a6d62e1488afd, type: 3}
-    - {fileID: 7519311026125774870, guid: 398572840b60a5c48b6a6d62e1488afd, type: 3}
-    - {fileID: -4863191220655612943, guid: 398572840b60a5c48b6a6d62e1488afd, type: 3}
-    - {fileID: 1047981545035052923, guid: 398572840b60a5c48b6a6d62e1488afd, type: 3}
-    - {fileID: 785187803066579406, guid: 398572840b60a5c48b6a6d62e1488afd, type: 3}
+    genericBindings: []
+    pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
