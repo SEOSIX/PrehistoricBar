@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: 9e01e183df8b9974ab5fde51cf4a167c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8291770568958087414
+    second: piise_sprite_sheet_ROUGE_v3_0
+  - first:
+      213: 4443390488366538013
+    second: piise_sprite_sheet_ROUGE_v3_1
+  - first:
+      213: 269201431984421757
+    second: piise_sprite_sheet_ROUGE_v3_2
+  - first:
+      213: 1993630143966525729
+    second: piise_sprite_sheet_ROUGE_v3_3
+  - first:
+      213: 1199683497940088518
+    second: piise_sprite_sheet_ROUGE_v3_4
+  - first:
+      213: -7781840056539159908
+    second: piise_sprite_sheet_ROUGE_v3_5
+  - first:
+      213: 6457921289015331105
+    second: piise_sprite_sheet_ROUGE_v3_6
+  - first:
+      213: -6837885789051413468
+    second: piise_sprite_sheet_ROUGE_v3_7
+  - first:
+      213: -6089917304963177583
+    second: piise_sprite_sheet_ROUGE_v3_8
+  - first:
+      213: -3508715877036160774
+    second: piise_sprite_sheet_ROUGE_v3_9
+  - first:
+      213: 8758657391413045895
+    second: piise_sprite_sheet_ROUGE_v3_10
+  - first:
+      213: -8950342372501933704
+    second: piise_sprite_sheet_ROUGE_v3_11
+  - first:
+      213: -518427007555243610
+    second: piise_sprite_sheet_ROUGE_v3_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: piise_sprite_sheet_ROUGE_v3_0
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 0
+        width: 249
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f019c99669421370800000000000000
+      internalID: 8291770568958087414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piise_sprite_sheet_ROUGE_v3_1
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 856
+        width: 46
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1ddf696b181aad30800000000000000
+      internalID: 4443390488366538013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piise_sprite_sheet_ROUGE_v3_2
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 0
+        width: 308
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7b357ea6456cb300800000000000000
+      internalID: 269201431984421757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piise_sprite_sheet_ROUGE_v3_3
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 0
+        width: 361
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 129b2a0ad0ccaab10800000000000000
+      internalID: 1993630143966525729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piise_sprite_sheet_ROUGE_v3_4
+      rect:
+        serializedVersion: 2
+        x: 1553
+        y: 0
+        width: 237
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c6fd9109c126a010800000000000000
+      internalID: 1199683497940088518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piise_sprite_sheet_ROUGE_v3_5
+      rect:
+        serializedVersion: 2
+        x: 2140
+        y: 0
+        width: 303
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c92e313d2b9510490800000000000000
+      internalID: -7781840056539159908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piise_sprite_sheet_ROUGE_v3_6
+      rect:
+        serializedVersion: 2
+        x: 2684
+        y: 0
+        width: 357
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 129013362352f9950800000000000000
+      internalID: 6457921289015331105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piise_sprite_sheet_ROUGE_v3_7
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 478
+        width: 52
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42c16e08a13fa11a0800000000000000
+      internalID: -6837885789051413468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piise_sprite_sheet_ROUGE_v3_8
+      rect:
+        serializedVersion: 2
+        x: 1394
+        y: 160
+        width: 34
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1936a261a744c7ba0800000000000000
+      internalID: -6089917304963177583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piise_sprite_sheet_ROUGE_v3_9
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 406
+        width: 45
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af88c73ff798e4fc0800000000000000
+      internalID: -3508715877036160774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piise_sprite_sheet_ROUGE_v3_10
+      rect:
+        serializedVersion: 2
+        x: 1966
+        y: 251
+        width: 50
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78a268cfd700d8970800000000000000
+      internalID: 8758657391413045895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piise_sprite_sheet_ROUGE_v3_11
+      rect:
+        serializedVersion: 2
+        x: 2441
+        y: 100
+        width: 74
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87135ec780ff9c380800000000000000
+      internalID: -8950342372501933704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piise_sprite_sheet_ROUGE_v3_12
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 0
+        width: 33
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a173b4226d2ec8f0800000000000000
+      internalID: -518427007555243610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      piise_sprite_sheet_ROUGE_v3_0: 8291770568958087414
+      piise_sprite_sheet_ROUGE_v3_1: 4443390488366538013
+      piise_sprite_sheet_ROUGE_v3_10: 8758657391413045895
+      piise_sprite_sheet_ROUGE_v3_11: -8950342372501933704
+      piise_sprite_sheet_ROUGE_v3_12: -518427007555243610
+      piise_sprite_sheet_ROUGE_v3_2: 269201431984421757
+      piise_sprite_sheet_ROUGE_v3_3: 1993630143966525729
+      piise_sprite_sheet_ROUGE_v3_4: 1199683497940088518
+      piise_sprite_sheet_ROUGE_v3_5: -7781840056539159908
+      piise_sprite_sheet_ROUGE_v3_6: 6457921289015331105
+      piise_sprite_sheet_ROUGE_v3_7: -6837885789051413468
+      piise_sprite_sheet_ROUGE_v3_8: -6089917304963177583
+      piise_sprite_sheet_ROUGE_v3_9: -3508715877036160774
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

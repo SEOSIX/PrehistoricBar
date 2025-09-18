@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: 7d1e4ea76ed901e4b942dd9a788bd528
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5984525082480909276
+    second: piise_sprite_sheet_JAUNE_v3_0
+  - first:
+      213: -8962214266970748871
+    second: piise_sprite_sheet_JAUNE_v3_1
+  - first:
+      213: -6963696908771369607
+    second: piise_sprite_sheet_JAUNE_v3_2
+  - first:
+      213: 4706645072025646940
+    second: piise_sprite_sheet_JAUNE_v3_3
+  - first:
+      213: -7691427595721594318
+    second: piise_sprite_sheet_JAUNE_v3_4
+  - first:
+      213: 6394274433636996995
+    second: piise_sprite_sheet_JAUNE_v3_5
+  - first:
+      213: 8752799288353425566
+    second: piise_sprite_sheet_JAUNE_v3_6
+  - first:
+      213: -5949310001687597458
+    second: piise_sprite_sheet_JAUNE_v3_7
+  - first:
+      213: -5538714815768776292
+    second: piise_sprite_sheet_JAUNE_v3_8
+  - first:
+      213: -3918089802599631297
+    second: piise_sprite_sheet_JAUNE_v3_9
+  - first:
+      213: 4362330002386738062
+    second: piise_sprite_sheet_JAUNE_v3_10
+  - first:
+      213: -7139644828561025540
+    second: piise_sprite_sheet_JAUNE_v3_11
+  - first:
+      213: -9199985657021180469
+    second: piise_sprite_sheet_JAUNE_v3_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: piise_sprite_sheet_JAUNE_v3_0
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 0
+        width: 249
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4246f451522b2fca0800000000000000
+      internalID: -5984525082480909276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piise_sprite_sheet_JAUNE_v3_1
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 856
+        width: 46
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9384548ab91df9380800000000000000
+      internalID: -8962214266970748871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piise_sprite_sheet_JAUNE_v3_2
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 0
+        width: 308
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97d52358e8afb5f90800000000000000
+      internalID: -6963696908771369607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piise_sprite_sheet_JAUNE_v3_3
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 0
+        width: 361
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c577ee191cc515140800000000000000
+      internalID: 4706645072025646940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piise_sprite_sheet_JAUNE_v3_4
+      rect:
+        serializedVersion: 2
+        x: 1553
+        y: 0
+        width: 237
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23aa0654a5f824590800000000000000
+      internalID: -7691427595721594318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piise_sprite_sheet_JAUNE_v3_5
+      rect:
+        serializedVersion: 2
+        x: 2140
+        y: 0
+        width: 303
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3879b4518b60db850800000000000000
+      internalID: 6394274433636996995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piise_sprite_sheet_JAUNE_v3_6
+      rect:
+        serializedVersion: 2
+        x: 2684
+        y: 0
+        width: 357
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9809941490387970800000000000000
+      internalID: 8752799288353425566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piise_sprite_sheet_JAUNE_v3_7
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 478
+        width: 52
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6e6bb2031ecf6da0800000000000000
+      internalID: -5949310001687597458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piise_sprite_sheet_JAUNE_v3_8
+      rect:
+        serializedVersion: 2
+        x: 1394
+        y: 160
+        width: 34
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c91b8ed68388223b0800000000000000
+      internalID: -5538714815768776292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piise_sprite_sheet_JAUNE_v3_9
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 406
+        width: 45
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f36f7fd551620a9c0800000000000000
+      internalID: -3918089802599631297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piise_sprite_sheet_JAUNE_v3_10
+      rect:
+        serializedVersion: 2
+        x: 1966
+        y: 251
+        width: 50
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8b5a49460c1a8c30800000000000000
+      internalID: 4362330002386738062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piise_sprite_sheet_JAUNE_v3_11
+      rect:
+        serializedVersion: 2
+        x: 2441
+        y: 100
+        width: 74
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf55a2b1bd2eaec90800000000000000
+      internalID: -7139644828561025540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piise_sprite_sheet_JAUNE_v3_12
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 0
+        width: 33
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc5509ed9c5135080800000000000000
+      internalID: -9199985657021180469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      piise_sprite_sheet_JAUNE_v3_0: -5984525082480909276
+      piise_sprite_sheet_JAUNE_v3_1: -8962214266970748871
+      piise_sprite_sheet_JAUNE_v3_10: 4362330002386738062
+      piise_sprite_sheet_JAUNE_v3_11: -7139644828561025540
+      piise_sprite_sheet_JAUNE_v3_12: -9199985657021180469
+      piise_sprite_sheet_JAUNE_v3_2: -6963696908771369607
+      piise_sprite_sheet_JAUNE_v3_3: 4706645072025646940
+      piise_sprite_sheet_JAUNE_v3_4: -7691427595721594318
+      piise_sprite_sheet_JAUNE_v3_5: 6394274433636996995
+      piise_sprite_sheet_JAUNE_v3_6: 8752799288353425566
+      piise_sprite_sheet_JAUNE_v3_7: -5949310001687597458
+      piise_sprite_sheet_JAUNE_v3_8: -5538714815768776292
+      piise_sprite_sheet_JAUNE_v3_9: -3918089802599631297
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
