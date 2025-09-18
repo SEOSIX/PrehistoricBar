@@ -23,6 +23,11 @@ public class QueueUiManager : MonoBehaviour
     private Coroutine timerCoroutine;
     private Coroutine blinkCoroutine;
     
+    [Header("Transition entre services")]
+    [SerializeField] private GameObject transitionPanel;
+    [SerializeField] private float transitionDuration = 2f;
+    
+    
     [Header("Tireuse")]
     public Cup cup;
     [Space(5f)]
@@ -455,11 +460,15 @@ public class QueueUiManager : MonoBehaviour
                     ShowNextClient();
                     return;
                 }
+                else
+                {
+                    ShowNextClient();
+                }
             }
         }
         if (queueManager.HasMoreWaves())
         {
-            ShowNextClient();
+            StartCoroutine(ShowTransitionThenNextClient());
         }
         else
         {
@@ -648,6 +657,14 @@ public class QueueUiManager : MonoBehaviour
         laitLocked = false;
         alcoolLocked = false;
         baveLocked = false;
+    }
+    
+    private IEnumerator ShowTransitionThenNextClient()
+    {
+        transitionPanel.SetActive(true);
+        yield return new WaitForSeconds(transitionDuration);
+        transitionPanel.SetActive(false);
+        ShowNextClient();
     }
 
     public void NextStep(ClientClass cocktail)
