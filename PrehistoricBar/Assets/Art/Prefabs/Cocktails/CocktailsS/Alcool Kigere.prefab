@@ -91,11 +91,11 @@ MonoBehaviour:
   cocktailIndices: 0100000008000000
   cocktailName: "Alcool Kig\xE8re"
   recette:
-  - description: "1 : Versez 60 ml d'alcool de foug\xE8re"
+  - description: {fileID: 4866626882494035010, guid: 02aaa39f4a8bf2743baaae8862a440fd, type: 3}
     ingredientIndex: 1
     amount: 60
     isDone: 0
-  - description: '2 : Broyez du kitron vert'
+  - description: {fileID: 3871948727185753212, guid: 067de79adf480e14fbc87eeb8ec9d135, type: 3}
     ingredientIndex: 8
     amount: 5
     isDone: 0

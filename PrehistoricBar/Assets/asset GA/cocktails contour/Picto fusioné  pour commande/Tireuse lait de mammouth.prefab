@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6949938112487522110
+--- !u!1 &733140943634717704
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7568960753061545778}
-  - component: {fileID: 1445151314073195846}
-  - component: {fileID: 1835647256195002814}
-  - component: {fileID: -4962834539135106580}
+  - component: {fileID: 6305829775175941249}
+  - component: {fileID: 4335998775723151480}
+  - component: {fileID: 1456027084659436440}
   m_Layer: 5
-  m_Name: Babavo rhume
+  m_Name: Tireuse lait de mammouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &7568960753061545778
+--- !u!224 &6305829775175941249
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6949938112487522110}
+  m_GameObject: {fileID: 733140943634717704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -36,23 +35,23 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 761, y: 869}
+  m_SizeDelta: {x: 230, y: 177}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &1445151314073195846
+--- !u!222 &4335998775723151480
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6949938112487522110}
+  m_GameObject: {fileID: 733140943634717704}
   m_CullTransparentMesh: 1
---- !u!114 &1835647256195002814
+--- !u!114 &1456027084659436440
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6949938112487522110}
+  m_GameObject: {fileID: 733140943634717704}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -66,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7151190859417948017, guid: 165a73792eceb2d468007a45035d965a, type: 3}
+  m_Sprite: {fileID: -8052349243713543870, guid: dbb9181272352a348bbff6ef70b85bec, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -76,30 +75,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &-4962834539135106580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6949938112487522110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99ee0e52ca784e0a89d6f86087ba1c61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Script.Objects.Cocktails
-  cocktailIndices: 010000000200000006000000
-  cocktailName: Babavo rhume
-  recette:
-  - description: "1 : Versez 60 ml d'alcool de foug\xE8re"
-    ingredientIndex: 1
-    amount: 60
-    isDone: 0
-  - description: '2 : Versez 30 ml de bave de boeuf'
-    ingredientIndex: 2
-    amount: 30
-    isDone: 0
-  - description: '3 : Broyez de la bababe'
-    ingredientIndex: 6
-    amount: 6
-    isDone: 0

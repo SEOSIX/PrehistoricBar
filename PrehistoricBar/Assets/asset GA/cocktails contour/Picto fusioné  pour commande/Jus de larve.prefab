@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6949938112487522110
+--- !u!1 &1134485170350774552
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7568960753061545778}
-  - component: {fileID: 1445151314073195846}
-  - component: {fileID: 1835647256195002814}
-  - component: {fileID: -4962834539135106580}
+  - component: {fileID: 4878373835594047764}
+  - component: {fileID: 6585276199060432829}
+  - component: {fileID: 5190073908819127469}
   m_Layer: 5
-  m_Name: Lait laid
+  m_Name: Jus de larve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &7568960753061545778
+--- !u!224 &4878373835594047764
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6949938112487522110}
+  m_GameObject: {fileID: 1134485170350774552}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -36,23 +35,23 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 810, y: 646}
+  m_SizeDelta: {x: 230, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &1445151314073195846
+--- !u!222 &6585276199060432829
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6949938112487522110}
+  m_GameObject: {fileID: 1134485170350774552}
   m_CullTransparentMesh: 1
---- !u!114 &1835647256195002814
+--- !u!114 &5190073908819127469
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6949938112487522110}
+  m_GameObject: {fileID: 1134485170350774552}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -66,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4647769484155761589, guid: b7a3ce51eed97794ba1328a16cd309e1, type: 3}
+  m_Sprite: {fileID: 735660954725580573, guid: bb2e80f9d70423548953e381313d5ef0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -76,30 +75,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &-4962834539135106580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6949938112487522110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99ee0e52ca784e0a89d6f86087ba1c61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Script.Objects.Cocktails
-  cocktailIndices: 00000000070000000a000000
-  cocktailName: Lait laid
-  recette:
-  - description: '1 : Versez 80 ml de lait de mammouth'
-    ingredientIndex: 0
-    amount: 80
-    isDone: 0
-  - description: '2: Broyez du Cacao laid'
-    ingredientIndex: 7
-    amount: 8
-    isDone: 0
-  - description: '3: Versez du jus de larve'
-    ingredientIndex: 10
-    amount: 1
-    isDone: 0

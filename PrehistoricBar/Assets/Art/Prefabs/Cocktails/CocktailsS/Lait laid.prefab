@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1835647256195002814}
   - component: {fileID: -4962834539135106580}
   m_Layer: 5
-  m_Name: "Bave lact\xE9e"
+  m_Name: Lait laid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 908, y: 812}
+  m_SizeDelta: {x: 810, y: 646}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1445151314073195846
 CanvasRenderer:
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7694780500788932871, guid: 8356f8a6ed9ac854c80cc7b7b37a2a89, type: 3}
+  m_Sprite: {fileID: 4647769484155761589, guid: b7a3ce51eed97794ba1328a16cd309e1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -88,14 +88,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ee0e52ca784e0a89d6f86087ba1c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Script.Objects.Cocktails
-  cocktailIndices: 0000000002000000
-  cocktailName: "Bave lact\xE9e"
+  cocktailIndices: 00000000070000000a000000
+  cocktailName: Lait laid
   recette:
-  - description: '1 : Versez 70 ml de lait de mammouth'
+  - description: {fileID: 733140943634717704, guid: 99cd95d99e918a4459e205fbd18d4b67, type: 3}
     ingredientIndex: 0
-    amount: 70
+    amount: 80
     isDone: 0
-  - description: '2 : Versez 20 ml de bave de boeuf'
-    ingredientIndex: 2
-    amount: 20
+  - description: {fileID: 4838671642464791669, guid: b914e43768b57ad48a083d3e9a499139, type: 3}
+    ingredientIndex: 7
+    amount: 8
+    isDone: 0
+  - description: {fileID: 1134485170350774552, guid: 5d3621430ee40fc43848cc904168c479, type: 3}
+    ingredientIndex: 10
+    amount: 1
     isDone: 0
