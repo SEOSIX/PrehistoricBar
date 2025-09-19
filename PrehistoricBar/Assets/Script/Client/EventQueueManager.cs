@@ -31,6 +31,12 @@ public class EventQueueManager : MonoBehaviour
         return currentWave < numberOfWaves;
     }
 
+    public float GetTimeMultiplier()
+    {
+        // currentWave commence à 1 après GenerateWave()
+        // donc à la vague 1 => diviseur 1, vague 2 => 1.2, vague 3 => 1.2², etc.
+        return Mathf.Pow(1.2f, currentWave - 1);
+    }
     private void Awake()
     {
         instance = this;
