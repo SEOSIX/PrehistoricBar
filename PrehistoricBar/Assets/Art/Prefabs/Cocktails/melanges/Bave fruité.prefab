@@ -91,15 +91,15 @@ MonoBehaviour:
   cocktailIndices: 060000000300000002000000
   cocktailName: "Bave fruit\xE9"
   recette:
-  - description: {fileID: 2604588365501592209, guid: e6dd72d62479188479abdaf2f7592381, type: 3}
+  - description: {fileID: 7118959494253593607, guid: bd9d0e6c88d09e54ba6c51b3dc8a9a10, type: 3}
     ingredientIndex: 6
     amount: 6
     isDone: 0
-  - description: {fileID: 9138615289754257118, guid: e51f79305b1dfc94ab299b6220090d5c, type: 3}
+  - description: {fileID: 1020844039708058689, guid: 68a15e20732fa4c47bfd1112830ed35b, type: 3}
     ingredientIndex: 3
     amount: 5
     isDone: 0
-  - description: {fileID: 5531269437547845904, guid: 582bfa15a5399c849b5503913f15839e, type: 3}
+  - description: {fileID: 6844864468781262634, guid: 665c059ad57e6524a86f1148dee22c46, type: 3}
     ingredientIndex: 2
     amount: 40
     isDone: 0

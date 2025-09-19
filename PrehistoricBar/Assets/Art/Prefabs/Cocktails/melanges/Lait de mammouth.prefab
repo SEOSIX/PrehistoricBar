@@ -91,7 +91,7 @@ MonoBehaviour:
   cocktailIndices: 00000000
   cocktailName: Lait de mammouth
   recette:
-  - description: {fileID: 8617276775322489157, guid: 311652c8047541a4a97c6ea025b36b59, type: 3}
+  - description: {fileID: -8052349243713543870, guid: ea404cd4677206546a02e355d6d18924, type: 3}
     ingredientIndex: 0
     amount: 90
     isDone: 0

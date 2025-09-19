@@ -91,15 +91,15 @@ MonoBehaviour:
   cocktailIndices: 00000000070000000a000000
   cocktailName: Lait laid
   recette:
-  - description: {fileID: 8617276775322489157, guid: 311652c8047541a4a97c6ea025b36b59, type: 3}
+  - description: {fileID: -8052349243713543870, guid: ea404cd4677206546a02e355d6d18924, type: 3}
     ingredientIndex: 0
     amount: 80
     isDone: 0
-  - description: {fileID: 7727670266175670023, guid: cbfb54d2f46578f4092921d09d3f7025, type: 3}
+  - description: {fileID: 5501178834276232339, guid: f91fc8976f996a84b91f53aa3acac5cd, type: 3}
     ingredientIndex: 7
     amount: 8
     isDone: 0
-  - description: {fileID: 6520558286356248895, guid: f8ff3bd91471af945a0ee1a685e3e988, type: 3}
+  - description: {fileID: 735660954725580573, guid: e4762082d5a773f4e828c1ff7ec099e6, type: 3}
     ingredientIndex: 10
     amount: 1
     isDone: 0

@@ -91,11 +91,11 @@ MonoBehaviour:
   cocktailIndices: 0100000006000000
   cocktailName: Babababama
   recette:
-  - description: {fileID: 6926152731881456593, guid: fb86fade288d0c848b1b3c3035496d15, type: 3}
+  - description: {fileID: 5519074491227133086, guid: b9812f47e40757d40be12d459b465bcb, type: 3}
     ingredientIndex: 1
     amount: 70
     isDone: 0
-  - description: {fileID: 2604588365501592209, guid: e6dd72d62479188479abdaf2f7592381, type: 3}
+  - description: {fileID: 7118959494253593607, guid: bd9d0e6c88d09e54ba6c51b3dc8a9a10, type: 3}
     ingredientIndex: 6
     amount: 6
     isDone: 0

@@ -167,11 +167,11 @@ MonoBehaviour:
   cocktailIndices: 0000000002000000
   cocktailName: "Bave lact\xE9e"
   recette:
-  - description: {fileID: 8617276775322489157, guid: 311652c8047541a4a97c6ea025b36b59, type: 3}
+  - description: {fileID: -8052349243713543870, guid: ea404cd4677206546a02e355d6d18924, type: 3}
     ingredientIndex: 0
     amount: 70
     isDone: 0
-  - description: {fileID: 5531269437547845904, guid: 582bfa15a5399c849b5503913f15839e, type: 3}
+  - description: {fileID: 6844864468781262634, guid: 665c059ad57e6524a86f1148dee22c46, type: 3}
     ingredientIndex: 2
     amount: 20
     isDone: 0

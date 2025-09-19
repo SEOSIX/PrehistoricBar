@@ -91,19 +91,19 @@ MonoBehaviour:
   cocktailIndices: 01000000080000000a00000005000000
   cocktailName: Gin Kitrine
   recette:
-  - description: {fileID: 6926152731881456593, guid: fb86fade288d0c848b1b3c3035496d15, type: 3}
+  - description: {fileID: 5519074491227133086, guid: b9812f47e40757d40be12d459b465bcb, type: 3}
     ingredientIndex: 1
     amount: 60
     isDone: 0
-  - description: {fileID: 2125918622385674728, guid: 906755f0cc1ccbd4d931a725ead853a2, type: 3}
+  - description: {fileID: 6925969156528608270, guid: 6afa032fb54a4084e8f039c1887fbb49, type: 3}
     ingredientIndex: 8
     amount: 5
     isDone: 0
-  - description: {fileID: 6520558286356248895, guid: f8ff3bd91471af945a0ee1a685e3e988, type: 3}
+  - description: {fileID: 735660954725580573, guid: e4762082d5a773f4e828c1ff7ec099e6, type: 3}
     ingredientIndex: 10
     amount: 1
     isDone: 0
-  - description: {fileID: 959813092841435770, guid: a088cc40d85b5764a9f45e6282800c38, type: 3}
+  - description: {fileID: -2572898532819107891, guid: 1ea8fe437b9a46d46a5d3429d44577f7, type: 3}
     ingredientIndex: 5
     amount: 10
     isDone: 0

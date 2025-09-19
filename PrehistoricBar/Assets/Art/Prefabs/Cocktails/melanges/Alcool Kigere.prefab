@@ -91,11 +91,11 @@ MonoBehaviour:
   cocktailIndices: 0100000008000000
   cocktailName: "Alcool Kig\xE8re"
   recette:
-  - description: {fileID: 6926152731881456593, guid: fb86fade288d0c848b1b3c3035496d15, type: 3}
+  - description: {fileID: 5519074491227133086, guid: 0d3b29f758706e94aaa1b017424f3d8a, type: 3}
     ingredientIndex: 1
     amount: 60
     isDone: 0
-  - description: {fileID: 2125918622385674728, guid: 906755f0cc1ccbd4d931a725ead853a2, type: 3}
+  - description: {fileID: 6925969156528608270, guid: 6afa032fb54a4084e8f039c1887fbb49, type: 3}
     ingredientIndex: 8
     amount: 5
     isDone: 0
