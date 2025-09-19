@@ -105,6 +105,10 @@ namespace Script.Bar
 
         public static void GetScore(float timeleft, float initialtime)
         {
+            if (EventQueueManager.GetCurrentCocktail() == null)
+            {
+                return;
+            }
             scoreMultNv = EventQueueManager.GetCurrentCocktail().recette.Count;
             Debug.Log($"Score | scoreMultNv : {scoreMultNv}");
             scoreMultPrepTime = 1.7f;

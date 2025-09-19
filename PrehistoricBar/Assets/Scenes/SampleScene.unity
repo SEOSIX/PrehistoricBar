@@ -2694,6 +2694,7 @@ MonoBehaviour:
   - guy
   possiblesPrefabs:
   - {fileID: 1969696730971884632, guid: bbf7ba895f393d5419619a78a946af5b, type: 3}
+  - {fileID: 7411728173120759502, guid: 350210283f9aa91459147a6cbfd5afe3, type: 3}
   possiblesCocktails:
   - {fileID: 6949938112487522110, guid: a3f4c4a3e44e70549b6b74d9ac120339, type: 3}
   minClient: 1
@@ -2710,7 +2711,7 @@ Transform:
   m_GameObject: {fileID: 784911049}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.61994, y: 1.58671, z: 0}
+  m_LocalPosition: {x: 2.61994, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
