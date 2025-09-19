@@ -142,7 +142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 4adc7cb1d94e0e44f85757be9d998a99, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -167,19 +167,19 @@ MonoBehaviour:
   cocktailIndices: 01000000080000000a00000005000000
   cocktailName: Gin Kitrine
   recette:
-  - description: "1: Versez 60 ml d'alcool de foug\xE8re"
+  - description: {fileID: 6926152731881456593, guid: fb86fade288d0c848b1b3c3035496d15, type: 3}
     ingredientIndex: 1
     amount: 60
     isDone: 0
-  - description: '2 : Broyez du kitron vert'
+  - description: {fileID: 2125918622385674728, guid: 906755f0cc1ccbd4d931a725ead853a2, type: 3}
     ingredientIndex: 8
     amount: 5
     isDone: 0
-  - description: '3 : Versez du jus de larve'
+  - description: {fileID: 6520558286356248895, guid: f8ff3bd91471af945a0ee1a685e3e988, type: 3}
     ingredientIndex: 10
     amount: 1
     isDone: 0
-  - description: "4 : Broyez des gla\xE7ons"
+  - description: {fileID: 959813092841435770, guid: a088cc40d85b5764a9f45e6282800c38, type: 3}
     ingredientIndex: 5
     amount: 10
     isDone: 0

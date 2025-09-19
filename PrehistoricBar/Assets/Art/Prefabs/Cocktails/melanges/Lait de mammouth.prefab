@@ -142,7 +142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 899f453c224cc1b4caa99b4c12e01f22, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -167,7 +167,7 @@ MonoBehaviour:
   cocktailIndices: 00000000
   cocktailName: Lait de mammouth
   recette:
-  - description: '1 : Versez 90 ml de lait de mammouth'
+  - description: {fileID: 8617276775322489157, guid: 311652c8047541a4a97c6ea025b36b59, type: 3}
     ingredientIndex: 0
     amount: 90
     isDone: 0
