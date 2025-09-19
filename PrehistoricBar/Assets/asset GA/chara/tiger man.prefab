@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 099409852ab5d0545a9c2570316ca54b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.7819247
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 099409852ab5d0545a9c2570316ca54b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -63,6 +63,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 099409852ab5d0545a9c2570316ca54b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5755305282087111387}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 099409852ab5d0545a9c2570316ca54b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7038596586745057528}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 099409852ab5d0545a9c2570316ca54b, type: 3}
 --- !u!1 &5158781128674234255 stripped
 GameObject:
@@ -91,3 +94,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!111 &-7038596586745057528
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5158781128674234255}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 0}
+  - {fileID: 0}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
