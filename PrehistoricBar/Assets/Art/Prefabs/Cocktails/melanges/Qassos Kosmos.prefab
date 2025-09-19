@@ -91,19 +91,19 @@ MonoBehaviour:
   cocktailIndices: 01000000090000000a00000005000000
   cocktailName: Qassos Kosmos
   recette:
-  - description: {fileID: 6926152731881456593, guid: fb86fade288d0c848b1b3c3035496d15, type: 3}
+  - description: {fileID: 5519074491227133086, guid: b9812f47e40757d40be12d459b465bcb, type: 3}
     ingredientIndex: 1
     amount: 60
     isDone: 0
-  - description: {fileID: 5078877867004012131, guid: 2287e559a9a6d6940938489fd9077c44, type: 3}
+  - description: {fileID: -982921356571190467, guid: 513b4527d8863c6469f31f24d4481122, type: 3}
     ingredientIndex: 9
     amount: 5
     isDone: 0
-  - description: {fileID: 6520558286356248895, guid: f8ff3bd91471af945a0ee1a685e3e988, type: 3}
+  - description: {fileID: 735660954725580573, guid: e4762082d5a773f4e828c1ff7ec099e6, type: 3}
     ingredientIndex: 10
     amount: 1
     isDone: 0
-  - description: {fileID: 959813092841435770, guid: a088cc40d85b5764a9f45e6282800c38, type: 3}
+  - description: {fileID: -2572898532819107891, guid: 1ea8fe437b9a46d46a5d3429d44577f7, type: 3}
     ingredientIndex: 5
     amount: 10
     isDone: 0
