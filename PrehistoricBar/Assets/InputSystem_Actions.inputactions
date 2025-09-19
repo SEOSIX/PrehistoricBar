@@ -265,7 +265,7 @@
                 {
                     "name": "",
                     "id": "881f8159-2daf-434b-bb83-af63b5cd5939",
-                    "path": "<Keyboard>/q",
+                    "path": "<Keyboard>/f",
                     "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": "",
@@ -276,7 +276,7 @@
                 {
                     "name": "",
                     "id": "d582e48c-6376-4ee6-9550-e197c6fe7e0d",
-                    "path": "<Keyboard>/w",
+                    "path": "<Keyboard>/g",
                     "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": "",
@@ -287,7 +287,7 @@
                 {
                     "name": "",
                     "id": "403f999f-68d1-4a46-acb7-7b978ee7c17c",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/h",
                     "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": "",
