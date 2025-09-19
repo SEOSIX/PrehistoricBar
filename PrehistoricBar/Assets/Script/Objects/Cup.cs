@@ -19,6 +19,7 @@ namespace Script.Objects
 
         [Header("UI")]
         public Slider cupSlider; 
+		public Slider targetSlider;
         [SerializeField] private Image fillImage;
         [HideInInspector]
         public bool IsAchieved = false;
@@ -103,6 +104,7 @@ namespace Script.Objects
                 {
                     float amount = EventQueueManager.GetCurrentStep().amount;
                     targetDosage = amount + TotalAmount;
+					targetSlider.value = cupSlider.value + targetDosage;
                     Debug.Log($"Dosage recommendé{targetDosage}");
                     
                     return;
