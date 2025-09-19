@@ -91,7 +91,7 @@ MonoBehaviour:
   cocktailIndices: 01000000
   cocktailName: "Alcool de foug\xE8re"
   recette:
-  - description: {fileID: 6926152731881456593, guid: fb86fade288d0c848b1b3c3035496d15, type: 3}
+  - description: {fileID: 5519074491227133086, guid: 0d3b29f758706e94aaa1b017424f3d8a, type: 3}
     ingredientIndex: 1
     amount: 60
     isDone: 0

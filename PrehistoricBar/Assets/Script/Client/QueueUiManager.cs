@@ -15,6 +15,8 @@ public class QueueUiManager : MonoBehaviour
     [SerializeField] private EventQueueManager queueManager;
     [SerializeField] private Transform spawnContainer;
     public GameObject Over;
+    
+    private ClientAnimManager clientAnimManager;
 
     [Header("Timer")]
     public Slider timerSlider;
@@ -23,16 +25,17 @@ public class QueueUiManager : MonoBehaviour
     private Coroutine timerCoroutine;
     private Coroutine blinkCoroutine;
     
+    [Header("Transition entre services")]
+    [SerializeField] private GameObject transitionPanel;
+    [SerializeField] private float transitionDuration = 2f;
+    
+    
     [Header("Tireuse")]
     public Cup cup;
     [Space(5f)]
     [SerializeField] private float tireuseLaitSpeed;
     [SerializeField] private float tireuseBaveSpeed;
     [SerializeField] private float tireuseAlcoolSpeed;
-    
-    private bool laitMoved = false;
-    private bool alcoolMoved = false;
-    private bool baveMoved = false;
     
     [Header("Positions des ingrédients")]
     [SerializeField] private Transform laitPos;
@@ -58,7 +61,7 @@ public class QueueUiManager : MonoBehaviour
 
     [Header("UI Recette")]
     [SerializeField] private Transform recetteContainer;
-    [SerializeField] private GameObject recetteTextPrefab;
+    [SerializeField] private GameObject recetteImagePrefab;
     
     [Header("Preview des prochains clients")]
     [SerializeField] private Transform nextClientSlot1;
@@ -68,7 +71,7 @@ public class QueueUiManager : MonoBehaviour
     private GameObject nextClient2UI;
     
 
-    private Dictionary<ClientClass, List<TextMeshProUGUI>> recetteTexts = new();
+    private Dictionary<ClientClass, List<Image>> recetteTexts = new();
     
     [HideInInspector] public bool laitLocked = false;
     [HideInInspector] public bool alcoolLocked = false;
@@ -110,9 +113,10 @@ public class QueueUiManager : MonoBehaviour
         }
     }
     
-    public void ShowNextClient(bool valid = true)
+    public void ShowNextClient()
     {
-        if (valid) ControlerPoints.GetScore(currentTime,clientTime);
+        if (clientAnimManager != null) clientAnimManager.LeaveBar();
+        
         Over.SetActive(false);
         currentClient = queueManager.GetNextService();
 
@@ -143,14 +147,17 @@ public class QueueUiManager : MonoBehaviour
             timerSlider.fillRect.GetComponent<Image>().color = Color.white;
             return;
         }
+        
+        GameObject newClient = Instantiate(currentClient.prefab, new Vector3(-12f, -5f, 0f), transform.rotation);
+        clientAnimManager = newClient.GetComponent<ClientAnimManager>();
+        
         foreach (var cocktail in currentClient.clients)
         {
             remainingCocktails.Add(cocktail);
             cocktailIngredientsRemaining[cocktail] = new HashSet<IngredientIndex>();
-            recetteTexts[cocktail] = new List<TextMeshProUGUI>();
+            recetteTexts[cocktail] = new List<Image>();
             cocktailStepIndices[cocktail] = 0;
-            
-            
+
             foreach (var prefab in cocktail.cocktailsImage)
             {
                 if (prefab != null)
@@ -176,9 +183,9 @@ public class QueueUiManager : MonoBehaviour
                             };
                             cocktailRecettes[cocktail].Add(newStep);
 
-                            var textObj = Instantiate(recetteTextPrefab, recetteContainer);
-                            var textMesh = textObj.GetComponent<TextMeshProUGUI>();
-                            //textMesh.text = newStep.description;
+                            var textObj = Instantiate(recetteImagePrefab, recetteContainer);
+                            var textMesh = textObj.GetComponent<Image>();
+                            textMesh.sprite = newStep.description;
                             recetteTexts[cocktail].Add(textMesh);
                         }
                     }
@@ -263,10 +270,15 @@ public class QueueUiManager : MonoBehaviour
         var steps = cocktailRecettes[cocktail];
         int idx = steps.IndexOf(step);
         if (idx == -1) return;
-        if (!recetteTexts.ContainsKey(cocktail)) return;
+
+        if (!recetteTexts.ContainsKey(cocktail)) return; 
         steps[idx].isDone = true;
+
         if (recetteTexts[cocktail].Count > idx)
-            recetteTexts[cocktail][idx].text = $"<color=green>{steps[idx].description}</color>";
+        {
+            recetteTexts[cocktail][idx].color = Color.gray;
+        }
+
         cocktailStepIndices[cocktail]++;
         if (cocktailStepIndices[cocktail] >= steps.Count)
             ValidateCocktail(cocktail);
@@ -299,32 +311,20 @@ public class QueueUiManager : MonoBehaviour
         text.alignment = TextAlignmentOptions.BottomLeft;
         text.color = Color.cyan;
     }
-    // Déplacement du verre 
-    void OnMove0(InputValue value)
-    {
-        if (!laitLocked && value.isPressed) StartMove(IngredientIndex.Laitdemammouth, laitPos);
-    }
 
-    void OnMove1(InputValue value)
-    {
-        if (!alcoolLocked && value.isPressed) StartMove(IngredientIndex.Alcooldefougere, alcoolPos);
-    }
-
-    void OnMove2(InputValue value)
-    {
-        if (!baveLocked&& value.isPressed) StartMove(IngredientIndex.Bavedeboeuf, bavePos);
-    }
-    
     void OnColors(InputValue value)
     {
         if (!value.isPressed) return;
-        if (!laitMoved) return;
+        if (!IsCupAtPosition(laitPos)) return;  
         if (!laitLocked)
         {
             laitLocked = true;
             SounfManager.Singleton.PlaySound(5, true);
             Liquide.singleton.AcitaveObject(2, true);
-            TryValidateIngredient(IngredientIndex.Laitdemammouth, value);
+            Cup.instance.SetTargetDosage(IngredientIndex.Laitdemammouth);
+            
+            StartCoroutine(FillRoutine(IngredientIndex.Laitdemammouth, tireuseLaitSpeed, 
+                InputSystem.actions["Colors"]));
         }
     }
 
@@ -332,18 +332,22 @@ public class QueueUiManager : MonoBehaviour
     {
         Liquide.singleton.AcitaveObject(2, false);
         SounfManager.Singleton.StopSound(5);
+        ValidateIngredient(IngredientIndex.Laitdemammouth);
     }
 
     void OnColors1(InputValue value)
     {
         if (!value.isPressed) return;
-        if (!alcoolMoved) return;
+        if (!IsCupAtPosition(alcoolPos)) return;  
         if (!alcoolLocked)
         {
             alcoolLocked = true;
             SounfManager.Singleton.PlaySound(5, true);
             Liquide.singleton.AcitaveObject(0, true);
-            TryValidateIngredient(IngredientIndex.Alcooldefougere, value);
+            Cup.instance.SetTargetDosage(IngredientIndex.Alcooldefougere);
+            
+            StartCoroutine(FillRoutine(IngredientIndex.Alcooldefougere, tireuseAlcoolSpeed, 
+                InputSystem.actions["Colors1"]));
         }
     }
 
@@ -351,19 +355,23 @@ public class QueueUiManager : MonoBehaviour
     {
         Liquide.singleton.AcitaveObject(0, false);
         SounfManager.Singleton.StopSound(5);
+        ValidateIngredient(IngredientIndex.Alcooldefougere);
     }
 
     void OnColors2(InputValue value)
     {
         if (!value.isPressed) return;
-        if (!baveMoved) return;
+        if (!IsCupAtPosition(bavePos)) return;  
         
         if (!baveLocked)
         {
             baveLocked = true;
             SounfManager.Singleton.PlaySound(5, true);
             Liquide.singleton.AcitaveObject(1, true);
-            TryValidateIngredient(IngredientIndex.Bavedeboeuf, value);
+            Cup.instance.SetTargetDosage(IngredientIndex.Bavedeboeuf);
+            
+            StartCoroutine(FillRoutine(IngredientIndex.Bavedeboeuf, tireuseBaveSpeed, 
+                InputSystem.actions["Colors2"]));
         }
     }
 
@@ -371,6 +379,7 @@ public class QueueUiManager : MonoBehaviour
     {
         Liquide.singleton.AcitaveObject(1, false);
         SounfManager.Singleton.StopSound(5);
+        ValidateIngredient(IngredientIndex.Bavedeboeuf);
     }
 
     public void TryValidateIngredient(IngredientIndex ingredient, InputValue value)
@@ -391,26 +400,44 @@ public class QueueUiManager : MonoBehaviour
 
     IEnumerator FillRoutine(IngredientIndex ingredient, float speed, InputAction action)
     {
-        do
+        float amountBefore = cup.content[ingredient];
+
+        while (action.inProgress)
         {
             if (cup == null) yield break;
             if (cup.TotalAmount <= 0) yield return null;
-            if (cup != null && cup.GetType().GetField("isLocked", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(cup) is bool locked && locked)
+            if (cup != null && cup.GetType()
+                    .GetField("isLocked", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
+                    .GetValue(cup) is bool locked && locked)
             {
                 yield break;
             }
             cup.Fill(ingredient, speed * Time.deltaTime);
             yield return null;
         }
-        while (action.inProgress);
-        ValidateIngredient(ingredient);
-        ValidateIngredient(ingredient);
+        float amountAfter = cup.content[ingredient];
+        if (amountAfter > amountBefore)
+        {
+            ValidateIngredient(ingredient);
+        }
+        else
+        {
+            Debug.LogWarning($"Aucun liquide versé pour {ingredient}, donc pas de validation !");
+        }
     }
+    
+    private bool IsCupAtPosition(Transform target)
+    {
+        RectTransform cupRect = cup.GetComponent<RectTransform>();
+        RectTransform targetRect = target.GetComponent<RectTransform>();
+        Vector2 targetPos = targetRect.anchoredPosition + offset;
+        return Vector2.Distance(cupRect.anchoredPosition, targetPos) < 0.1f;
+    }
+
 
     void OnNextClient(InputValue value)
     {
         if (!value.isPressed) return;
-        
 
         if (currentClient != null)
         {
@@ -419,12 +446,19 @@ public class QueueUiManager : MonoBehaviour
                 if (HasIncorrectIngredients(cocktail))
                 {
                     Debug.LogWarning("Vous avez mis des ingrédients incorrects pour ce cocktail !");
-                    ShowNextClient(false);
+                    if (clientAnimManager != null)
+                    {
+                        clientAnimManager.ServeCocktail(false);
+                    }
+                    ShowNextClient();
                     return;
+                }
+                else
+                {
+                    ShowNextClient();
                 }
             }
         }
-        
         if (queueManager.HasMoreWaves())
         {
             ShowNextClient();
@@ -438,47 +472,32 @@ public class QueueUiManager : MonoBehaviour
     private void ResetGame()
     {
         ControlerPoints.instance.ResetReward();
-        ControlerPoints.instance.ResetPointsAndLife();
+        // ControlerPoints.instance.ResetLife();
+        // ControlerPoints.instance.ResetPoints();
+
         Debug.Log("Game Reset");
         ShowNextClient();
     }
     
     private bool HasIncorrectIngredients(ClientClass cocktail)
     {
-        if (!cocktailRecettes.ContainsKey(cocktail)) return false;
-        Dictionary<IngredientIndex, int> expectedCounts = new();
-        foreach (var step in cocktailRecettes[cocktail])
-        {
-            if (!expectedCounts.ContainsKey(step.ingredientIndex))
-                expectedCounts[step.ingredientIndex] = 0;
-            expectedCounts[step.ingredientIndex]++;
-        }
-        Dictionary<IngredientIndex, int> actualCounts = new();
-        foreach (var step in cocktailRecettes[cocktail])
-        {
-            if (step.isDone)
-            {
-                if (!actualCounts.ContainsKey(step.ingredientIndex))
-                    actualCounts[step.ingredientIndex] = 0;
-                actualCounts[step.ingredientIndex]++;
-            }
-        }
-        foreach (var kvp in actualCounts)
-        {
-            int expected = expectedCounts.ContainsKey(kvp.Key) ? expectedCounts[kvp.Key] : 0;
-            if (kvp.Value > expected)
-            {
-                Debug.LogWarning($"Ingrédient {kvp.Key} utilisé {kvp.Value}x au lieu de {expected}x !");
-                return true;
-            }
-        }
+        if (!cocktailIngredientsRemaining.ContainsKey(cocktail)) return false;
 
-        foreach (var kvp in expectedCounts)
+        var allIngredients = new HashSet<IngredientIndex>();
+        if (cocktailRecettes.ContainsKey(cocktail))
         {
-            int actual = actualCounts.ContainsKey(kvp.Key) ? actualCounts[kvp.Key] : 0;
-            if (actual < kvp.Value)
+            foreach (var step in cocktailRecettes[cocktail])
             {
-                Debug.Log($"⚠Ingrédient {kvp.Key} manquant : {actual}/{kvp.Value}");
+                allIngredients.Add(step.ingredientIndex);
+            }
+        }
+        
+        foreach (var ingredient in Enum.GetValues(typeof(IngredientIndex)))
+        {
+            var ing = (IngredientIndex)ingredient;
+            if (!allIngredients.Contains(ing) && !cocktailIngredientsRemaining[cocktail].Contains(ing))
+            {
+                return true; 
             }
         }
 
@@ -510,30 +529,24 @@ public class QueueUiManager : MonoBehaviour
         currentMoveCoroutine = StartCoroutine(MoveAndFill(ingredient, target));
     }
 
-    private IEnumerator MoveCupTo(Transform target, IngredientIndex ingredient)
+    private IEnumerator MoveCupTo(Transform target)
     {
         RectTransform cupRect = cup.GetComponent<RectTransform>();
         RectTransform targetRect = target.GetComponent<RectTransform>();
         Vector2 targetPos = targetRect.anchoredPosition + offset;
         while (Vector2.Distance(cupRect.anchoredPosition, targetPos) > 0.1f)
         {
-            cupRect.anchoredPosition = Vector2.MoveTowards(cupRect.anchoredPosition, targetPos, moveSpeed * Time.deltaTime);
+            cupRect.anchoredPosition = Vector2.MoveTowards(
+                cupRect.anchoredPosition, targetPos, moveSpeed * Time.deltaTime);
             yield return null;
         }
         cupRect.anchoredPosition = targetPos;
         currentMoveCoroutine = null;
-        
-        switch (ingredient)
-        {
-            case IngredientIndex.Laitdemammouth: laitMoved = true; break;
-            case IngredientIndex.Alcooldefougere: alcoolMoved = true; break;
-            case IngredientIndex.Bavedeboeuf: baveMoved = true; break;
-        }
     }
 
     private IEnumerator MoveAndFill(IngredientIndex ingredient, Transform target)
     {
-        yield return StartCoroutine(MoveCupTo(target, ingredient));
+        yield return StartCoroutine(MoveCupTo(target));
         float speed = ingredient switch
         {
             IngredientIndex.Laitdemammouth => tireuseLaitSpeed,
@@ -588,7 +601,7 @@ public class QueueUiManager : MonoBehaviour
                 }
             }
             cocktailRecettes[cocktail] = new List<RecetteStep>();
-            recetteTexts[cocktail] = new List<TextMeshProUGUI>();
+            recetteTexts[cocktail] = new List<Image>();
             cocktailStepIndices[cocktail] = 0;
             Script.Objects.Cocktails sourceData = null;
             foreach (var prefab in cocktail.cocktailsImage)
@@ -608,9 +621,9 @@ public class QueueUiManager : MonoBehaviour
                         isDone = false
                     };
                     cocktailRecettes[cocktail].Add(newStep);
-                    var textObj = Instantiate(recetteTextPrefab, recetteContainer);
-                    var textMesh = textObj.GetComponent<TextMeshProUGUI>();
-                    //textMesh.text = newStep.description;
+                    var textObj = Instantiate(recetteImagePrefab, recetteContainer);
+                    var textMesh = textObj.GetComponent<Image>();
+                    textMesh.sprite = newStep.description;
                     recetteTexts[cocktail].Add(textMesh);
                 }
             }
@@ -622,6 +635,14 @@ public class QueueUiManager : MonoBehaviour
         laitLocked = false;
         alcoolLocked = false;
         baveLocked = false;
+    }
+    
+    private IEnumerator ShowTransitionThenNextClient()
+    {
+        transitionPanel.SetActive(true);
+        yield return new WaitForSeconds(transitionDuration);
+        transitionPanel.SetActive(false);
+        ShowNextClient();
     }
 
     public void NextStep(ClientClass cocktail)
