@@ -11,11 +11,6 @@ public class ClientAnimManager : MonoBehaviour
         animator.SetTrigger("trgEnter");
     }
     
-    public void StopAtBar()
-    {
-        animation.Stop();
-    }
-
     public void LeaveBar()
     {
         animator.SetTrigger("trgExit");
