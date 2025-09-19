@@ -2729,6 +2729,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2993500188576457439, guid: 10f9063b123b9044bbd436cb329bb472, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993500188576457439, guid: 10f9063b123b9044bbd436cb329bb472, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993500188576457439, guid: 10f9063b123b9044bbd436cb329bb472, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3106397209759323450, guid: 10f9063b123b9044bbd436cb329bb472, type: 3}
       propertyPath: m_Name
       value: GobeletV3
@@ -2836,6 +2848,14 @@ PrefabInstance:
     - target: {fileID: 8325416760019712222, guid: 10f9063b123b9044bbd436cb329bb472, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -23.422104
+      objectReference: {fileID: 0}
+    - target: {fileID: 9103311899475131316, guid: 10f9063b123b9044bbd436cb329bb472, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9103311899475131316, guid: 10f9063b123b9044bbd436cb329bb472, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
