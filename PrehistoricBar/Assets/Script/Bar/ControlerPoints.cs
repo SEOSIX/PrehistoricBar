@@ -120,7 +120,7 @@ namespace Script.Bar
             scoreMultCombo += 1;
             Debug.Log($"Score | scoreMultCombo : {scoreMultCombo}");
             float scoretotal = 0;
-            scoretotal += scoreMultNv * (1 + scoreMultPrepTime + scoreMultDosage) * 1 / /*EventQueueManager.instance.currentWave */ scoreMultCombo;
+            scoretotal += scoreMultNv * (1 + scoreMultPrepTime + scoreMultDosage) * 1 / scoreMultCombo;
             Debug.Log($"Score | scoretotal : {scoretotal}");
             
             instance.CheckForWin(Mathf.RoundToInt(scoretotal));

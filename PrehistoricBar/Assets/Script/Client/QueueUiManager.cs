@@ -150,7 +150,14 @@ public class QueueUiManager : MonoBehaviour
             }
             NextStep(cocktail);
         }
-        StartTimer(clientTime);
+        float adjustedTime = clientTime;
+        if (EventQueueManager.instance != null)
+        {
+            adjustedTime /= EventQueueManager.instance.GetTimeMultiplier();
+            Debug.Log($"Wave {EventQueueManager.currentWave} | Time multiplier: {EventQueueManager.instance.GetTimeMultiplier()} | Adjusted time: {adjustedTime}");
+        }
+
+        StartTimer(adjustedTime);
     }
 
     private void StartTimer(float duration)

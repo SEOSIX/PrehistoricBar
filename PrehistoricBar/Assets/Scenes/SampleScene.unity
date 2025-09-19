@@ -2703,11 +2703,11 @@ MonoBehaviour:
   - {fileID: 6949938112487522110, guid: 36acd9bfd7498a247802317853b0b097, type: 3}
   - {fileID: 6949938112487522110, guid: 291bda61438d55741914934a9496dbe8, type: 3}
   - {fileID: 6949938112487522110, guid: bcd07237893b9284f806f49834c475c8, type: 3}
-  minClient: 1
-  maxClient: 58
+  minClient: 6
+  maxClient: 6
   minCocktails: 1
   maxCocktails: 1
-  numberOfWaves: 2787
+  numberOfWaves: 2865
 --- !u!4 &784911051
 Transform:
   m_ObjectHideFlags: 0
