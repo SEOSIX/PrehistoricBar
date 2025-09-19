@@ -142,7 +142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 207a122c5595bfc49a861330fbd80a1e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -167,15 +167,15 @@ MonoBehaviour:
   cocktailIndices: 01000000040000000a000000
   cocktailName: Mouchito
   recette:
-  - description: "1 : Versez 60 ml d'alcool de foug\xE8re"
+  - description: {fileID: 6926152731881456593, guid: fb86fade288d0c848b1b3c3035496d15, type: 3}
     ingredientIndex: 1
     amount: 60
     isDone: 0
-  - description: '2 : Broyez des mouches'
+  - description: {fileID: 5796394029288060242, guid: 09059ea89c88ba44db1fb8e30dfd5346, type: 3}
     ingredientIndex: 4
     amount: 7
     isDone: 0
-  - description: '3 : Versez du jus de larve'
+  - description: {fileID: 6520558286356248895, guid: f8ff3bd91471af945a0ee1a685e3e988, type: 3}
     ingredientIndex: 10
     amount: 1
     isDone: 0

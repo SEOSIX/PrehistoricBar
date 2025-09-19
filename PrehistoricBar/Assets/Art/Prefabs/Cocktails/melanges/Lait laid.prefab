@@ -142,7 +142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 313294009277968516, guid: 456517e40b2792e4b81c107f8562b491, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -167,15 +167,15 @@ MonoBehaviour:
   cocktailIndices: 00000000070000000a000000
   cocktailName: Lait laid
   recette:
-  - description: '1 : Versez 80 ml de lait de mammouth'
+  - description: {fileID: 8617276775322489157, guid: 311652c8047541a4a97c6ea025b36b59, type: 3}
     ingredientIndex: 0
     amount: 80
     isDone: 0
-  - description: '2: Broyez du Cacao laid'
+  - description: {fileID: 7727670266175670023, guid: cbfb54d2f46578f4092921d09d3f7025, type: 3}
     ingredientIndex: 7
     amount: 8
     isDone: 0
-  - description: '3: Versez du jus de larve'
+  - description: {fileID: 6520558286356248895, guid: f8ff3bd91471af945a0ee1a685e3e988, type: 3}
     ingredientIndex: 10
     amount: 1
     isDone: 0

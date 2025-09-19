@@ -142,7 +142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 7798517641584231245, guid: ea88be58bf6a3d949b80a2b8fb16e3ac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -167,15 +167,15 @@ MonoBehaviour:
   cocktailIndices: 010000000200000006000000
   cocktailName: Babavo rhume
   recette:
-  - description: "1 : Versez 60 ml d'alcool de foug\xE8re"
+  - description: {fileID: 6926152731881456593, guid: fb86fade288d0c848b1b3c3035496d15, type: 3}
     ingredientIndex: 1
     amount: 60
     isDone: 0
-  - description: '2 : Versez 30 ml de bave de boeuf'
+  - description: {fileID: 5531269437547845904, guid: 582bfa15a5399c849b5503913f15839e, type: 3}
     ingredientIndex: 2
     amount: 30
     isDone: 0
-  - description: '3 : Broyez de la bababe'
+  - description: {fileID: 2604588365501592209, guid: e6dd72d62479188479abdaf2f7592381, type: 3}
     ingredientIndex: 6
     amount: 6
     isDone: 0

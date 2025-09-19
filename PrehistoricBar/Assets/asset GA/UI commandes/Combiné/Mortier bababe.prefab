@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6949938112487522110
+--- !u!1 &2604588365501592209
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7568960753061545778}
-  - component: {fileID: 1445151314073195846}
-  - component: {fileID: 1835647256195002814}
-  - component: {fileID: -4962834539135106580}
+  - component: {fileID: 7298101190990553746}
+  - component: {fileID: 3578630982629025717}
+  - component: {fileID: 3503896896812154717}
   m_Layer: 5
-  m_Name: Alcool de fougere
+  m_Name: Mortier bababe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &7568960753061545778
+--- !u!224 &7298101190990553746
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6949938112487522110}
+  m_GameObject: {fileID: 2604588365501592209}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -35,24 +34,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -338.72754, y: -64.23303}
+  m_SizeDelta: {x: 230, y: 185}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &1445151314073195846
+--- !u!222 &3578630982629025717
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6949938112487522110}
+  m_GameObject: {fileID: 2604588365501592209}
   m_CullTransparentMesh: 1
---- !u!114 &1835647256195002814
+--- !u!114 &3503896896812154717
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6949938112487522110}
+  m_GameObject: {fileID: 2604588365501592209}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -66,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a1f006a6f2916e74c83fae00997f4eb5, type: 3}
+  m_Sprite: {fileID: 7118959494253593607, guid: bd9d0e6c88d09e54ba6c51b3dc8a9a10, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -76,22 +75,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &-4962834539135106580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6949938112487522110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99ee0e52ca784e0a89d6f86087ba1c61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Script.Objects.Cocktails
-  cocktailIndices: 01000000
-  cocktailName: "Alcool de foug\xE8re"
-  recette:
-  - description: {fileID: 6926152731881456593, guid: fb86fade288d0c848b1b3c3035496d15, type: 3}
-    ingredientIndex: 1
-    amount: 60
-    isDone: 0

@@ -142,7 +142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 805269781639573646, guid: 4e970fb388e79b5469e40cd2d0002324, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -167,11 +167,11 @@ MonoBehaviour:
   cocktailIndices: 0100000006000000
   cocktailName: Babababama
   recette:
-  - description: "1 : Versez 70 ml d'alcool de foug\xE8re"
+  - description: {fileID: 6926152731881456593, guid: fb86fade288d0c848b1b3c3035496d15, type: 3}
     ingredientIndex: 1
     amount: 70
     isDone: 0
-  - description: '2 : Broyez de la bababe'
+  - description: {fileID: 2604588365501592209, guid: e6dd72d62479188479abdaf2f7592381, type: 3}
     ingredientIndex: 6
     amount: 6
     isDone: 0

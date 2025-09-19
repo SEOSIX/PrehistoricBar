@@ -142,7 +142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 653e5ea30ff4ee948974e31583d2142e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -167,19 +167,19 @@ MonoBehaviour:
   cocktailIndices: 00000000030000000a00000005000000
   cocktailName: Froz au lait
   recette:
-  - description: '1 : Versez 70 ml de lait de mammouth'
+  - description: {fileID: 8617276775322489157, guid: 311652c8047541a4a97c6ea025b36b59, type: 3}
     ingredientIndex: 0
     amount: 70
     isDone: 0
-  - description: '2 : Broyez de la froz'
+  - description: {fileID: 9138615289754257118, guid: e51f79305b1dfc94ab299b6220090d5c, type: 3}
     ingredientIndex: 3
     amount: 5
     isDone: 0
-  - description: '3 : Versez du jus de larve'
+  - description: {fileID: 6520558286356248895, guid: f8ff3bd91471af945a0ee1a685e3e988, type: 3}
     ingredientIndex: 10
     amount: 1
     isDone: 0
-  - description: "4 : Broyez des gla\xE7ons"
+  - description: {fileID: 959813092841435770, guid: a088cc40d85b5764a9f45e6282800c38, type: 3}
     ingredientIndex: 5
     amount: 10
     isDone: 0
