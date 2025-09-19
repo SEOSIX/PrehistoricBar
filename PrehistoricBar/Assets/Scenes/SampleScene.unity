@@ -2697,7 +2697,7 @@ MonoBehaviour:
   possiblesCocktails:
   - {fileID: 6949938112487522110, guid: a3f4c4a3e44e70549b6b74d9ac120339, type: 3}
   minClient: 1
-  maxClient: 2
+  maxClient: 20
   minCocktails: 1
   maxCocktails: 1
   numberOfWaves: 3
@@ -3974,8 +3974,6 @@ MonoBehaviour:
   Over: {fileID: 587429603}
   timerSlider: {fileID: 1735919063}
   clientTime: 40
-  transitionPanel: {fileID: 0}
-  transitionDuration: 2
   cup: {fileID: 972269005}
   tireuseLaitSpeed: 25
   tireuseBaveSpeed: 15
@@ -3989,8 +3987,6 @@ MonoBehaviour:
   moveSpeed: 4000
   recetteContainer: {fileID: 583896870}
   recetteImagePrefab: {fileID: 1891050406694736087, guid: 6c076bbb54a424541b79b30e0803e073, type: 3}
-  nextClientSlot1: {fileID: 0}
-  nextClientSlot2: {fileID: 0}
   laitLocked: 0
   alcoolLocked: 0
   offset: {x: 0, y: 185.2}
