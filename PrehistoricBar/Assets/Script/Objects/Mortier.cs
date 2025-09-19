@@ -21,8 +21,6 @@ namespace Script.Objects
             currentCocktail = cocktail;
             grindPressCount = 0;
             requiredPresses = Mathf.Max(1, Mathf.RoundToInt(step.amount));
-            if (currentIngredientText != null)
-                currentIngredientText.text = $"Broyer: {step.ingredientIndex}";
         }
 
         void OnGrind(InputValue value)
@@ -33,7 +31,7 @@ namespace Script.Objects
             grindPressCount++;
             if (currentIngredientText != null)
                 currentIngredientText.text =
-                    $"Broyer: {currentStep.ingredientIndex} ({grindPressCount}/{requiredPresses})";
+                    $"{grindPressCount}/{requiredPresses})";
 
             if (grindPressCount >= requiredPresses)
             {
